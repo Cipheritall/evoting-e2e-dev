@@ -1,0 +1,483 @@
+{
+  "rabbit_version": "3.7.26",
+  "users": [
+	{
+	  "name": "mixing2",
+	  "password_hash": "+S9dgmWpPpXzfBkHebI98ah2S3xpQxw9/UYjGuR4RnCCRTvA",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "return-codes2",
+	  "password_hash": "hsCGxgtx0xU7yLaH9JY0LI4d6SL3XrZlVwQ/mzBK47kDOjkw",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "return-codes3",
+	  "password_hash": "9ToDyiTnMoCQHRwWgMIDsrdYYyGQtWbn4ER3rLx21v84KxIv",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "mixing3",
+	  "password_hash": "NuTuyQkPUL3SPzQL2pN51+QAmMcHvfVRMKm8n6/djsXrUctk",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "return-codes1",
+	  "password_hash": "efUdZyCPxDZmWi/11pcoFUhaTq752xmhC+uW8gViJtI2rsm6",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "orchestrator",
+	  "password_hash": "D4fa5+aoHuB3kIrjweOxlswTkWoo04sfN5DJ5DHULWrmi13A",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "admin",
+	  "password_hash": "IotYRL9dea/Kv2Bo05Hk24r464o4aNDpNu3+D6o08LX462Ky",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": "administrator"
+	},
+	{
+	  "name": "control-components",
+	  "password_hash": "KgvQzmI2TTkGwiazjcItcb1mKLV9c3j+Ve8qMKIyAD/0xQJA",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "return-codes4",
+	  "password_hash": "4RGIqmUX83PnPLPrvoiW4LSSTmsiDUvTjFFQQzZJgq4n9WJa",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	},
+	{
+	  "name": "mixing1",
+	  "password_hash": "hFkoQ051cJ7WKVJNBlcz+PoGMKrqNTrAbJm7iLfttK8gK2Cy",
+	  "hashing_algorithm": "rabbit_password_hashing_sha256",
+	  "tags": ""
+	}
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    },
+    {
+      "name": "control-components"
+    }
+  ],
+  "permissions": [
+	{
+	  "user": "return-codes1",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.1\\..*Response|return-codes\\.verification\\.1\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.1\\..*Request$|^return-codes\\.verification\\.1\\..*Request$"
+	},
+	{
+	  "user": "mixing1",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.1\\..*Response)$",
+	  "read": "^mixnet\\.1\\..*Request$"
+	},
+	{
+	  "user": "return-codes3",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.3\\..*Response|return-codes\\.verification\\.3\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.3\\..*Request$|^return-codes\\.verification\\.3\\..*Request$"
+	},
+	{
+	  "user": "mixing3",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.3\\..*Response)$",
+	  "read": "^mixnet\\.3\\..*Request$"
+	},
+	{
+	  "user": "return-codes4",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.4\\..*Response|return-codes\\.verification\\.4\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.4\\..*Request$|^return-codes\\.verification\\.4\\..*Request$"
+	},
+	{
+	  "user": "admin",
+	  "vhost": "control-components",
+	  "configure": ".*",
+	  "write": "^$",
+	  "read": "^$"
+	},
+	{
+	  "user": "mixing2",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.2\\..*Response)$",
+	  "read": "^mixnet\\.2\\..*Request$"
+	},
+	{
+	  "user": "return-codes2",
+	  "vhost": "control-components",
+	  "configure": "^$",
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.2\\..*Response|return-codes\\.verification\\.2\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.2\\..*Request$|^return-codes\\.verification\\.2\\..*Request$"
+	},
+	{
+	  "user": "orchestrator",
+	  "vhost": "control-components",
+	  "configure": "^amq\\.gen.*$",
+	  "write": "^(amq\\.gen.*|amq\\.default|orchestrator-ha)$",
+	  "read": "^(amq\\.gen.*|.*Response|orchestrator-ha)$"
+	},
+	{
+	  "user": "control-components",
+	  "vhost": "control-components",
+	  "configure": ".*",
+	  "write": ".*",
+	  "read": ".*"
+	},
+	{
+	  "user": "admin",
+	  "vhost": "/",
+	  "configure": ".*",
+	  "write": ".*",
+	  "read": ".*"
+	}
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [
+    {
+      "name": "cluster_name",
+      "value": "rabbit@73aa70051ad8"
+    }
+  ],
+  "policies": [],
+  "queues": [
+    {
+      "name": "return-codes.generation.1.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.3.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.4.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.3.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.1.DecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.4.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.1.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.3.PartialMixingDecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.3.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.1.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.3.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.2.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.2.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.2.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.3.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.3.DecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.3.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.4.DecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.4.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.2.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.1.DecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.4.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.4.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.1.PartialMixingDecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.1.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.4.DecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.3.PartialMixingDecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.2.PartialMixingDecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.1.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.2.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.2.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.4.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.2.DecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.3.DecryptionRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.1.PartialMixingDecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.2.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.1.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.3.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.2.PartialMixingDecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "mixnet.1.KeyGenerationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.1.ComputationResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.3.ComputationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.generation.2.KeyGenerationRequest",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "return-codes.verification.2.DecryptionResponse",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "orchestrator-ha",
+      "vhost": "control-components",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": []
+}

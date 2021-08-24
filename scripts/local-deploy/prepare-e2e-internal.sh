@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+#
+# Copyright 2021 by Swiss Post, Information Technology Services
+#
+#
+
+#
+# Script to setup the docker dev environment for an end to end.
+#
+# Available arguments :
+#   -d the database to use, either h2 or oracle. Required.
+set -o errexit
+
+load_argument() {
+  while getopts d: option; do
+      case "${option}"
+      in
+        d) DATABASE=${OPTARG} ;;
+    *)
+      echo "Unknown option ${OPTARG}. Process is ending..."
+      die 1
+      ;;
+      esac
+    done
+
+  if [ "${DATABASE}" != "h2" ] && [ "${DATABASE}" != "oracle" ] && [ "${DATABASE}" != "h2-internal" ]; then
+    echo "Database argument must be either h2 or oracle."
+    exit 1
+  fi
+}
+
+reset_testdata() {
+  rm -rf testdata
+  cp -r testdata-internal testdata
+}
+
+# Arg 1: prompt
+# Arg 2: yes action
+# Arg 3: no action
+confirm_operation() {
+  if [ "$#" -ne 3 ]; then
+    echo "$#"
+    echo "Not enough arguments provided to confirm_operation."
+    exit 1;
+  fi
+  echo -n "$1" "[y/N]"
+  read -r input
+  case "$input" in
+    y | Y) bash -c "$2" ;;
+    n | N | *) bash -c "$3"; exit 0 ;;
+  esac
+}
+
+rebuild_service_images() {
+  echo "Rebuilding docker services images"
+  if [ "${DATABASE}" == "oracle" ]; then
+    if grep -q '^\s*image: ev\/database-snap' docker-compose.oracle.yml; then
+      echo "Snapshot detected in compose file. Building all images except the database"
+      docker-compose ${composeFileOptions} build admin-portal api-gateway authentication certificate-registry extended-authentication election-information voter-material \
+      vote-verification voting-workflow orchestrator vp-frontend config-tools sdm-crypto sdm-rest message-broker \
+      return-codes-1 return-codes-2 return-codes-3 return-codes-4 \
+      distributed-mixing-1 distributed-mixing-2 distributed-mixing-3
+      return
+    fi
+  fi
+  docker-compose ${composeFileOptions} build
+}
+
+check_db_snapshot() {
+  snapshot_count=$(docker images "ev/$SNAPSHOT_NAME:0.11.0" -q | wc -l)
+  if [ "$snapshot_count" -ne 1 ]; then
+    confirm_operation "Cannot find database snapshot image, the startup will take a long time, are you sure you want to proceed? [y/N]" \
+      'echo "Starting database without snapshot."' \
+      'echo "Exiting."'
+  else
+    echo "Using database snapshot image."
+    sed -i "s/#image: ev\/$SNAPSHOT_NAME:0.11.0/image: ev\/$SNAPSHOT_NAME:0.11.0/" docker-compose.oracle.yml
+    sed -i "s/image: ev\/database:0.11.0/#image: ev\/database:0.11.0/" docker-compose.oracle.yml
+  fi
+}
+
+define_compose_file_options() {
+  composeFileOptions="-f docker-compose.common-internal.yml -f docker-compose.${DATABASE}.yml"
+}
+
+##########################
+########## Main ##########
+##########################
+
+SNAPSHOT_NAME="database-snap"
+
+cd ../..
+load_argument "$@"
+reset_testdata
+define_compose_file_options
+if [ "${DATABASE}" == "oracle" ]; then
+  check_db_snapshot
+fi
+rebuild_service_images
+
+echo "Starting all services"
+docker-compose ${composeFileOptions} stop
+docker-compose ${composeFileOptions} up -d --force-recreate
+docker-compose ${composeFileOptions} logs --follow | grep --colour "SEVERE\|ERROR"
