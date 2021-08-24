@@ -1,0 +1,823 @@
+#
+# Copyright 2021 by Swiss Post, Information Technology Services
+#
+#
+
+version: "2.4"
+
+services:
+  api-gateway:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/api-gateway/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/api-gateway:0.11.0
+    container_name: api-gateway
+    hostname: api-gateway
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+    networks:
+      - area-voter-portal
+      - area-database
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    ports:
+      - "6006:6006"
+      - "8011:8011"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 500m
+    memswap_limit: 620m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  authentication:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/authentication/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        TC_HTTP_PORT: 8000
+        TC_HTTPS_PORT: 9000
+    image: ev/authentication:0.11.0
+    container_name: authentication
+    hostname: authentication
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: authentication
+      DATABASE_PASSWORD: authentication
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6000:6000"
+      - "8000:8000"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  certificate-registry:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/certificate-registry/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/certificate-registry:0.11.0
+    container_name: certificate-registry
+    hostname: certificate-registry
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: certificate_registry
+      DATABASE_PASSWORD: certificate_registry
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6008:6008"
+      - "8008:8008"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 350m
+    memswap_limit: 470m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  extended-authentication:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/extended-authentication/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/extended-authentication:0.11.0
+    container_name: extended-authentication
+    hostname: extended-authentication
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: extended_authentication
+      DATABASE_PASSWORD: extended_authentication
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6009:6009"
+      - "8009:8009"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  election-information:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/election-information/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/election-information:0.11.0
+    container_name: election-information
+    hostname: election-information
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: election_information
+      DATABASE_PASSWORD: election_information
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6001:6001"
+      - "8001:8001"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  voter-material:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/voter-material/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/voter-material:0.11.0
+    container_name: voter-material
+    hostname: voter-material
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: voter_material
+      DATABASE_PASSWORD: voter_material
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6002:6002"
+      - "8002:8002"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  vote-verification:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/vote-verification/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        TC_HTTP_PORT: 8003
+        TC_HTTPS_PORT: 9003
+    image: ev/vote-verification:0.11.0
+    container_name: vote-verification
+    hostname: vote-verification
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: vote_verification
+      DATABASE_PASSWORD: vote_verification
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6003:6003"
+      - "8003:8003"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  voting-workflow:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/voting-workflow/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/voting-workflow:0.11.0
+    container_name: voting-workflow
+    hostname: voting-workflow
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: voting_workflow
+      DATABASE_PASSWORD: voting_workflow
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6004:6004"
+      - "8014:8004"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 600m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  orchestrator:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/orchestrator/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/orchestrator:0.11.0
+    container_name: orchestrator
+    hostname: orchestrator
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      CC_MB_HOSTNAME: message-broker
+      CC_MB_PORT: 5671
+      CC_MB_VHOST: control-components
+      CC_MB_USER: orchestrator
+      CC_MB_PASSWORD: orchestrator
+      CC_QUEUE_NAMES: '{"g1":{"cg-comp":{"req":"return-codes.generation.1.ComputationRequest","res":"return-codes.generation.1.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.1.KeyGenerationRequest","res":"return-codes.generation.1.KeyGenerationResponse"}},"g2":{"cg-comp":{"req":"return-codes.generation.2.ComputationRequest","res":"return-codes.generation.2.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.2.KeyGenerationRequest","res":"return-codes.generation.2.KeyGenerationResponse"}},"g3":{"cg-comp":{"req":"return-codes.generation.3.ComputationRequest","res":"return-codes.generation.3.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.3.KeyGenerationRequest","res":"return-codes.generation.3.KeyGenerationResponse"}},"g4":{"cg-comp":{"req":"return-codes.generation.4.ComputationRequest","res":"return-codes.generation.4.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.4.KeyGenerationRequest","res":"return-codes.generation.4.KeyGenerationResponse"}},"v1":{"cv-comp":{"req":"return-codes.verification.1.ComputationRequest","res":"return-codes.verification.1.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.1.DecryptionRequest","res":"return-codes.verification.1.DecryptionResponse"}},"v2":{"cv-comp":{"req":"return-codes.verification.2.ComputationRequest","res":"return-codes.verification.2.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.2.DecryptionRequest","res":"return-codes.verification.2.DecryptionResponse"}},"v3":{"cv-comp":{"req":"return-codes.verification.3.ComputationRequest","res":"return-codes.verification.3.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.3.DecryptionRequest","res":"return-codes.verification.3.DecryptionResponse"}},"v4":{"cv-comp":{"req":"return-codes.verification.4.ComputationRequest","res":"return-codes.verification.4.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.4.DecryptionRequest","res":"return-codes.verification.4.DecryptionResponse"}},"m1":{"md-keygen":{"req":"mixnet.1.KeyGenerationRequest","res":"mixnet.1.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.1.PartialMixingDecryptionRequest","res":"mixnet.1.PartialMixingDecryptionResponse"}},"m2":{"md-keygen":{"req":"mixnet.3.KeyGenerationRequest","res":"mixnet.3.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.3.PartialMixingDecryptionRequest","res":"mixnet.3.PartialMixingDecryptionResponse"}},"m3":{"md-keygen":{"req":"mixnet.2.KeyGenerationRequest","res":"mixnet.2.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.2.PartialMixingDecryptionRequest","res":"mixnet.2.PartialMixingDecryptionResponse"}}}'
+      CC_TOPIC_NAMES: '{"or-ha": "orchestrator-ha" }'
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: orchestrator
+      DATABASE_PASSWORD: orchestrator
+      MIXING_DECRYPT_REQUEST_QUEUE_PATTERN: mixnet.#nodeId#.PartialMixingDecryptionRequest
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+    ports:
+      - "6010:6010"
+      - "8010:8010"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 620m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  vp-frontend:
+    build:
+      context: ${EVOTING_HOME}/voter-portal/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        APACHE_HTTP_PORT: 7000
+        APACHE_HTTPS_PORT: 7001
+        SECOND_FACTOR: yob
+    image: ev/vp-frontend:0.11.0
+    container_name: vp-frontend
+    hostname: vp-frontend
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+    networks:
+      - area-frontend
+      - area-voter-portal
+      - area-sdm
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./testdata/vp-frontend/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
+      - ./testdata/vp-frontend/httpd.conf:/etc/httpd/conf/httpd.conf
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 50m
+    memswap_limit: 400m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  message-broker:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:0.11.0
+    container_name: message-broker
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+    networks:
+      - area-control-components
+      - area-message-broker
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    # The AMQP default port is 5672. We translate the port to avoid conflicts with Arquillian integration tests.
+    ports:
+      - "8020:5672"
+      - "5671:5671"
+      - "18020:15672"
+    mem_limit: 100m
+    memswap_limit: 400m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  return-codes-1:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/return-codes:0.11.0
+    container_name: return-codes-1
+    hostname: return-codes-1
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: return_codes_1
+      SPRING_DATASOURCE_PASSWORD: return_codes_1
+      SPRING_RABBITMQ_USERNAME: return-codes1
+      SPRING_RABBITMQ_PASSWORD: return-codes1
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.1.ComputationRequest
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.1.ComputationResponse
+      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.1.KeyGenerationRequest
+      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.1.KeyGenerationResponse
+      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.1.ComputationRequest
+      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.1.ComputationResponse
+      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.1.DecryptionRequest
+      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.1.DecryptionResponse
+      NODEID: 1
+      KEY_NODE_ID: ccn_c1
+      KEYSTORE: CCN_C1.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C1.txt
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6025'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6025:6025"
+    volumes:
+      - ./testdata/return-codes/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  return-codes-2:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/return-codes:0.11.0
+    container_name: return-codes-2
+    hostname: return-codes-2
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: return_codes_2
+      SPRING_DATASOURCE_PASSWORD: return_codes_2
+      SPRING_RABBITMQ_USERNAME: return-codes2
+      SPRING_RABBITMQ_PASSWORD: return-codes2
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.2.ComputationRequest
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.2.ComputationResponse
+      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.2.KeyGenerationRequest
+      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.2.KeyGenerationResponse
+      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.2.ComputationRequest
+      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.2.ComputationResponse
+      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.2.DecryptionRequest
+      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.2.DecryptionResponse
+      NODEID: 2
+      KEY_NODE_ID: ccn_c2
+      KEYSTORE: CCN_C2.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C2.txt
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6026'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6026:6026"
+    volumes:
+      - ./testdata/return-codes/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  return-codes-3:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/return-codes:0.11.0
+    container_name: return-codes-3
+    hostname: return-codes-3
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: return_codes_3
+      SPRING_DATASOURCE_PASSWORD: return_codes_3
+      SPRING_RABBITMQ_USERNAME: return-codes3
+      SPRING_RABBITMQ_PASSWORD: return-codes3
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.3.ComputationRequest
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.3.ComputationResponse
+      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.3.KeyGenerationRequest
+      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.3.KeyGenerationResponse
+      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.3.ComputationRequest
+      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.3.ComputationResponse
+      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.3.DecryptionRequest
+      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.3.DecryptionResponse
+      NODEID: 3
+      KEY_NODE_ID: ccn_c3
+      KEYSTORE: CCN_C3.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C3.txt
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6027'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6027:6027"
+    volumes:
+      - ./testdata/return-codes/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  return-codes-4:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/return-codes:0.11.0
+    container_name: return-codes-4
+    hostname: return-codes-4
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: return_codes_4
+      SPRING_DATASOURCE_PASSWORD: return_codes_4
+      SPRING_RABBITMQ_USERNAME: return-codes4
+      SPRING_RABBITMQ_PASSWORD: return-codes4
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.4.ComputationRequest
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.4.ComputationResponse
+      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.4.KeyGenerationRequest
+      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.4.KeyGenerationResponse
+      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.4.ComputationRequest
+      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.4.ComputationResponse
+      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.4.DecryptionRequest
+      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.4.DecryptionResponse
+      NODEID: 4
+      KEY_NODE_ID: ccn_c4
+      KEYSTORE: CCN_C4.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C4.txt
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6028'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6028:6028"
+    volumes:
+      - ./testdata/return-codes/keystore-4:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  distributed-mixing-1:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/distributed-mixing:0.11.0
+    container_name: distributed-mixing-1
+    hostname: distributed-mixing-1
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: distributed_mixing_1
+      SPRING_DATASOURCE_PASSWORD: distributed_mixing_1
+      SPRING_RABBITMQ_USERNAME: mixing1
+      SPRING_RABBITMQ_PASSWORD: mixing1
+      NODEID: 1
+      KEYS_NODEID: 1
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6029'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6029:6029"
+    volumes:
+      - ./testdata/distributed-mixing/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+    tty: true
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  distributed-mixing-2:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/distributed-mixing:0.11.0
+    container_name: distributed-mixing-2
+    hostname: distributed-mixing-2
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: distributed_mixing_2
+      SPRING_DATASOURCE_PASSWORD: distributed_mixing_2
+      SPRING_RABBITMQ_USERNAME: mixing2
+      SPRING_RABBITMQ_PASSWORD: mixing2
+      NODEID: 2
+      KEYS_NODEID: 2
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6030'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6030:6030"
+    volumes:
+      - ./testdata/distributed-mixing/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  distributed-mixing-3:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/distributed-mixing:0.11.0
+    container_name: distributed-mixing-3
+    hostname: distributed-mixing-3
+    security_opt:
+      - no-new-privileges
+    environment:
+      SPRING_DATASOURCE_USERNAME: distributed_mixing_3
+      SPRING_DATASOURCE_PASSWORD: distributed_mixing_3
+      SPRING_RABBITMQ_USERNAME: mixing3
+      SPRING_RABBITMQ_PASSWORD: mixing3
+      NODEID: 3
+      KEYS_NODEID: 3
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6031'
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6031:6031"
+    volumes:
+      - ./testdata/distributed-mixing/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+networks:
+  area-sdm:
+    driver: bridge
+    internal: false
+  area-database:
+    driver: bridge
+    internal: false
+  area-control-components:
+    driver: bridge
+    internal: true
+  area-frontend:
+    driver: bridge
+    internal: false
+  area-voter-portal:
+    driver: bridge
+    internal: false
+  area-message-broker:
+    driver: bridge
+    internal: false
+

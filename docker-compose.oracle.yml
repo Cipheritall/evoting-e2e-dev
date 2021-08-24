@@ -1,0 +1,122 @@
+#
+# Copyright 2021 by Swiss Post, Information Technology Services
+#
+#
+
+version: "2.4"
+
+services:
+  database:
+    build:
+      context: ${EVOTING_HOME}/database/
+      dockerfile: oracle.dockerfile
+      shm_size: 1g
+      args:
+        FLYWAY_URL: https://artifactory.tools.pnet.ch/artifactory/ext-binaries-local/org/flywaydb/flyway-commandline-7.7.2-linux-x64.tar.gz
+        FLYWAY_VERSION: 7.7.2
+    # Switch for optimized db startup time
+    #image: ev/database-snap:0.11.0
+    image: ev/database:0.11.0
+    container_name: database
+    hostname: database
+    security_opt:
+      - no-new-privileges
+    environment:
+      ORACLE_PWD: password01
+      ORACLE_CHARACTERSET: AL32UTF8
+      TZ: Europe/Zurich
+    networks:
+      - area-database
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    ulimits:
+      nofile:
+        soft: 20000
+        hard: 40000
+    shm_size: 1G
+    mem_reservation: 1g
+    mem_limit: 2500m
+    memswap_limit: 3500m
+    cpus: 6
+    oom_kill_disable: true
+
+  admin-portal:
+    environment:
+      DB_ORACLE_DRIVERCLASSNAME: oracle.jdbc.OracleDriver
+      DB_ORACLE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+
+  authentication:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  certificate-registry:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  election-information:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  extended-authentication:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  vote-verification:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  voter-material:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  voting-workflow:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  orchestrator:
+    environment:
+      DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      DATABASE_DRIVER: oracle.jdbc.OracleDriver
+
+  return-codes-1:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
+  return-codes-2:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
+  return-codes-3:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
+  return-codes-4:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
+  distributed-mixing-1:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
+  distributed-mixing-2:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
+  distributed-mixing-3:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
