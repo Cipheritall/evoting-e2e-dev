@@ -39,7 +39,7 @@ follow the guide [Install_SDM.md](./Install_SDM.md)
 
 2. Click "**IMPORT**"
 
-3. Select the folder [testdata/sdm/sdm_Post_E2E_DEV](./testdata/sdm/sdm_Post_E2E_DEV)
+3. Select the folder [testdata-external/sdm/sdm_Post_E2E_DEV](./testdata-external/sdm/sdm_Post_E2E_DEV)
 
 4. Confirm
 
@@ -49,9 +49,9 @@ follow the guide [Install_SDM.md](./Install_SDM.md)
 
 1. In the Tab Administration Boards select the Administration Board (AB) Post_E2E_DEV and click on "**CONSTITUTE**"
 
-2. Click "**CHOOSE FILE**" and select the file [testdata/sdm/tenant/tenant_100.sks](./testdata/sdm/tenant/tenant_100.sks)
+2. Click "**CHOOSE FILE**" and select the file [testdata-external/sdm/tenant/tenant_100.sks](./testdata-external/sdm/tenant/tenant_100.sks)
 
-3. Enter the password of the tenant key (see [testdata/sdm/tenant/tenant_PW.txt](./testdata/sdm/tenant/tenant_PW.txt))
+3. Enter the password of the tenant key (see [testdata-external/sdm/tenant/tenant_PW.txt](./testdata-external/sdm/tenant/tenant_PW.txt))
 
 4. Click "**OK**"
 

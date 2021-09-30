@@ -7,7 +7,7 @@ version: "2.4"
 
 services:
   database:
-    image: ${DOCKER_REGISTRY}/ev/h2:0.11.0
+    image: ${DOCKER_REGISTRY}/ev/h2:0.11.3
     container_name: h2
     hostname: h2
     security_opt:
