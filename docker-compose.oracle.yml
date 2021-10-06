@@ -15,8 +15,8 @@ services:
         FLYWAY_URL: https://artifactory.tools.pnet.ch/artifactory/ext-binaries-local/org/flywaydb/flyway-commandline-7.7.2-linux-x64.tar.gz
         FLYWAY_VERSION: 7.7.2
     # Switch for optimized db startup time
-    #image: ev/database-snap:0.11.0
-    image: ev/database:0.11.0
+    #image: ev/database-snap:${EVOTING_VERSION}
+    image: ev/database:${EVOTING_VERSION}
     container_name: database
     hostname: database
     security_opt:

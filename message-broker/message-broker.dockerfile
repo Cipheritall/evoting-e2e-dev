@@ -3,7 +3,7 @@ FROM $DOCKER_REGISTRY/ev/rabbitmq:3.7
 
 ENV BUILD_RESOURCES="./resources"
 ENV INSTALL_DIR="/install"
-ENV RABBIT_DEFINITIONS="rabbit.definitions-0.11.0.json"
+ENV RABBIT_DEFINITIONS="rabbit.definitions.json"
 ENV RABBIT_CONF="rabbitmq.conf"
 ENV DEFINITIONS_DIR="/data"
 ENV CA_CERT="ca_certificate.pem"

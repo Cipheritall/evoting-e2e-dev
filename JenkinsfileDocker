@@ -87,8 +87,8 @@ pipeline {
 					sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS} docker.tools.post.ch"
 
 					// MESSAGE-BROKER
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/message-broker:0.11.0 -f ./message-broker/message-broker.dockerfile ./message-broker/"
-					sh "docker push docker.tools.post.ch/ev/message-broker:0.11.0"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/message-broker:${EVOTING_VERSION} -f ./message-broker/message-broker.dockerfile ./message-broker/"
+					sh "docker push docker.tools.post.ch/ev/message-broker:${EVOTING_VERSION}"
 				}
 			}
 		}
