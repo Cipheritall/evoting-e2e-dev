@@ -35,6 +35,8 @@ To build and start the docker images, run the following script
 Alternatively, you can run the following commands:
 
 ```sh
+rm -rf testdata
+cp -r testdata-external testdata
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml build
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml stop
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml up -d --force-recreate
