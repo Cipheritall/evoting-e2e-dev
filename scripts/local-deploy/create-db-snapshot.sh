@@ -34,4 +34,4 @@ docker exec -u oracle database bash <<EOF
   SQLCODE
 EOF
 
-docker commit database ev/database-snap:0.11.0
+docker commit database ev/database-snap:${EVOTING_VERSION}

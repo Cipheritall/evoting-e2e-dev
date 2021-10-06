@@ -9,6 +9,8 @@
 
 set -o errexit
 
+source $EVOTING_DOCKER_HOME/copy-evoting-version-in-env-file.sh
+
 reset_testdata() {
   rm -rf testdata
   cp -r testdata-external testdata

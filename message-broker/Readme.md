@@ -1,10 +1,10 @@
 #Commands
 
 ##Build
-`docker build -t ev/message-broker:0.11.0 .`
+`docker build -t ev/message-broker:${EVOTING_VERSION} .`
 
 ##Run
-`docker run --name message-broker  -p 5672:5672 ev/message-broker:0.11.0`
+`docker run --name message-broker  -p 5672:5672 ev/message-broker:${EVOTING_VERSION}`
 
 # RabbitMQ passwords
 The password for a user is the name of that user. 

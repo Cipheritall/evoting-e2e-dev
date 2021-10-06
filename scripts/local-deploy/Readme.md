@@ -11,7 +11,7 @@ To avoid having to wait a long time each time for the database to start, you sho
 1. Start the normal database through docker compose with: `docker-compose up --force-recreate database`
 2. Run the script `create-db-snapshot.sh` in scripts/local-deploy
 3. Stop the database: `docker-compose stop database`
-4. Change the image to build from in the docker-compose to `image: ev/database-snap:0.11.0` 
+4. Change the image to build from in the docker-compose to `image: ev/database-snap:${EVOTING_VERSION}` 
 
 ## Start and stop
 ### With optimized database startup time
