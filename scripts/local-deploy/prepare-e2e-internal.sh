@@ -11,6 +11,8 @@
 #   -d the database to use, either h2 or oracle. Required.
 set -o errexit
 
+source $EVOTING_DOCKER_HOME/copy-evoting-version-in-env-file.sh
+
 load_argument() {
   while getopts d: option; do
       case "${option}"
@@ -67,15 +69,15 @@ rebuild_service_images() {
 }
 
 check_db_snapshot() {
-  snapshot_count=$(docker images "ev/$SNAPSHOT_NAME:0.11.0" -q | wc -l)
+  snapshot_count=$(docker images "ev/$SNAPSHOT_NAME:${EVOTING_VERSION}" -q | wc -l)
   if [ "$snapshot_count" -ne 1 ]; then
     confirm_operation "Cannot find database snapshot image, the startup will take a long time, are you sure you want to proceed? [y/N]" \
       'echo "Starting database without snapshot."' \
       'echo "Exiting."'
   else
     echo "Using database snapshot image."
-    sed -i "s/#image: ev\/$SNAPSHOT_NAME:0.11.0/image: ev\/$SNAPSHOT_NAME:0.11.0/" docker-compose.oracle.yml
-    sed -i "s/image: ev\/database:0.11.0/#image: ev\/database:0.11.0/" docker-compose.oracle.yml
+    sed -i "s/#image: ev\/$SNAPSHOT_NAME:${EVOTING_VERSION}/image: ev\/$SNAPSHOT_NAME:${EVOTING_VERSION}/" docker-compose.oracle.yml
+    sed -i "s/image: ev\/database:${EVOTING_VERSION}/#image: ev\/database:${EVOTING_VERSION}/" docker-compose.oracle.yml
   fi
 }
 
