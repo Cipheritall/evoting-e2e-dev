@@ -16,7 +16,7 @@ services:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         TC_HTTP_PORT: 8005
         TC_HTTPS_PORT: 9005
-    image: ev/admin-portal:0.11.0
+    image: ev/admin-portal:${EVOTING_VERSION}
     container_name: admin-portal
     hostname: admin-portal
     security_opt:
@@ -65,7 +65,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/api-gateway/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/api-gateway:0.11.0
+    image: ev/api-gateway:${EVOTING_VERSION}
     container_name: api-gateway
     hostname: api-gateway
     security_opt:
@@ -110,7 +110,7 @@ services:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         TC_HTTP_PORT: 8000
         TC_HTTPS_PORT: 9000
-    image: ev/authentication:0.11.0
+    image: ev/authentication:${EVOTING_VERSION}
     container_name: authentication
     hostname: authentication
     security_opt:
@@ -157,7 +157,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/certificate-registry/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/certificate-registry:0.11.0
+    image: ev/certificate-registry:${EVOTING_VERSION}
     container_name: certificate-registry
     hostname: certificate-registry
     security_opt:
@@ -202,7 +202,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/extended-authentication/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/extended-authentication:0.11.0
+    image: ev/extended-authentication:${EVOTING_VERSION}
     container_name: extended-authentication
     hostname: extended-authentication
     security_opt:
@@ -247,7 +247,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/election-information/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/election-information:0.11.0
+    image: ev/election-information:${EVOTING_VERSION}
     container_name: election-information
     hostname: election-information
     security_opt:
@@ -294,7 +294,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/voter-material/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/voter-material:0.11.0
+    image: ev/voter-material:${EVOTING_VERSION}
     container_name: voter-material
     hostname: voter-material
     security_opt:
@@ -341,7 +341,7 @@ services:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         TC_HTTP_PORT: 8003
         TC_HTTPS_PORT: 9003
-    image: ev/vote-verification:0.11.0
+    image: ev/vote-verification:${EVOTING_VERSION}
     container_name: vote-verification
     hostname: vote-verification
     security_opt:
@@ -388,7 +388,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/voting-workflow/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/voting-workflow:0.11.0
+    image: ev/voting-workflow:${EVOTING_VERSION}
     container_name: voting-workflow
     hostname: voting-workflow
     security_opt:
@@ -435,7 +435,7 @@ services:
       context: ${EVOTING_HOME}/voting-server/orchestrator/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/orchestrator:0.11.0
+    image: ev/orchestrator:${EVOTING_VERSION}
     container_name: orchestrator
     hostname: orchestrator
     security_opt:
@@ -491,7 +491,7 @@ services:
         APACHE_HTTP_PORT: 7000
         APACHE_HTTPS_PORT: 7001
         SECOND_FACTOR: dob
-    image: ev/vp-frontend:0.11.0
+    image: ev/vp-frontend:${EVOTING_VERSION}
     container_name: vp-frontend
     hostname: vp-frontend
     security_opt:
@@ -522,7 +522,7 @@ services:
       context: ${EVOTING_HOME}/tools/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/config-tools:0.11.0
+    image: ev/config-tools:${EVOTING_VERSION}
     container_name: config-tools
     hostname: config-tools
     security_opt:
@@ -549,7 +549,7 @@ services:
       context: ${EVOTING_HOME}/secure-data-manager/config-generator/config-webapp/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/sdm-crypto:0.11.0
+    image: ev/sdm-crypto:${EVOTING_VERSION}
     container_name: sdm-crypto
     hostname: sdm-crypto
     security_opt:
@@ -579,7 +579,8 @@ services:
       context: ${EVOTING_HOME}/secure-data-manager/secure-data-manager-backend/web-services/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/sdm-rest:0.11.0
+        VERSION: ${EVOTING_VERSION}
+    image: ev/sdm-rest:${EVOTING_VERSION}
     container_name: sdm-rest
     hostname: sdm-rest
     security_opt:
@@ -613,7 +614,7 @@ services:
       dockerfile: message-broker.dockerfile
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/message-broker:0.11.0
+    image: ev/message-broker:${EVOTING_VERSION}
     container_name: message-broker
     security_opt:
       - no-new-privileges
@@ -647,7 +648,7 @@ services:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:0.11.0
+    image: ev/return-codes:${EVOTING_VERSION}
     container_name: return-codes-1
     hostname: return-codes-1
     security_opt:
@@ -696,7 +697,7 @@ services:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:0.11.0
+    image: ev/return-codes:${EVOTING_VERSION}
     container_name: return-codes-2
     hostname: return-codes-2
     security_opt:
@@ -745,7 +746,7 @@ services:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:0.11.0
+    image: ev/return-codes:${EVOTING_VERSION}
     container_name: return-codes-3
     hostname: return-codes-3
     security_opt:
@@ -794,7 +795,7 @@ services:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:0.11.0
+    image: ev/return-codes:${EVOTING_VERSION}
     container_name: return-codes-4
     hostname: return-codes-4
     security_opt:
@@ -843,7 +844,7 @@ services:
       context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:0.11.0
+    image: ev/distributed-mixing:${EVOTING_VERSION}
     container_name: distributed-mixing-1
     hostname: distributed-mixing-1
     security_opt:
@@ -880,7 +881,7 @@ services:
       context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:0.11.0
+    image: ev/distributed-mixing:${EVOTING_VERSION}
     container_name: distributed-mixing-2
     hostname: distributed-mixing-2
     security_opt:
@@ -916,7 +917,7 @@ services:
       context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:0.11.0
+    image: ev/distributed-mixing:${EVOTING_VERSION}
     container_name: distributed-mixing-3
     hostname: distributed-mixing-3
     security_opt:
