@@ -4,7 +4,7 @@
 *
 */
 
-@Library('pipeline-library@master')_
+@Library('pipeline-library@master') _
 
 def BUILD_INFO = Artifactory.newBuildInfo()
 def PROJECT_NAME = 'evoting-e2e-dev'
@@ -79,7 +79,7 @@ pipeline {
 				}
 			}
 		}
-		
+
 		stage('Build and push - message-broker') {
 
 			steps {
@@ -92,14 +92,15 @@ pipeline {
 				}
 			}
 		}
-		
+
 	}
 
 	post {
+		cleanup {
+			step([$class: 'StashNotifier'])
+		}
 		always {
-			script {
-				step([$class: 'StashNotifier'])
-			}
+			step([$class: 'StashNotifier'])
 		}
 		failure {
 			sendBuildMail(projectName: PROJECT_NAME, message: 'Hi, the docker base images and message-broker build and deploy has failed!!', onError: true, toCommitters: true)
