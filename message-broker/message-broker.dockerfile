@@ -21,4 +21,6 @@ RUN sed -ie "s+@@certfile@@+${SERVER_CERT}+g" $INSTALL_DIR/$RABBIT_CONF
 RUN sed -ie "s+@@keyfile@@+${PRIVATE_KEY}+g" $INSTALL_DIR/$RABBIT_CONF
 RUN sed -ie "s+@@cert_password@@+${KEY_PASSWORD}+g" $INSTALL_DIR/$RABBIT_CONF
 
+RUN rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_federation_management
+
 RUN mv $INSTALL_DIR/$RABBIT_CONF /etc/rabbitmq/
