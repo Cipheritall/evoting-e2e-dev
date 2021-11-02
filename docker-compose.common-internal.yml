@@ -694,7 +694,7 @@ services:
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     container_name: haproxy
-    hostname: haproxy
+    hostname: message-broker
     depends_on:
       - message-broker-1
       - message-broker-2
