@@ -70,8 +70,8 @@ pipeline {
 					sh "docker push docker.tools.post.ch/ev/apache:2.4.37"
 
 					// TOMCAT
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomcat:8.5.69 -f ./base-images/tomcat.dockerfile ./base-images/"
-					sh "docker push docker.tools.post.ch/ev/tomcat:8.5.69"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomcat:8.5.72 -f ./base-images/tomcat.dockerfile ./base-images/"
+					sh "docker push docker.tools.post.ch/ev/tomcat:8.5.72"
 
 					// ORACLE - Only build
 					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/oraclexe:18.4.0-xe -f ./base-images/oraclexe.dockerfile ./base-images/"
