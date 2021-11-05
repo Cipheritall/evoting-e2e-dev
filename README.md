@@ -42,13 +42,6 @@ docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml stop
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml up -d --force-recreate
 ```
 
-## Known Issues
-
-The current version of the development end-2-end has the following issues in the Secure Data Manager GUI:
-
-- **PRE-COMPUTE:** When selecting all Voting Card Sets at once to run the pre-compute step, a bug prevents some Voting Card Sets to move to the *PRE_COMPUTED* tab. As a workaround, launch the process for one Voting Card Set at a time.
-- **COMPUTE:** When selecting all Voting Card Sets at once to run the compute step, a bug prevents the process from starting correctly. As a workaround, launch the process for one Voting Card Set at a time.
-
 ## Run an Election Event
 
 Follow [Run_Election_Event.md](./Run_Election_Event.md)
