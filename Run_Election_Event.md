@@ -305,13 +305,10 @@ _printingData.csv example (with added column headers)_
 
 ### Mixing
 
-1. Copy the simulated smart cards of the Administration Board (AB1.b64 and AB2.b64) from ```C:\Users\<USERNAME>\SecureDataManager\PREPROCESSING\sdm\smart-cards``` to ```C:\Users\<USERNAME>\SecureDataManager\ONLINE\sdm\smart-cards```
 
-2. Activate the Administration Board
+1. In the Tab Ballot Boxes select all Test Ballot Boxes in the SIGNED tab and Click "**MIX**"
 
-3. In the Tab Ballot Boxes select all Test Ballot Boxes in the SIGNED tab and Click "**MIX**"
-
-4. Enter Verification Code and Confirm to mix
+2. Enter Verification Code and Confirm to mix
 
 ***Note: This process can take some time***
 
