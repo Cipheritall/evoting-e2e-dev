@@ -58,6 +58,9 @@ pipeline {
 	}
 
 	post {
+		cleanup {
+			step([$class: 'StashNotifier'])
+		}
 		always {
 			step([$class: 'StashNotifier'])
 		}
