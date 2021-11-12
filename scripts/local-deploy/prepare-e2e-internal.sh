@@ -103,4 +103,4 @@ rebuild_service_images
 echo "Starting all services"
 docker-compose ${composeFileOptions} stop
 docker-compose ${composeFileOptions} up -d --force-recreate
-docker-compose ${composeFileOptions} logs --follow | grep --colour "SEVERE\|ERROR"
+docker-compose ${composeFileOptions} logs --follow | grep --colour "SEVERE\|ERROR\|WARN"

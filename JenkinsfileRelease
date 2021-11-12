@@ -45,6 +45,7 @@ pipeline {
 
 		stage('Prepare') {
 			steps {
+				step([$class: 'StashNotifier'])
 				script {
 					currentBuild.displayName = "#${BUILD_INFO.number} : ${RELEASE_VERSION}"
 					currentBuild.description = "Jenkins job to release the evoting-e2e-dev"
@@ -92,44 +93,15 @@ pipeline {
 						credentialsId: "s-cicd-evoting");
 			}
 		}
-
-		stage('Build and push - base images on gitlab') {
-
-			steps {
-
-				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GITLAB_CRED_ID', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS']]) {
-					sh "docker login -u ${GIT_USER} -p ${GIT_PASS} registry.gitlab.com"
-
-					// RABBITMQ
-					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:3.7 -f ./base-images/rabbitmq.dockerfile ./base-images/"
-					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:3.7"
-
-					// JAVA
-					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:1.8 -f ./base-images/published-base-images/java.dockerfile ./base-images"
-					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:1.8"
-
-					// TOMCAT-NATIVE-LIBS
-					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:1.2.30 -f ./base-images/published-base-images/tomcat-native-lib.dockerfile ./base-images"
-					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:1.2.30"
-
-					// TOMEE
-					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:8 -f ./base-images/published-base-images/tomee.dockerfile ./base-images"
-					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:8"
-
-					// APACHE
-					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:2.4.37 -f ./base-images/apache.dockerfile ./base-images/"
-					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:2.4.37"
-
-					// TOMCAT
-					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:8.5.69 -f ./base-images/published-base-images/tomcat.dockerfile ./base-images"
-					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:8.5.69"
-				}
-			}
-		}
-
 	}
 
 	post {
+		cleanup {
+				step([$class: 'StashNotifier'])
+		}
+		always {
+				step([$class: 'StashNotifier'])
+		}
 		failure {
 			sendBuildMail(projectName: PROJECT_NAME, message: 'Hi, You broke the evoting-e2e-dev RELEASE build! Please check the problem.', onError: true, toCommitters: true)
 		}

@@ -429,7 +429,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/voting-server/orchestrator/
@@ -608,18 +608,20 @@ services:
     memswap_limit: 800m
     cpus: 0.5
 
-  message-broker:
+  message-broker-1:
     build:
       context: ./message-broker
       dockerfile: message-broker.dockerfile
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
     image: ev/message-broker:${EVOTING_VERSION}
-    container_name: message-broker
+    container_name: message-broker-1
+    hostname: message-broker-1
     security_opt:
       - no-new-privileges
     environment:
       TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
     networks:
       - area-control-components
       - area-message-broker
@@ -628,21 +630,89 @@ services:
       nofile:
         soft: 20000
         hard: 40000
-    # The AMQP default port is 5672. We translate the port to avoid conflicts with Arquillian integration tests.
-    ports:
-      - "8020:5672"
-      - "5671:5671"
-      - "18020:15672"
     mem_limit: 100m
     memswap_limit: 400m
     oom_kill_disable: true
     cpus: 0.5
 
+  message-broker-2:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:${EVOTING_VERSION}
+    container_name: message-broker-2
+    hostname: message-broker-2
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 100m
+    memswap_limit: 400m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  message-broker-3:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:${EVOTING_VERSION}
+    container_name: message-broker-3
+    hostname: message-broker-3
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 100m
+    memswap_limit: 400m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  haproxy:
+    image: haproxy:1.7
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    container_name: haproxy
+    hostname: message-broker
+    depends_on:
+      - message-broker-1
+      - message-broker-2
+      - message-broker-3
+    ports:
+      - 15672:15672
+      - 5671:5671
+      - 8022:5672
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+
   return-codes-1:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
@@ -691,7 +761,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
@@ -740,7 +810,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
@@ -789,7 +859,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/return-codes-service/
@@ -838,7 +908,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
@@ -875,7 +945,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
@@ -911,7 +981,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-1:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/distributed-mixing-service/

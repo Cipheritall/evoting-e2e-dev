@@ -13,4 +13,4 @@ docker build --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY -t ev/java:1.8 -f java
 docker build --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY --no-cache --force-rm -t ev/tomcat-native-libs:evoting -f tomcat-native-lib.dockerfile .
 docker build --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY -t ev/tomee:8 -f tomee.dockerfile .
 docker build --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY -t ev/apache:2.4.37 -f apache.dockerfile .
-docker build --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY -t ev/tomcat:8.5.69 -f tomcat.dockerfile .
+docker build --build-arg DOCKER_REGISTRY=$DOCKER_REGISTRY -t ev/tomcat:8.5.72 -f tomcat.dockerfile .

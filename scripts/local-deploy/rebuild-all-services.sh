@@ -4,7 +4,7 @@
 #
 #
 # Available arguments :
-#   -d the database to use, either h2 or oracle. Required.
+#   -d the database to use, either h2, h2-internal or oracle. Required.
 set -o errexit
 
 load_argument() {
@@ -19,8 +19,8 @@ load_argument() {
     esac
   done
 
-  if [ "${DATABASE}" != "h2" ] && [ "${DATABASE}" != "oracle" ]; then
-    echo "Database argument must be either h2 or oracle."
+  if [ "${DATABASE}" != "h2" ] && [ "${DATABASE}" != "h2-internal" ] && [ "${DATABASE}" != "oracle" ]; then
+    echo "Database argument must be part of h2, h2-internal or oracle."
     exit 1
   fi
 }
@@ -29,4 +29,4 @@ set -x
 
 cd ../..
 load_argument "$@"
-docker-compose -f docker-compose.common.yml -f docker-compose."${DATABASE}".yml build
+docker-compose -f docker-compose.common-internal -f docker-compose."${DATABASE}".yml build
