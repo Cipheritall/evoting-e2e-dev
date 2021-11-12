@@ -37,6 +37,7 @@ Alternatively, you can run the following commands:
 ```sh
 rm -rf testdata
 cp -r testdata-external testdata
+source copy-evoting-version-in-env-file.sh
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml build
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml stop
 docker-compose -f docker-compose.common.yml -f docker-compose.h2.yml up -d --force-recreate
