@@ -29,4 +29,4 @@ set -x
 
 cd ../..
 load_argument "$@"
-docker-compose -f docker-compose.common-internal -f docker-compose."${DATABASE}".yml build
+docker-compose -f docker-compose.common-internal.yml -f docker-compose."${DATABASE}".yml build
