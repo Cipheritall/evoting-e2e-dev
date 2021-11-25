@@ -19,27 +19,13 @@ pipeline {
 									serverUrl    : 'https://erancher-int.pnet.ch/k8s/clusters/c-96lxd',
 									contextName  : 'mycluster',
 									clusterName  : 'mycluster',
-									namespace    : 'itdev-voter-database'
+									namespace    : 'voting-system'
 					]) {
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/database/flyway.yaml'
-					}
-					withKubeConfig([credentialsId: 'rancher-token-int',
-									caCertificate: 'LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZ6RENDQTdTZ0F3SUJBZ0lRQVBIYUFXOUo5UzhRY3I3NnY2OU1aakFOQmdrcWhraUc5dzBCQVFzRkFEQlAKTVFzd0NRWURWUVFHRXdKRFNERVRNQkVHQTFVRUNoTUtVRzl6ZENCRFNDQkJSekVOTUFzR0ExVUVDeE1FVUZKUApSREVjTUJvR0ExVUVBeE1UVUV0SklGTjNhWE56VUc5emRDQkRRU0JITXpBZUZ3MHhOREV4TWpnd056TXhORE5hCkZ3MDBOREV4TWpBd056TXhORE5hTUU4eEN6QUpCZ05WQkFZVEFrTklNUk13RVFZRFZRUUtFd3BRYjNOMElFTkkKSUVGSE1RMHdDd1lEVlFRTEV3UlFVazlFTVJ3d0dnWURWUVFERXhOUVMwa2dVM2RwYzNOUWIzTjBJRU5CSUVjegpNSUlDSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQWc4QU1JSUNDZ0tDQWdFQXlNM0JQWVRGSGNIeWtVNG5vVjF6Ck5MRXFiL0w4UjlBejE3cTN4TGk1L2IzSGtmYnZzUDV0eDJVeDFROWxMTnlRL0hORE9CVXdySlhVSG44RDRMVVIKazBNZElFL2MyT0R1QUliYXZTZ0pTUFYrbVRPV001aVdCaFJZbTdINTFvR0UrckFYSG4vcVo2dW5WQVM3M0Y4SQpiR2ExUGNyOFJ3eFBkMzZzYmo3MFV3MGtJR0pNN3F0cWhKWlFPRTZQVm5pb2VLZzIwRHB6MDhLK3NsRHllSDEzCnd6K2FmNFRvUnA3MEFNcEJVQ3ZTWWxIc0d5S2Q0SDZ6YkJPWDl6Q2tFOFNNbm1oS0NCTW5CMzNSSWZ2UHJzVTMKWDlmdVhzSFNGOFhBQmg4MlhxNUl6cUlyNzZIZmFGaW5YOUpIZzU1UXVqUXdSTTB3cWZsbHJpQkIrSjdXaVQ5OQo3MXJORlRJcUIyRnhkeUhkcDhSQXRtejNxWGJLNXhLZkFoQ0NLaHZxb3k3dlU3Zld1THV5elZONUdtQzk5MXN2CkQ5ZWdob3Vqc3pEa3loZmI1QytmZk5RQ0tUSVAyZ3YzZEZ0Z052UEtxTkFoVVh6U3JZcmxnWlhwUy9tY2grZmYKZHlTZGJLYnJsNkR1ZExLSWsrUWU0cTlsVzM1OHN3UmhqT2RXSTlxazRoQ1RwTjl3cUV0QjVTNkNCT2drSjBnRQp2eW1ZbWwzalBTNW5pc3k1SUpPc09PdVBGU1B3NzM3d2N1UG94NnZFay9nNklkVC9vdVlON0Z1UkhITjdHaE5PCnM1TXJxaTBHVkxyeTJHQ1BnYUpzMCtWWFI2MEZCUjRwcGZSK0haRnhra3lnM2dFNDQ1VWFOVmtqV24zdzlHS1cKRkZKVzFKMlpQMVRld2VCeitnVzlnWU1DQXdFQUFhT0JvekNCb0RBT0JnTlZIUThCQWY4RUJBTUNBUVl3RHdZRApWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVWxvNlhWZEtSV3M0ZWZKRm4yOXdrc1pTRGYxWXdId1lEClZSMGpCQmd3Rm9BVWxvNlhWZEtSV3M0ZWZKRm4yOXdrc1pTRGYxWXdQUVlEVlIwZ0JEWXdOREF5QmdrckJnRUUKQWFwZkNRRXdKVEFqQmdnckJnRUZCUWNDQVJZWGFIUjBjRG92TDNCcmFTNXdibVYwTG1Ob0wyTndjeTh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dJQkFBZk1iN0R1dzduQ0FrRHlKbnkxNnRXY2twU0V0SElVS2t5WWNMR0lCaHJPCkhQWTh1ektNejNua040dVRqM05RMWZub25PVFh5VStTSVdUQXMxT1J3aS9Db2U0emRBV0sydlpqRjNQWFBQSlcKV1piK21YbURUdlg5M1crQ2ZpSndXb09SRTR3TjcwYVVWQWUrMkNMRzdUN3o2ckZrKzBJcTlQZ3luL1luczg1bApuMUluMXdib3NYaVhYVElMNVRnN0dTeVBudFowaERQdHh3dmo1bnBwaDJEWjBySW4rRDFsU3pwWEQxeHRTdUpaCkc3V3J6Y0FWWEYwT0tiQW1qYm1PdEp0N0Y1NWRhckFlTE5hVnM0dEgwQk9NU3lkeVBjcEQ5MFJHTEVINHp3TmcKS0RveDZBL1RTbit1WU81Q05vV0kwcE5mc3JjTDAvM1ZZQWpVNDEzZk9QMlp5UWxpUFErS1RQS1U4N1U0clhNMwptQk1ZQmdLNDJKaGtKNGVJQVJKWkRxN3RZV2Y5RFdJOGMwOW40S203UVBwNjNKTDUwemdCZjBaNkZ2Q1JYWWo4CnJPMzZxMnpFMG9IY0VhYVdQZkpudWVpM1FadVRFbTdpSEZ1Vm9XdEdleGtiaVBsL2dXTnJPZDZpMlliajRiQ1gKN0VSWlNXOXlqU0ptOU1XaEdTei9aem5pbWVwZk4vVUdpUytQNkNoSWptbjllSGRpa09wL0hBeFhYSDhEK1VSZwoyU3pHZDRtcWxOcS9RaGxsdEdoZHc0cmtLS3dPSmxTQmZ1VEhjaEEwSEpYNndUVlZRZ1RpaWpxSVY3VkFNdkp6CmlUNUIrQUl0Qnk5Wkl5aTVkcTZDOFpvQkdqUFhCeklkbmNFd0ZhS1lYR3NBQTBPc3lWanBjaWl1a0M3QkZiTDUKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==',
-									serverUrl    : 'https://erancher-int.pnet.ch/k8s/clusters/c-96lxd',
-									contextName  : 'mycluster',
-									clusterName  : 'mycluster',
-									namespace    : 'itdev-voter-messagebroker'
-					]) {
-						// Deploy claims & ingress
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/claims'
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/ingress'
-
-						// Deploy all services
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/control-component'
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/message-broker'
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/others'
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/sdm'
-						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/voter-backend'
+						sh 'kubectl --insecure-skip-tls-verify config set-context --current --namespace=voting-system'
+						sh 'kubectl --insecure-skip-tls-verify delete all --all -n voting-system'
+						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/voting-system/configuration/'
+						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/voting-system/infrastructure/'
+						sh 'kubectl --insecure-skip-tls-verify apply -f kubernetes/voting-system/components/'
 					}
 				}
 			}
