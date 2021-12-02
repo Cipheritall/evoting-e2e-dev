@@ -600,6 +600,10 @@ services:
       - ./testdata/sdm/config:/home/evote/sdm/config
       - ./testdata/sdm/application-level-security/signed-http-headers/keystore:/home/evote/sdm/config/keystore
       - ./testdata/sdm/electionEvents:/home/evote/sdm/integration/electionEvents
+      - ./testdata/tools/file-converter:/home/evote/sdm/integration/electionEvents
+      - ./testdata/tools/DIS/Post_E2E_DEV/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV/input
+      - ./testdata/tools/DIS/Post_E2E_DEV_1000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/input
+      - ./testdata/tools/DIS/Post_E2E_DEV_10000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_10000/input
       - ./testdata/sdm/systemKeys:/home/evote/sdm/systemKeys
       # Writing storage
       - ./testdata/smart-cards:/home/evote/sdm/smart-cards
