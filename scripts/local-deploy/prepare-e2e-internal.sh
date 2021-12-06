@@ -77,8 +77,8 @@ check_db_snapshot() {
       'echo "Exiting."'
   else
     echo "Using database snapshot image."
-    sed -i "s/#image: ev\/$SNAPSHOT_NAME:${EVOTING_VERSION}/image: ev\/$SNAPSHOT_NAME:${EVOTING_VERSION}/" docker-compose.oracle.yml
-    sed -i "s/image: ev\/database:${EVOTING_VERSION}/#image: ev\/database:${EVOTING_VERSION}/" docker-compose.oracle.yml
+    sed -i "s/#image: ev\/$SNAPSHOT_NAME:\${EVOTING_VERSION}/image: ev\/$SNAPSHOT_NAME:\${EVOTING_VERSION}/" docker-compose.oracle.yml
+    sed -i "s/image: ev\/database:\${EVOTING_VERSION}/#image: ev\/database:\${EVOTING_VERSION}/" docker-compose.oracle.yml
   fi
 }
 
