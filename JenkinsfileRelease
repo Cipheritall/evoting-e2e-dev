@@ -82,7 +82,7 @@ pipeline {
 				anonymization(
 						gitAnonymousUserName: "SwissPost-Bot",
 						gitAnonymousUserEmail: "evotingspoc@poste.ch",
-						fileToRemove: "JenkinsfileRelease,JenkinsfileK8s,JenkinsfileDocker,JenkinsfileAnonymizeDevelop,docker-compose.common-internal.yml,docker-compose.h2-internal.yml,docker-compose.oracle.yml,base-images,kubernetes,scripts,testdata-internal/");
+						fileToRemove: "JenkinsfileRelease,JenkinsfileK8s,JenkinsfileDocker,JenkinsfileAnonymizeDevelop,docker-compose.common-internal.yml,docker-compose.h2-internal.yml,docker-compose.oracle.yml,base-images/,kubernetes/,scripts/,testdata-internal/,testdata-external/sdm/electionEvents/");
 			}
 		}
 
