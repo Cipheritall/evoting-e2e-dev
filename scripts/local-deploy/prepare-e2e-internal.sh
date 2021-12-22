@@ -61,9 +61,7 @@ rebuild_service_images() {
       docker-compose ${composeFileOptions} build admin-portal api-gateway authentication certificate-registry extended-authentication election-information voter-material \
       vote-verification voting-workflow orchestrator vp-frontend config-tools sdm-crypto sdm-rest \
       message-broker-1 message-broker-2 message-broker-3 \
-      return-codes-1 return-codes-2 return-codes-3 return-codes-4 \
-      distributed-mixing-1 distributed-mixing-2 distributed-mixing-3
-      return
+      control-component-1 control-component-2 control-component-3 control-component-4
     fi
   fi
   docker-compose ${composeFileOptions} build

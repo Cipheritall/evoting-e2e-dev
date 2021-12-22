@@ -712,26 +712,26 @@ services:
       - area-database
       - area-message-broker
 
-  return-codes-1:
+  control-component-1:
     depends_on:
       database:
         condition: service_healthy
       message-broker-1:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-1
-    hostname: return-codes-1
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-1
+    hostname: control-component-1
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_1
-      SPRING_DATASOURCE_PASSWORD: return_codes_1
-      SPRING_RABBITMQ_USERNAME: return-codes1
-      SPRING_RABBITMQ_PASSWORD: return-codes1
+      SPRING_DATASOURCE_USERNAME: control_component_1
+      SPRING_DATASOURCE_PASSWORD: control_component_1
+      SPRING_RABBITMQ_USERNAME: control_components_1
+      SPRING_RABBITMQ_PASSWORD: control_components_1
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
@@ -755,32 +755,32 @@ services:
     ports:
       - "6025:6025"
     volumes:
-      - ./testdata/return-codes/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/keystore-1:${KEYSTORE_MOUNT_LOCATION}
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
     cpus: 0.5
 
-  return-codes-2:
+  control-component-2:
     depends_on:
       database:
         condition: service_healthy
       message-broker-1:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-2
-    hostname: return-codes-2
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-2
+    hostname: control-component-2
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_2
-      SPRING_DATASOURCE_PASSWORD: return_codes_2
-      SPRING_RABBITMQ_USERNAME: return-codes2
-      SPRING_RABBITMQ_PASSWORD: return-codes2
+      SPRING_DATASOURCE_USERNAME: control_component_2
+      SPRING_DATASOURCE_PASSWORD: control_component_2
+      SPRING_RABBITMQ_USERNAME: control_components_2
+      SPRING_RABBITMQ_PASSWORD: control_components_2
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
@@ -804,32 +804,32 @@ services:
     ports:
       - "6026:6026"
     volumes:
-      - ./testdata/return-codes/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/keystore-2:${KEYSTORE_MOUNT_LOCATION}
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
     cpus: 0.5
 
-  return-codes-3:
+  control-component-3:
     depends_on:
       database:
         condition: service_healthy
       message-broker-1:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-3
-    hostname: return-codes-3
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-3
+    hostname: control-component-3
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_3
-      SPRING_DATASOURCE_PASSWORD: return_codes_3
-      SPRING_RABBITMQ_USERNAME: return-codes3
-      SPRING_RABBITMQ_PASSWORD: return-codes3
+      SPRING_DATASOURCE_USERNAME: control_component_3
+      SPRING_DATASOURCE_PASSWORD: control_component_3
+      SPRING_RABBITMQ_USERNAME: control_components_3
+      SPRING_RABBITMQ_PASSWORD: control_components_3
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
@@ -853,32 +853,33 @@ services:
     ports:
       - "6027:6027"
     volumes:
-      - ./testdata/return-codes/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/keystore-3:${KEYSTORE_MOUNT_LOCATION}
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
     cpus: 0.5
 
-  return-codes-4:
+  control-component-4:
     depends_on:
       database:
         condition: service_healthy
       message-broker-1:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-4
-    hostname: return-codes-4
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-4
+    hostname: control-component-4
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_4
-      SPRING_DATASOURCE_PASSWORD: return_codes_4
-      SPRING_RABBITMQ_USERNAME: return-codes4
-      SPRING_RABBITMQ_PASSWORD: return-codes4
+      SPRING_DATASOURCE_USERNAME: control_component_4
+      SPRING_DATASOURCE_PASSWORD: control_component_4
+      SPRING_RABBITMQ_USERNAME: control_components_4
+      SPRING_RABBITMQ_PASSWORD: control_components_4
+      MIXING_RABBITMQ_LISTENERS_ENABLED: "false"
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
@@ -902,116 +903,7 @@ services:
     ports:
       - "6028:6028"
     volumes:
-      - ./testdata/return-codes/keystore-4:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
-
-  distributed-mixing-1:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker-1:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:${EVOTING_VERSION}
-    container_name: distributed-mixing-1
-    hostname: distributed-mixing-1
-    security_opt:
-      - no-new-privileges
-    environment:
-      SPRING_DATASOURCE_USERNAME: distributed_mixing_1
-      SPRING_DATASOURCE_PASSWORD: distributed_mixing_1
-      SPRING_RABBITMQ_USERNAME: mixing1
-      SPRING_RABBITMQ_PASSWORD: mixing1
-      NODEID: 1
-      KEYS_NODEID: 1
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6029'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
-    networks:
-      - area-control-components
-      - area-database
-    ports:
-      - "6029:6029"
-    volumes:
-      - ./testdata/distributed-mixing/keystore-1:${KEYSTORE_MOUNT_LOCATION}
-    tty: true
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
-
-  distributed-mixing-2:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker-1:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:${EVOTING_VERSION}
-    container_name: distributed-mixing-2
-    hostname: distributed-mixing-2
-    security_opt:
-      - no-new-privileges
-    environment:
-      SPRING_DATASOURCE_USERNAME: distributed_mixing_2
-      SPRING_DATASOURCE_PASSWORD: distributed_mixing_2
-      SPRING_RABBITMQ_USERNAME: mixing2
-      SPRING_RABBITMQ_PASSWORD: mixing2
-      NODEID: 2
-      KEYS_NODEID: 2
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6030'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
-    networks:
-      - area-control-components
-      - area-database
-    ports:
-      - "6030:6030"
-    volumes:
-      - ./testdata/distributed-mixing/keystore-2:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
-
-  distributed-mixing-3:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker-1:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:${EVOTING_VERSION}
-    container_name: distributed-mixing-3
-    hostname: distributed-mixing-3
-    security_opt:
-      - no-new-privileges
-    environment:
-      SPRING_DATASOURCE_USERNAME: distributed_mixing_3
-      SPRING_DATASOURCE_PASSWORD: distributed_mixing_3
-      SPRING_RABBITMQ_USERNAME: mixing3
-      SPRING_RABBITMQ_PASSWORD: mixing3
-      NODEID: 3
-      KEYS_NODEID: 3
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6031'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
-    networks:
-      - area-control-components
-      - area-database
-    ports:
-      - "6031:6031"
-    volumes:
-      - ./testdata/distributed-mixing/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/keystore-4:${KEYSTORE_MOUNT_LOCATION}
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true

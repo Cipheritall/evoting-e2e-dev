@@ -2,32 +2,20 @@
   "rabbit_version": "3.7.26",
   "users": [
 	{
-	  "name": "mixing2",
-	  "password_hash": "+S9dgmWpPpXzfBkHebI98ah2S3xpQxw9/UYjGuR4RnCCRTvA",
+	  "name": "control_components_2",
+	  "password_hash": "CrkThja1dLskC97MYGqPsMnjftZR3ii3fVfzltb9IViGs4Ag",
 	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes2",
-	  "password_hash": "hsCGxgtx0xU7yLaH9JY0LI4d6SL3XrZlVwQ/mzBK47kDOjkw",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes3",
-	  "password_hash": "9ToDyiTnMoCQHRwWgMIDsrdYYyGQtWbn4ER3rLx21v84KxIv",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "mixing3",
-	  "password_hash": "NuTuyQkPUL3SPzQL2pN51+QAmMcHvfVRMKm8n6/djsXrUctk",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes1",
-	  "password_hash": "efUdZyCPxDZmWi/11pcoFUhaTq752xmhC+uW8gViJtI2rsm6",
+      "tags": ""
+    },
+    {
+      "name": "control_components_3",
+      "password_hash": "48dWFKsP4UbDQyXWF7F9qaYQ8mYZ/IqN2eobzSSvmB6BeRyL",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "control_components_1",
+      "password_hash": "PVBY9FQXq3U5EQbp/qXMfad4sl0ZqauxIwBdbvBJIVi0lvPH",
 	  "hashing_algorithm": "rabbit_password_hashing_sha256",
 	  "tags": ""
 	},
@@ -50,14 +38,8 @@
 	  "tags": ""
 	},
 	{
-	  "name": "return-codes4",
-	  "password_hash": "4RGIqmUX83PnPLPrvoiW4LSSTmsiDUvTjFFQQzZJgq4n9WJa",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "mixing1",
-	  "password_hash": "hFkoQ051cJ7WKVJNBlcz+PoGMKrqNTrAbJm7iLfttK8gK2Cy",
+	  "name": "control_components_4",
+	  "password_hash": "RmrDN76wg8i8BL0OuHC+QDVRdZ33ADliPIlKgjVwHmPzmCTx",
 	  "hashing_algorithm": "rabbit_password_hashing_sha256",
 	  "tags": ""
 	}
@@ -72,35 +54,21 @@
   ],
   "permissions": [
 	{
-	  "user": "return-codes1",
+	  "user": "control_components_1",
 	  "vhost": "control-components",
 	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.1\\..*Response|return-codes\\.verification\\.1\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.1\\..*Request$|^return-codes\\.verification\\.1\\..*Request$"
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.1\\..*Response|return-codes\\.verification\\.1\\..*Response)$|^(amq\\.gen.*|amq\\.default|mixnet\\.1\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.1\\..*Request$|^return-codes\\.verification\\.1\\..*Request$|^mixnet\\.1\\..*Request$"
 	},
 	{
-	  "user": "mixing1",
+	  "user": "control_components_3",
 	  "vhost": "control-components",
 	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.1\\..*Response)$",
-	  "read": "^mixnet\\.1\\..*Request$"
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.3\\..*Response|return-codes\\.verification\\.3\\..*Response)$|^(amq\\.gen.*|amq\\.default|mixnet\\.3\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.3\\..*Request$|^return-codes\\.verification\\.3\\..*Request$|^mixnet\\.3\\..*Request$"
 	},
 	{
-	  "user": "return-codes3",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.3\\..*Response|return-codes\\.verification\\.3\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.3\\..*Request$|^return-codes\\.verification\\.3\\..*Request$"
-	},
-	{
-	  "user": "mixing3",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.3\\..*Response)$",
-	  "read": "^mixnet\\.3\\..*Request$"
-	},
-	{
-	  "user": "return-codes4",
+	  "user": "control_components_4",
 	  "vhost": "control-components",
 	  "configure": "^$",
 	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.4\\..*Response|return-codes\\.verification\\.4\\..*Response)$",
@@ -114,18 +82,11 @@
 	  "read": "^$"
 	},
 	{
-	  "user": "mixing2",
+	  "user": "control_components_2",
 	  "vhost": "control-components",
 	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.2\\..*Response)$",
-	  "read": "^mixnet\\.2\\..*Request$"
-	},
-	{
-	  "user": "return-codes2",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.2\\..*Response|return-codes\\.verification\\.2\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.2\\..*Request$|^return-codes\\.verification\\.2\\..*Request$"
+	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.2\\..*Response|return-codes\\.verification\\.2\\..*Response)$|^(amq\\.gen.*|amq\\.default|mixnet\\.2\\..*Response)$",
+	  "read": "^return-codes\\.generation\\.2\\..*Request$|^return-codes\\.verification\\.2\\..*Request$|^mixnet\\.2\\..*Request$"
 	},
 	{
 	  "user": "orchestrator",

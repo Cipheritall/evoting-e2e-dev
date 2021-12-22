@@ -8,5 +8,4 @@ set -o errexit
 set -x
 
 cd ../..
-docker-compose stop return-codes-1 return-codes-2 return-codes-3 return-codes-4 \
-distributed-mixing-1 distributed-mixing-2 distributed-mixing-3
+docker-compose stop control-components-1 control-components-2 control-components-3 control-components-4

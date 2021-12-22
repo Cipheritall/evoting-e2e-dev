@@ -86,37 +86,22 @@ services:
       DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
       DATABASE_DRIVER: oracle.jdbc.OracleDriver
 
-  return-codes-1:
+  control-component-1:
     environment:
       SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
       SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
 
-  return-codes-2:
+  control-component-2:
     environment:
       SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
       SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
 
-  return-codes-3:
+  control-component-3:
     environment:
       SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
       SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
 
-  return-codes-4:
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
-      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
-
-  distributed-mixing-1:
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
-      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
-
-  distributed-mixing-2:
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
-      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
-
-  distributed-mixing-3:
+  control-component-4:
     environment:
       SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
       SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
