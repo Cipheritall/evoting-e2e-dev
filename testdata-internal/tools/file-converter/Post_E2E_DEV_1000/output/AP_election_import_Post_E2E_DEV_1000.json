@@ -4,7 +4,7 @@
     "title" : "Post_E2E_DEV_1000",
     "description" : "Post_E2E_DEV_1000",
     "dateFrom" : "2020-04-30 09:04",
-    "dateTo" : "2021-12-31 00:00",
+    "dateTo" : "2022-12-31 00:00",
     "gracePeriod" : 900,
     "timeZone" : "+02:00",
     "ballots" : [ {
@@ -403,7 +403,7 @@
       "title" : "Testurne_ICH",
       "description" : "Testurne_ICHSG-CH-1|SG-MU-10001 + SG-CT-1|SG-MU-10001",
       "dateFrom" : "2020-04-30 09:04",
-      "dateTo" : "2021-12-31 00:00",
+      "dateTo" : "2022-12-31 00:00",
       "gracePeriod" : 900,
       "timeZone" : "+02:00",
       "ballot" : {
@@ -419,7 +419,7 @@
       "title" : "Kontrollurne_ICH",
       "description" : "Kontrollurne_ICHSG-CH-1|SG-MU-10003 + SG-CT-1|SG-MU-10003",
       "dateFrom" : "2020-04-30 09:04",
-      "dateTo" : "2021-12-31 00:00",
+      "dateTo" : "2022-12-31 00:00",
       "gracePeriod" : 900,
       "timeZone" : "+02:00",
       "ballot" : {
@@ -435,7 +435,7 @@
       "title" : "Supportstimmen_Post_ICH",
       "description" : "Supportstimmen_Post_ICHSG-CH-1|SG-MU-10009 + SG-CT-1|SG-MU-10009",
       "dateFrom" : "2020-04-30 09:04",
-      "dateTo" : "2021-12-31 00:00",
+      "dateTo" : "2022-12-31 00:00",
       "gracePeriod" : 900,
       "timeZone" : "+02:00",
       "ballot" : {
@@ -451,7 +451,7 @@
       "title" : "Supportstimmen_Res_ICH",
       "description" : "Supportstimmen_Res_ICHSG-CH-1|SG-MU-10011 + SG-CT-1|SG-MU-10011",
       "dateFrom" : "2020-04-30 09:04",
-      "dateTo" : "2021-12-31 00:00",
+      "dateTo" : "2022-12-31 00:00",
       "gracePeriod" : 900,
       "timeZone" : "+02:00",
       "ballot" : {
