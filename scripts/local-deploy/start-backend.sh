@@ -9,5 +9,5 @@ set -x
 
 cd ../..
 docker-compose up -d --force-recreate api-gateway voting-workflow extended-authentication admin-portal certificate-registry \
-election-information vote-verification vp-frontend authentication voter-material orchestrator config-tools sdm-rest sdm-crypto
+election-information vote-verification vp-frontend authentication voter-material orchestrator config-tools sdm-backend
 

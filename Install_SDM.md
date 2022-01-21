@@ -6,7 +6,7 @@
 ## Installation
 
 1. Create folder ```C:\Users\<USERNAME>\SecureDataManager\```
-2. Unzip ```ov-secure-data-manager-package-X.X.X.X.zip``` in ```$EVOTING_HOME\secure-data-manager\secure-data-manager-packaging\target```
+2. Unzip ```secure-data-manager-package-X.X.X.X.zip``` in ```$EVOTING_HOME\secure-data-manager\packaging\target```
 3. Copy the contents of the unzipped subfolder ```win64``` to ```C:\Users\<USERNAME>\SecureDataManager\ONLINE```
 4. Copy the contents of ```evoting-e2e-dev\testdata\sdm\config``` into ```C:\Users\<USERNAME>\SecureDataManager\ONLINE\sdm\config```
 5. Copy the contents of ```evoting-e2e-dev\testdata\sdm\sdmConfig``` into ```C:\Users\<USERNAME>\SecureDataManager\ONLINE\sdm\sdmConfig```

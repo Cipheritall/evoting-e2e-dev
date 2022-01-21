@@ -8,4 +8,4 @@ set -o errexit
 set -x
 
 cd ../..
-docker-compose up -d --force-recreate sdm-rest sdm-crypto
+docker-compose up -d --force-recreate sdm-backend

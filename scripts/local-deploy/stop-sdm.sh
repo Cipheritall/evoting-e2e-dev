@@ -8,4 +8,4 @@ set -o errexit
 set -x
 
 cd ../..
-docker-compose stop sdm-rest sdm-crypto
+docker-compose stop sdm-backend

@@ -544,45 +544,18 @@ services:
     cpu_quota: 20000
     oom_kill_disable: true
 
-  sdm-crypto:
-    build:
-      context: ${EVOTING_HOME}/secure-data-manager/config-generator/config-webapp/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/sdm-crypto:${EVOTING_VERSION}
-    container_name: sdm-crypto
-    hostname: sdm-crypto
-    security_opt:
-      - no-new-privileges
-    environment:
-      TZ: Europe/Zurich
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6080'
-      TC_HTTP_PORT: 8080
-      keystore_location: /home/evote/sdm/config/keystore
-    networks:
-      - area-sdm
-    ports:
-      - "8080:8080"
-      - "6080:6080"
-    volumes:
-      - ./testdata/sdm/config:/home/evote/sdm/config
-      - ./testdata/sdm/application-level-security/signed-http-headers/keystore:/home/evote/sdm/config/keystore
-    mem_limit: 350m
-    memswap_limit: 470m
-    cpus: 0.5
-
-  sdm-rest:
+  sdm-backend:
     depends_on:
       config-tools:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/secure-data-manager/secure-data-manager-backend/web-services/
+      context: ${EVOTING_HOME}/secure-data-manager/backend/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         VERSION: ${EVOTING_VERSION}
-    image: ev/sdm-rest:${EVOTING_VERSION}
-    container_name: sdm-rest
-    hostname: sdm-rest
+    image: ev/sdm-backend:${EVOTING_VERSION}
+    container_name: sdm-backend
+    hostname: sdm-backend
     security_opt:
       - no-new-privileges
     environment:

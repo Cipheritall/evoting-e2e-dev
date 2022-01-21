@@ -59,7 +59,7 @@ rebuild_service_images() {
     if grep -q '^\s*image: ev\/database-snap' docker-compose.oracle.yml; then
       echo "Snapshot detected in compose file. Building all images except the database"
       docker-compose ${composeFileOptions} build admin-portal api-gateway authentication certificate-registry extended-authentication election-information voter-material \
-      vote-verification voting-workflow orchestrator vp-frontend config-tools sdm-crypto sdm-rest \
+      vote-verification voting-workflow orchestrator vp-frontend config-tools sdm-backend \
       message-broker-1 message-broker-2 message-broker-3 \
       control-component-1 control-component-2 control-component-3 control-component-4
     fi
