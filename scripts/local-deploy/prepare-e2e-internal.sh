@@ -102,4 +102,4 @@ rebuild_service_images
 echo "Starting all services"
 docker-compose ${composeFileOptions} stop
 docker-compose ${composeFileOptions} up -d --force-recreate
-docker-compose ${composeFileOptions} logs --follow | grep --colour "SEVERE\|ERROR\|WARN"
+docker-compose ${composeFileOptions} logs --no-color --follow | sed -r "s/\x1b\[[0-9;]*m?//g" | grep --colour -w "SEVERE\|ERROR\|WARN"
