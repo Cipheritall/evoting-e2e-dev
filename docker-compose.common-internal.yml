@@ -564,6 +564,8 @@ services:
       SMARTCARDS_PROFILE: e2e
       keystore_location: /home/evote/sdm/config/keystore
       database.password.location: /home/evote/sdm/config/database_password.properties
+      ADMIN_PORTAL_HOST: http://admin-portal:8005
+      VOTING_PORTAL_HOST: http://vp-frontend:7000
     networks:
       - area-sdm
     ports:
