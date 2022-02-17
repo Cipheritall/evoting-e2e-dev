@@ -81,6 +81,11 @@ services:
       DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
       DATABASE_DRIVER: oracle.jdbc.OracleDriver
 
+  message-broker-orchestrator:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@database:1521/XEPDB1
+      SPRING_DATASOURCE_DRIVER_CLASS: oracle.jdbc.OracleDriver
+
   orchestrator:
     environment:
       DATABASE_URL: jdbc:oracle:thin:@database:1521/XEPDB1

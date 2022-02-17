@@ -65,6 +65,11 @@ services:
       DATABASE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=VOTING_WORKFLOW
       DATABASE_DRIVER: org.h2.Driver
 
+  message-broker-orchestrator:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=MESSAGE_BROKER_ORCHESTRATOR
+      SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
+
   orchestrator:
     environment:
       DATABASE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=ORCHESTRATOR

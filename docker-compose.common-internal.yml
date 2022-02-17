@@ -358,6 +358,7 @@ services:
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
       DATABASE_USER: vote_verification
       DATABASE_PASSWORD: vote_verification
     networks:
@@ -425,6 +426,46 @@ services:
     cpus: 0.5
     oom_kill_disable: true
 
+  message-broker-orchestrator:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-1:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/message-broker-orchestrator/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker-orchestrator:${EVOTING_VERSION}
+    container_name: message-broker-orchestrator
+    hostname: message-broker-orchestrator
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      SPRING_RABBITMQ_ADDRESSES: amqps://message-broker:5671
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_USERNAME: message_broker_orchestrator
+      SPRING_RABBITMQ_PASSWORD: message_broker_orchestrator
+      SPRING_DATASOURCE_USERNAME: message_broker_orchestrator
+      SPRING_DATASOURCE_PASSWORD: message_broker_orchestrator
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+    ports:
+      - "6016:6016"
+      - "8016:8016"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 620m
+    cpus: 0.5
+    oom_kill_disable: true
+
   orchestrator:
     depends_on:
       database:
@@ -448,7 +489,7 @@ services:
       CC_MB_VHOST: control-components
       CC_MB_USER: orchestrator
       CC_MB_PASSWORD: orchestrator
-      CC_QUEUE_NAMES: '{"g1":{"cg-comp":{"req":"return-codes.generation.1.ComputationRequest","res":"return-codes.generation.1.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.1.KeyGenerationRequest","res":"return-codes.generation.1.KeyGenerationResponse"}},"g2":{"cg-comp":{"req":"return-codes.generation.2.ComputationRequest","res":"return-codes.generation.2.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.2.KeyGenerationRequest","res":"return-codes.generation.2.KeyGenerationResponse"}},"g3":{"cg-comp":{"req":"return-codes.generation.3.ComputationRequest","res":"return-codes.generation.3.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.3.KeyGenerationRequest","res":"return-codes.generation.3.KeyGenerationResponse"}},"g4":{"cg-comp":{"req":"return-codes.generation.4.ComputationRequest","res":"return-codes.generation.4.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.4.KeyGenerationRequest","res":"return-codes.generation.4.KeyGenerationResponse"}},"v1":{"cv-comp":{"req":"return-codes.verification.1.ComputationRequest","res":"return-codes.verification.1.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.1.DecryptionRequest","res":"return-codes.verification.1.DecryptionResponse"}},"v2":{"cv-comp":{"req":"return-codes.verification.2.ComputationRequest","res":"return-codes.verification.2.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.2.DecryptionRequest","res":"return-codes.verification.2.DecryptionResponse"}},"v3":{"cv-comp":{"req":"return-codes.verification.3.ComputationRequest","res":"return-codes.verification.3.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.3.DecryptionRequest","res":"return-codes.verification.3.DecryptionResponse"}},"v4":{"cv-comp":{"req":"return-codes.verification.4.ComputationRequest","res":"return-codes.verification.4.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.4.DecryptionRequest","res":"return-codes.verification.4.DecryptionResponse"}},"m1":{"md-keygen":{"req":"mixnet.1.KeyGenerationRequest","res":"mixnet.1.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.1.PartialMixingDecryptionRequest","res":"mixnet.1.PartialMixingDecryptionResponse"}},"m2":{"md-keygen":{"req":"mixnet.3.KeyGenerationRequest","res":"mixnet.3.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.3.PartialMixingDecryptionRequest","res":"mixnet.3.PartialMixingDecryptionResponse"}},"m3":{"md-keygen":{"req":"mixnet.2.KeyGenerationRequest","res":"mixnet.2.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.2.PartialMixingDecryptionRequest","res":"mixnet.2.PartialMixingDecryptionResponse"}}}'
+      CC_QUEUE_NAMES: '{"g1": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.1", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.1"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.1", "res": "configuration.return-codes.GenKeysCCRResponse.1"}}, "g2": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.2", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.2"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.2", "res": "configuration.return-codes.GenKeysCCRResponse.2"}}, "g3": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.3", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.3"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.3", "res": "configuration.return-codes.GenKeysCCRResponse.3"}}, "g4": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.4", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.4"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.4", "res": "configuration.return-codes.GenKeysCCRResponse.4"}}, "m1": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.1", "res": "configuration.mixing.SetupTallyCCMResponse.1"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.1", "res": "tally.mixing.MixDecOnlineResponse.1"}}, "m2": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.2", "res": "configuration.mixing.SetupTallyCCMResponse.2"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.2", "res": "tally.mixing.MixDecOnlineResponse.2"}}, "m3": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.3", "res": "configuration.mixing.SetupTallyCCMResponse.3"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.3", "res": "tally.mixing.MixDecOnlineResponse.3"}}}'
       CC_TOPIC_NAMES: '{"or-ha": "orchestrator-ha" }'
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
       CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
@@ -461,7 +502,7 @@ services:
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: orchestrator
       DATABASE_PASSWORD: orchestrator
-      MIXING_DECRYPT_REQUEST_QUEUE_PATTERN: mixnet.#nodeId#.PartialMixingDecryptionRequest
+      MIXING_DECRYPT_REQUEST_QUEUE_PATTERN: tally.mixing.MixDecOnlineRequest.#nodeId#
     networks:
       - area-voter-portal
       - area-database
@@ -710,14 +751,10 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.1.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.1.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.1.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.1.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.1.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.1.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.1.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.1.DecryptionResponse
+      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.1
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.1
+      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.1
+      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.1
       NODEID: 1
       KEY_NODE_ID: ccn_c1
       KEYSTORE: CCN_C1.p12
@@ -759,14 +796,10 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.2.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.2.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.2.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.2.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.2.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.2.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.2.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.2.DecryptionResponse
+      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.2
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.2
+      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.2
+      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.2
       NODEID: 2
       KEY_NODE_ID: ccn_c2
       KEYSTORE: CCN_C2.p12
@@ -808,14 +841,10 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.3.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.3.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.3.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.3.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.3.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.3.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.3.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.3.DecryptionResponse
+      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.3
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.3
+      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.3
+      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.3
       NODEID: 3
       KEY_NODE_ID: ccn_c3
       KEYSTORE: CCN_C3.p12
@@ -858,14 +887,10 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.4.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.4.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.4.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.4.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.4.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.4.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.4.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.4.DecryptionResponse
+      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.4
+      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.4
+      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.4
+      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.4
       NODEID: 4
       KEY_NODE_ID: ccn_c4
       KEYSTORE: CCN_C4.p12
