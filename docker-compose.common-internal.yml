@@ -430,7 +430,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker-1:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/voting-server/message-broker-orchestrator/
@@ -470,7 +470,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker-1:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/voting-server/orchestrator/
@@ -635,6 +635,11 @@ services:
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
     image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
     container_name: message-broker-1
     hostname: message-broker-1
     security_opt:
@@ -662,8 +667,16 @@ services:
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
     image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
     container_name: message-broker-2
     hostname: message-broker-2
+    depends_on:
+      message-broker-1:
+        condition: service_healthy
     security_opt:
       - no-new-privileges
     environment:
@@ -689,8 +702,16 @@ services:
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
     image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
     container_name: message-broker-3
     hostname: message-broker-3
+    depends_on:
+      message-broker-2:
+        condition: service_healthy
     security_opt:
       - no-new-privileges
     environment:
@@ -722,7 +743,6 @@ services:
     ports:
       - 15672:15672
       - 5671:5671
-      - 8022:5672
     networks:
       - area-voter-portal
       - area-database
@@ -732,7 +752,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker-1:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/
@@ -777,7 +797,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker-1:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/
@@ -822,7 +842,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker-1:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/
@@ -867,7 +887,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      message-broker-1:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/control-components/
