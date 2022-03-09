@@ -502,7 +502,6 @@ services:
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: orchestrator
       DATABASE_PASSWORD: orchestrator
-      MIXING_DECRYPT_REQUEST_QUEUE_PATTERN: tally.mixing.MixDecOnlineRequest.#nodeId#
     networks:
       - area-voter-portal
       - area-database
@@ -771,10 +770,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.1
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.1
-      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.1
-      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.1
       NODEID: 1
       KEY_NODE_ID: ccn_c1
       KEYSTORE: CCN_C1.p12
@@ -816,10 +811,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.2
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.2
-      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.2
-      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.2
       NODEID: 2
       KEY_NODE_ID: ccn_c2
       KEYSTORE: CCN_C2.p12
@@ -861,10 +852,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.3
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.3
-      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.3
-      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.3
       NODEID: 3
       KEY_NODE_ID: ccn_c3
       KEYSTORE: CCN_C3.p12
@@ -907,10 +894,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: configuration.return-codes.GenEncLongCodeSharesRequest.4
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: configuration.return-codes.GenEncLongCodeSharesResponse.4
-      GENERATION_KEYGEN_REQUEST_QUEUE: configuration.return-codes.GenKeysCCRRequest.4
-      GENERATION_KEYGEN_RESPONSE_QUEUE: configuration.return-codes.GenKeysCCRResponse.4
       NODEID: 4
       KEY_NODE_ID: ccn_c4
       KEYSTORE: CCN_C4.p12

@@ -519,10 +519,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.1.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.1.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.1.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.1.KeyGenerationResponse
       VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.1.ComputationRequest
       VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.1.ComputationResponse
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.1.DecryptionRequest
@@ -568,10 +564,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.2.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.2.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.2.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.2.KeyGenerationResponse
       VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.2.ComputationRequest
       VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.2.ComputationResponse
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.2.DecryptionRequest
@@ -617,10 +609,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.3.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.3.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.3.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.3.KeyGenerationResponse
       VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.3.ComputationRequest
       VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.3.ComputationResponse
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.3.DecryptionRequest
@@ -666,10 +654,6 @@ services:
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.4.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.4.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.4.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.4.KeyGenerationResponse
       VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.4.ComputationRequest
       VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.4.ComputationResponse
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.4.DecryptionRequest
