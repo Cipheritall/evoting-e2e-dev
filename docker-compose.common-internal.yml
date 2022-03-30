@@ -8,7 +8,7 @@ version: "2.4"
 services:
 
   jaeger:
-    image : jaegertracing/all-in-one
+    image : ${DOCKER_REGISTRY}/jaegertracing/all-in-one
     hostname: jaegertracing
     ports:
       - "5775:5775"
