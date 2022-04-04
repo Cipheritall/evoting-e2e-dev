@@ -200,6 +200,26 @@
       }
     },
     {
+      "name": "configuration.electioncontext.ElectionContextRequest.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.electioncontext.ElectionContextResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "configuration.mixing.SetupTallyCCMRequest.2",
       "vhost": "control-components",
       "durable": true,
@@ -251,6 +271,26 @@
     },
     {
       "name": "configuration.return-codes.GenKeysCCRResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.electioncontext.ElectionContextRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.electioncontext.ElectionContextResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -320,6 +360,26 @@
       }
     },
     {
+      "name": "configuration.electioncontext.ElectionContextRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.electioncontext.ElectionContextResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "configuration.mixing.SetupTallyCCMRequest.4",
       "vhost": "control-components",
       "durable": true,
@@ -371,6 +431,26 @@
     },
     {
       "name": "configuration.return-codes.GenKeysCCRResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.electioncontext.ElectionContextRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.electioncontext.ElectionContextResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -776,6 +856,22 @@
       "arguments": {}
     },
     {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.1",
+      "arguments": {}
+    },
+    {
       "source": "control-components",
       "vhost": "/",
       "destination": "configuration.mixing.SetupTallyCCMRequest.2",
@@ -821,6 +917,22 @@
       "destination": "configuration.return-codes.GenKeysCCRResponse.2",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenKeysCCRResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.2",
       "arguments": {}
     },
     {
@@ -872,6 +984,22 @@
       "arguments": {}
     },
     {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.3",
+      "arguments": {}
+    },
+    {
       "source": "control-components",
       "vhost": "/",
       "destination": "configuration.mixing.SetupTallyCCMRequest.4",
@@ -917,6 +1045,22 @@
       "destination": "configuration.return-codes.GenKeysCCRResponse.4",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenKeysCCRResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.4",
       "arguments": {}
     },
     {
