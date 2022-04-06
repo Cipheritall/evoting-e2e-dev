@@ -107,6 +107,7 @@ services:
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
     networks:
       - area-voter-portal
       - area-database

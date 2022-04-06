@@ -840,22 +840,6 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.return-codes.GenKeysCCRRequest.1",
-      "destination_type": "queue",
-      "routing_key": "configuration.return-codes.GenKeysCCRRequest.1",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.return-codes.GenKeysCCRResponse.1",
-      "destination_type": "queue",
-      "routing_key": "configuration.return-codes.GenKeysCCRResponse.1",
-      "arguments": {}
-    },
-    {
       "source": "evoting-exchange",
       "vhost": "control-components",
       "destination": "configuration.electioncontext.ElectionContextRequest.1",
@@ -901,22 +885,6 @@
       "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.return-codes.GenKeysCCRRequest.2",
-      "destination_type": "queue",
-      "routing_key": "configuration.return-codes.GenKeysCCRRequest.2",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.return-codes.GenKeysCCRResponse.2",
-      "destination_type": "queue",
-      "routing_key": "configuration.return-codes.GenKeysCCRResponse.2",
       "arguments": {}
     },
     {
@@ -968,22 +936,6 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.return-codes.GenKeysCCRRequest.3",
-      "destination_type": "queue",
-      "routing_key": "configuration.return-codes.GenKeysCCRRequest.3",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.return-codes.GenKeysCCRResponse.3",
-      "destination_type": "queue",
-      "routing_key": "configuration.return-codes.GenKeysCCRResponse.3",
-      "arguments": {}
-    },
-    {
       "source": "evoting-exchange",
       "vhost": "control-components",
       "destination": "configuration.electioncontext.ElectionContextRequest.3",
@@ -1032,16 +984,64 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenKeysCCRRequest.4",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenKeysCCRRequest.4",
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenKeysCCRResponse.4",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenKeysCCRResponse.4",
