@@ -495,6 +495,7 @@ services:
         "-agentlib:jdwp=transport=dt_socket,address=6016,server=y,suspend=n"
         '-Dserver.port=8016'
       TZ: Europe/Zurich
+      SERVER_PORT: 8016
       SPRING_RABBITMQ_ADDRESSES: amqps://message-broker:5671
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_USERNAME: message_broker_orchestrator
