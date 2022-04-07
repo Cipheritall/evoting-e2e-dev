@@ -1,0 +1,1049 @@
+#
+# Copyright 2021 by Swiss Post, Information Technology Services
+#
+#
+
+version: "2.4"
+
+services:
+
+  jaeger:
+    image : ${DOCKER_REGISTRY}/jaegertracing/all-in-one
+    hostname: jaegertracing
+    ports:
+      - "5775:5775"
+      - "5778:5778"
+      - "16686:16686"
+      - "9411:9411"
+      - "14250:14250"
+    environment:
+     COLLECTOR_ZIPKIN_HOST_PORT: 9411
+    networks:
+      - area-voter-portal
+      - area-control-components
+      - area-sdm
+
+  admin-portal:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/online-voting-admin/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        TC_HTTP_PORT: 8005
+        TC_HTTPS_PORT: 9005
+    image: ev/admin-portal:${EVOTING_VERSION}
+    container_name: admin-portal
+    hostname: admin-portal
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      DB_ORACLE_USERNAME: admin_portal
+      DB_ORACLE_PASSWORD: admin_portal
+      DB_MODE: oracle
+      IMPORT_STRATEGY: DEFAULT
+      LOCKED_IGNORE_STRATEGY: "false"
+      VOTER_MATERIAL_CONTEXT_URL: http://api-gateway:8011/ag-ws-rest
+      VOTER_MATERIAL_CREDENTIALS_PATH: /vm/informations
+      VOTING_WORKFLOW_CONTEXT_URL: http://api-gateway:8011/ag-ws-rest
+      VOTING_WORKFLOW_INFORMATIONS_PATH: /api/ov/monitoring/v1
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://api-gateway:8011/ag-ws-rest/extendedauthentication
+      OR_CONTEXT_URL: http://api-gateway:8011/ag-ws-rest
+      MIXING_DECRYPTION_PROCESS_PATH: /or/mixdec
+      CHOICE_CODES_PROCESS_PATH: /or/choicecodes
+      TENANT_ID: 100
+    networks:
+      - area-admin-portal
+      - area-sdm
+      - area-database
+    # There is a Windows process running on port 8005.
+    ports:
+      - "8015:8005"
+    volumes:
+      - ./testdata/admin-portal/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  api-gateway:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/api-gateway/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/api-gateway:${EVOTING_VERSION}
+    container_name: api-gateway
+    hostname: api-gateway
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8011 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6006
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=api-gateway -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
+    networks:
+      - area-voter-portal
+      - area-database
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    ports:
+      - "6006:6006"
+      - "8011:8011"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 500m
+    memswap_limit: 620m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  authentication:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/authentication/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        TC_HTTP_PORT: 8000
+        TC_HTTPS_PORT: 9000
+    image: ev/authentication:${EVOTING_VERSION}
+    container_name: authentication
+    hostname: authentication
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8000 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6000
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=authentication -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: authentication
+      DATABASE_PASSWORD: authentication
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6000:6000"
+      - "8000:8000"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  certificate-registry:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/certificate-registry/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/certificate-registry:${EVOTING_VERSION}
+    container_name: certificate-registry
+    hostname: certificate-registry
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8008 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6008
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=certificate-registry -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: certificate_registry
+      DATABASE_PASSWORD: certificate_registry
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6008:6008"
+      - "8008:8008"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 350m
+    memswap_limit: 470m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  extended-authentication:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/extended-authentication/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/extended-authentication:${EVOTING_VERSION}
+    container_name: extended-authentication
+    hostname: extended-authentication
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8009 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6009
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=extended-authentication -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: extended_authentication
+      DATABASE_PASSWORD: extended_authentication
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6009:6009"
+      - "8009:8009"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  election-information:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/election-information/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/election-information:${EVOTING_VERSION}
+    container_name: election-information
+    hostname: election-information
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8001 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6001
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=election-information -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: election_information
+      DATABASE_PASSWORD: election_information
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6001:6001"
+      - "8001:8001"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  voter-material:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/voter-material/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/voter-material:${EVOTING_VERSION}
+    container_name: voter-material
+    hostname: voter-material
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8002 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6002
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=vote-material -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: voter_material
+      DATABASE_PASSWORD: voter_material
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6002:6002"
+      - "8002:8002"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  vote-verification:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/vote-verification/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        TC_HTTP_PORT: 8003
+        TC_HTTPS_PORT: 9003
+    image: ev/vote-verification:${EVOTING_VERSION}
+    container_name: vote-verification
+    hostname: vote-verification
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8003 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6003
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=vote-verification -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
+      DATABASE_USER: vote_verification
+      DATABASE_PASSWORD: vote_verification
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6003:6003"
+      - "8003:8003"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 650m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  voting-workflow:
+    depends_on:
+      database:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/voting-workflow/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/voting-workflow:${EVOTING_VERSION}
+    container_name: voting-workflow
+    hostname: voting-workflow
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8004 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6004
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=voting-workflow -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: voting_workflow
+      DATABASE_PASSWORD: voting_workflow
+    networks:
+      - area-voter-portal
+      - area-database
+    ports:
+      - "6004:6004"
+      - "8014:8004"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 600m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  message-broker-orchestrator:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/message-broker-orchestrator/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker-orchestrator:${EVOTING_VERSION}
+    container_name: message-broker-orchestrator
+    hostname: message-broker-orchestrator
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=6016,server=y,suspend=n"
+        '-Dserver.port=8016'
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=message-broker-orchestrator' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      TZ: Europe/Zurich
+      SERVER_PORT: 8016
+      SPRING_RABBITMQ_ADDRESSES: amqps://message-broker:5671
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_USERNAME: message_broker_orchestrator
+      SPRING_RABBITMQ_PASSWORD: message_broker_orchestrator
+      SPRING_DATASOURCE_USERNAME: message_broker_orchestrator
+      SPRING_DATASOURCE_PASSWORD: message_broker_orchestrator
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+    ports:
+      - "6016:6016"
+      - "8016:8016"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 620m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  orchestrator:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/orchestrator/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/orchestrator:${EVOTING_VERSION}
+    container_name: orchestrator
+    hostname: orchestrator
+    security_opt:
+      - no-new-privileges
+    environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8010 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6010
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=orchestrator -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
+      TZ: Europe/Zurich
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+      CC_MB_HOSTNAME: message-broker
+      CC_MB_PORT: 5671
+      CC_MB_VHOST: control-components
+      CC_MB_USER: orchestrator
+      CC_MB_PASSWORD: orchestrator
+      CC_QUEUE_NAMES: '{"g1": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.1", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.1"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.1", "res": "configuration.return-codes.GenKeysCCRResponse.1"}}, "g2": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.2", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.2"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.2", "res": "configuration.return-codes.GenKeysCCRResponse.2"}}, "g3": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.3", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.3"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.3", "res": "configuration.return-codes.GenKeysCCRResponse.3"}}, "g4": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.4", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.4"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.4", "res": "configuration.return-codes.GenKeysCCRResponse.4"}}, "m1": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.1", "res": "configuration.mixing.SetupTallyCCMResponse.1"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.1", "res": "tally.mixing.MixDecOnlineResponse.1"}}, "m2": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.2", "res": "configuration.mixing.SetupTallyCCMResponse.2"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.2", "res": "tally.mixing.MixDecOnlineResponse.2"}}, "m3": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.3", "res": "configuration.mixing.SetupTallyCCMResponse.3"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.3", "res": "tally.mixing.MixDecOnlineResponse.3"}}}'
+      CC_TOPIC_NAMES: '{"or-ha": "orchestrator-ha" }'
+      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
+      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
+      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
+      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
+      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
+      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
+      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
+      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
+      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      DATABASE_USER: orchestrator
+      DATABASE_PASSWORD: orchestrator
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+    ports:
+      - "6010:6010"
+      - "8010:8010"
+    volumes:
+      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/tenant/
+      - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/keys_tmp/
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 500m
+    memswap_limit: 620m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  vp-frontend:
+    build:
+      context: ${EVOTING_HOME}/voter-portal/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        APACHE_HTTP_PORT: 7000
+        APACHE_HTTPS_PORT: 7001
+        SECOND_FACTOR: dob
+    image: ev/vp-frontend:${EVOTING_VERSION}
+    container_name: vp-frontend
+    hostname: vp-frontend
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+    networks:
+      - area-frontend
+      - area-voter-portal
+      - area-sdm
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./testdata/vp-frontend/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
+      - ./testdata/vp-frontend/httpd.conf:/etc/httpd/conf/httpd.conf
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 50m
+    memswap_limit: 400m
+    cpus: 0.5
+    oom_kill_disable: true
+
+  config-tools:
+    build:
+      context: ${EVOTING_HOME}/tools/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/config-tools:${EVOTING_VERSION}
+    container_name: config-tools
+    hostname: config-tools
+    security_opt:
+      - no-new-privileges
+    environment:
+      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
+    stdin_open: true
+    networks:
+      - area-frontend
+    volumes:
+      - ./testdata/config-platform-root/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 50m
+    memswap_limit: 170m
+    cpu_quota: 20000
+    oom_kill_disable: true
+
+  sdm-backend:
+    depends_on:
+      config-tools:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/secure-data-manager/backend/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+        VERSION: ${EVOTING_VERSION}
+    image: ev/sdm-backend:${EVOTING_VERSION}
+    container_name: sdm-backend
+    hostname: sdm-backend
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=6090,server=y,suspend=n"
+        '-Dserver.port=8090'
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=sdm-backend' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      TZ: Europe/Zurich
+      SMARTCARDS_PROFILE: e2e
+      keystore_location: /home/evote/sdm/config/keystore
+      database.password.location: /home/evote/sdm/config/database_password.properties
+      ADMIN_PORTAL_HOST: http://admin-portal:8005
+      VOTING_PORTAL_HOST: http://vp-frontend:7000
+    networks:
+      - area-sdm
+    ports:
+      - "8090:8090"
+      - "6090:6090"
+    volumes:
+      - ./testdata/sdm/config:/home/evote/sdm/config
+      - ./testdata/sdm/application-level-security/signed-http-headers/keystore:/home/evote/sdm/config/keystore
+      - ./testdata/sdm/electionEvents:/home/evote/sdm/integration/electionEvents
+      - ./testdata/tools/file-converter:/home/evote/sdm/integration/electionEvents
+      - ./testdata/tools/DIS/Post_E2E_DEV/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV/input
+      - ./testdata/tools/DIS/Post_E2E_DEV_1000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/input
+      - ./testdata/tools/DIS/Post_E2E_DEV_10000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_10000/input
+      - ./testdata/sdm/systemKeys:/home/evote/sdm/systemKeys
+      # Writing storage
+      - ./testdata/smart-cards:/home/evote/sdm/smart-cards
+      - ./testdata/sdmDB:/home/evote/sdm/sdmDB
+    mem_limit: 750m
+    memswap_limit: 800m
+    cpus: 0.5
+
+  message-broker-1:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    container_name: message-broker-1
+    hostname: message-broker-1
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 100m
+    memswap_limit: 400m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  message-broker-2:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    container_name: message-broker-2
+    hostname: message-broker-2
+    depends_on:
+      message-broker-1:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 100m
+    memswap_limit: 400m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  message-broker-3:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    container_name: message-broker-3
+    hostname: message-broker-3
+    depends_on:
+      message-broker-2:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    mem_limit: 100m
+    memswap_limit: 400m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  haproxy:
+    image: ${DOCKER_REGISTRY}/haproxy:1.7
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    container_name: haproxy
+    hostname: message-broker
+    depends_on:
+      - message-broker-1
+      - message-broker-2
+      - message-broker-3
+    ports:
+      - 15672:15672
+      - 5671:5671
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+
+  control-component-1:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-1
+    hostname: control-component-1
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+          "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+          '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-components-1' '-Dotel.traces.exporter=jaeger'
+          '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_1
+      SPRING_DATASOURCE_PASSWORD: control_component_1
+      SPRING_RABBITMQ_USERNAME: control_components_1
+      SPRING_RABBITMQ_PASSWORD: control_components_1
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      NODEID: 1
+      KEY_NODE_ID: ccn_c1
+      KEYSTORE: CCN_C1.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C1.txt
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6025:6025"
+    volumes:
+      - ./testdata/control-components/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  control-component-2:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-2
+    hostname: control-component-2
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-components-2' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_2
+      SPRING_DATASOURCE_PASSWORD: control_component_2
+      SPRING_RABBITMQ_USERNAME: control_components_2
+      SPRING_RABBITMQ_PASSWORD: control_components_2
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      NODEID: 2
+      KEY_NODE_ID: ccn_c2
+      KEYSTORE: CCN_C2.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C2.txt
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6026:6025"
+    volumes:
+      - ./testdata/control-components/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  control-component-3:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-3
+    hostname: control-component-3
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-components-3' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_3
+      SPRING_DATASOURCE_PASSWORD: control_component_3
+      SPRING_RABBITMQ_USERNAME: control_components_3
+      SPRING_RABBITMQ_PASSWORD: control_components_3
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      NODEID: 3
+      KEY_NODE_ID: ccn_c3
+      KEYSTORE: CCN_C3.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C3.txt
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6027:6025"
+    volumes:
+      - ./testdata/control-components/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+  control-component-4:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-4
+    hostname: control-component-4
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-components-4' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_4
+      SPRING_DATASOURCE_PASSWORD: control_component_4
+      SPRING_RABBITMQ_USERNAME: control_components_4
+      SPRING_RABBITMQ_PASSWORD: control_components_4
+      MIXING_RABBITMQ_LISTENERS_ENABLED: "false"
+      SPRING_RABBITMQ_HOST: message-broker
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_PORT: 5671
+      NODEID: 4
+      KEY_NODE_ID: ccn_c4
+      KEYSTORE: CCN_C4.p12
+      KEYSTORE_PASSWORD_FILE: CCN_C4.txt
+      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+    networks:
+      - area-control-components
+      - area-database
+    ports:
+      - "6028:6025"
+    volumes:
+      - ./testdata/control-components/keystore-4:${KEYSTORE_MOUNT_LOCATION}
+    mem_limit: 250m
+    memswap_limit: 370m
+    oom_kill_disable: true
+    cpus: 0.5
+
+networks:
+  area-sdm:
+    driver: bridge
+    internal: false
+  area-admin-portal:
+    driver: bridge
+    internal: false
+  area-database:
+    driver: bridge
+    internal: false
+  area-control-components:
+    driver: bridge
+    internal: true
+  area-frontend:
+    driver: bridge
+    internal: false
+  area-voter-portal:
+    driver: bridge
+    internal: false
+  area-message-broker:
+    driver: bridge
+    internal: false
+
