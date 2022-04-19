@@ -76,7 +76,7 @@ services:
         -Dtc.http.port=8011 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
-        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6006
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
