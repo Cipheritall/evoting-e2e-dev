@@ -801,8 +801,8 @@ services:
       - message-broker-2
       - message-broker-3
     ports:
-      - 15672:15672
-      - 5671:5671
+      - "15672:15672"
+      - "5671:5671"
     networks:
       - area-voter-portal
       - area-database

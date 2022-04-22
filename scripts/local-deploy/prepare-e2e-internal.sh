@@ -11,7 +11,7 @@
 #   -d the database to use, either h2 or oracle. Required.
 set -o errexit
 
-source $EVOTING_DOCKER_HOME/copy-evoting-version-in-env-file.sh
+source "$EVOTING_DOCKER_HOME"/copy-evoting-version-in-env-file.sh
 
 load_argument() {
   while getopts d: option; do
@@ -58,13 +58,14 @@ rebuild_service_images() {
   if [ "${DATABASE}" == "oracle" ]; then
     if grep -q '^\s*image: ev\/database-snap' docker-compose.oracle.yml; then
       echo "Snapshot detected in compose file. Building all images except the database"
-      docker-compose ${composeFileOptions} build admin-portal api-gateway authentication certificate-registry extended-authentication election-information voter-material \
-      vote-verification voting-workflow orchestrator vp-frontend config-tools sdm-backend \
+      docker-compose "${composeFileOptions}" build admin-portal api-gateway authentication certificate-registry extended-authentication election-information voter-material \
+      vote-verification voting-workflow orchestrator message-broker-orchestrator vp-frontend config-tools sdm-backend \
       message-broker-1 message-broker-2 message-broker-3 \
       control-component-1 control-component-2 control-component-3 control-component-4
+      return 0
     fi
   fi
-  docker-compose ${composeFileOptions} build
+  docker-compose "${composeFileOptions}" build
 }
 
 check_db_snapshot() {
@@ -100,6 +101,6 @@ fi
 rebuild_service_images
 
 echo "Starting all services"
-docker-compose ${composeFileOptions} stop
-docker-compose ${composeFileOptions} up -d --force-recreate
-docker-compose ${composeFileOptions} logs --no-color --follow | sed -r "s/\x1b\[[0-9;]*m?//g" | grep --colour -w "SEVERE\|ERROR\|WARN"
+docker-compose "${composeFileOptions}" stop
+docker-compose "${composeFileOptions}" up -d --force-recreate
+docker-compose "${composeFileOptions}" logs --no-color --follow | sed -r "s/\x1b\[[0-9;]*m?//g" | grep --colour -w "SEVERE\|ERROR\|WARN"
