@@ -64,14 +64,6 @@ services:
       - "8015:8005"
     volumes:
       - ./testdata/admin-portal/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   api-gateway:
@@ -111,19 +103,11 @@ services:
     networks:
       - area-voter-portal
       - area-database
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
     ports:
       - "6006:6006"
       - "8011:8011"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 500m
-    memswap_limit: 620m
-    cpus: 0.5
     oom_kill_disable: true
 
   authentication:
@@ -173,14 +157,6 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   certificate-registry:
@@ -226,14 +202,6 @@ services:
       - "8008:8008"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 350m
-    memswap_limit: 470m
-    cpus: 0.5
     oom_kill_disable: true
 
   extended-authentication:
@@ -279,14 +247,6 @@ services:
       - "8009:8009"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   election-information:
@@ -334,14 +294,6 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   voter-material:
@@ -387,14 +339,6 @@ services:
       - "8002:8002"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   vote-verification:
@@ -445,14 +389,6 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   voting-workflow:
@@ -498,14 +434,6 @@ services:
       - "8014:8004"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 600m
-    cpus: 0.5
     oom_kill_disable: true
 
   message-broker-orchestrator:
@@ -544,14 +472,6 @@ services:
     ports:
       - "6016:6016"
       - "8016:8016"
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 620m
-    cpus: 0.5
     oom_kill_disable: true
 
   orchestrator:
@@ -609,14 +529,6 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 620m
-    cpus: 0.5
     oom_kill_disable: true
 
   vp-frontend:
@@ -643,14 +555,6 @@ services:
     volumes:
       - ./testdata/vp-frontend/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
       - ./testdata/vp-frontend/httpd.conf:/etc/httpd/conf/httpd.conf
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 50m
-    memswap_limit: 400m
-    cpus: 0.5
     oom_kill_disable: true
 
   config-tools:
@@ -670,14 +574,6 @@ services:
       - area-frontend
     volumes:
       - ./testdata/config-platform-root/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 50m
-    memswap_limit: 170m
-    cpu_quota: 20000
     oom_kill_disable: true
 
   sdm-backend:
@@ -723,9 +619,6 @@ services:
       # Writing storage
       - ./testdata/smart-cards:/home/evote/sdm/smart-cards
       - ./testdata/sdmDB:/home/evote/sdm/sdmDB
-    mem_limit: 750m
-    memswap_limit: 800m
-    cpus: 0.5
 
   message-broker-1:
     build:
@@ -749,15 +642,7 @@ services:
     networks:
       - area-control-components
       - area-message-broker
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 100m
-    memswap_limit: 400m
     oom_kill_disable: true
-    cpus: 0.5
 
   message-broker-2:
     build:
@@ -784,15 +669,7 @@ services:
     networks:
       - area-control-components
       - area-message-broker
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 100m
-    memswap_limit: 400m
     oom_kill_disable: true
-    cpus: 0.5
 
   message-broker-3:
     build:
@@ -819,15 +696,7 @@ services:
     networks:
       - area-control-components
       - area-message-broker
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 100m
-    memswap_limit: 400m
     oom_kill_disable: true
-    cpus: 0.5
 
   haproxy:
     image: ${DOCKER_REGISTRY}/haproxy:1.7
@@ -886,10 +755,6 @@ services:
       - "6025:6025"
     volumes:
       - ./testdata/control-components/keystore-1:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
 
   control-component-2:
     depends_on:
@@ -930,10 +795,7 @@ services:
       - "6026:6025"
     volumes:
       - ./testdata/control-components/keystore-2:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
     oom_kill_disable: true
-    cpus: 0.5
 
   control-component-3:
     depends_on:
@@ -974,10 +836,7 @@ services:
       - "6027:6025"
     volumes:
       - ./testdata/control-components/keystore-3:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
     oom_kill_disable: true
-    cpus: 0.5
 
   control-component-4:
     depends_on:
@@ -1019,10 +878,7 @@ services:
       - "6028:6025"
     volumes:
       - ./testdata/control-components/keystore-4:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
     oom_kill_disable: true
-    cpus: 0.5
 
 networks:
   area-sdm:
