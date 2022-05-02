@@ -602,6 +602,8 @@ services:
       database.password.location: /home/evote/sdm/config/database_password.properties
       ADMIN_PORTAL_HOST: http://admin-portal:8005
       VOTING_PORTAL_HOST: http://vp-frontend:7000
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_sdm.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_sdm.txt
     networks:
       - area-sdm
     ports:
@@ -616,6 +618,7 @@ services:
       - ./testdata/tools/DIS/Post_E2E_DEV_1000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/input
       - ./testdata/tools/DIS/Post_E2E_DEV_10000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_10000/input
       - ./testdata/sdm/systemKeys:/home/evote/sdm/systemKeys
+      - ./testdata/sdm/direct-trust/:/home/evote/keystore/
       # Writing storage
       - ./testdata/smart-cards:/home/evote/sdm/smart-cards
       - ./testdata/sdmDB:/home/evote/sdm/sdmDB
@@ -748,6 +751,8 @@ services:
       KEYSTORE: CCN_C1.p12
       KEYSTORE_PASSWORD_FILE: CCN_C1.txt
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_1.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_1.txt
     networks:
       - area-control-components
       - area-database
@@ -755,6 +760,11 @@ services:
       - "6025:6025"
     volumes:
       - ./testdata/control-components/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_1/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
+    oom_kill_disable: true
+    cpus: 0.5
 
   control-component-2:
     depends_on:
@@ -788,6 +798,8 @@ services:
       KEYSTORE: CCN_C2.p12
       KEYSTORE_PASSWORD_FILE: CCN_C2.txt
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_2.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_2.txt
     networks:
       - area-control-components
       - area-database
@@ -795,6 +807,9 @@ services:
       - "6026:6025"
     volumes:
       - ./testdata/control-components/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_2/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
 
   control-component-3:
@@ -829,6 +844,8 @@ services:
       KEYSTORE: CCN_C3.p12
       KEYSTORE_PASSWORD_FILE: CCN_C3.txt
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_3.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_3.txt
     networks:
       - area-control-components
       - area-database
@@ -836,6 +853,9 @@ services:
       - "6027:6025"
     volumes:
       - ./testdata/control-components/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_3/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
 
   control-component-4:
@@ -871,6 +891,8 @@ services:
       KEYSTORE: CCN_C4.p12
       KEYSTORE_PASSWORD_FILE: CCN_C4.txt
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_4.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_4.txt
     networks:
       - area-control-components
       - area-database
@@ -878,6 +900,9 @@ services:
       - "6028:6025"
     volumes:
       - ./testdata/control-components/keystore-4:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_4/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
 
 networks:
