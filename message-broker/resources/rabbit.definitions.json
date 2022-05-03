@@ -220,6 +220,26 @@
       }
     },
     {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "configuration.mixing.SetupTallyCCMRequest.2",
       "vhost": "control-components",
       "durable": true,
@@ -291,6 +311,26 @@
     },
     {
       "name": "configuration.electioncontext.ElectionContextResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -378,6 +418,25 @@
         "x-dead-letter-exchange": "dead-letter-exchange",
         "x-dead-letter-routing-key": "dead-letter"
       }
+    },    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
       "name": "configuration.mixing.SetupTallyCCMRequest.4",
@@ -451,6 +510,26 @@
     },
     {
       "name": "configuration.electioncontext.ElectionContextResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -936,6 +1015,22 @@
       "arguments": {}
     },
     {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.1",
+      "arguments": {}
+    },
+    {
       "source": "control-components",
       "vhost": "/",
       "destination": "configuration.mixing.SetupTallyCCMRequest.2",
@@ -984,6 +1079,22 @@
       "arguments": {}
     },
     {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.2",
+      "arguments": {}
+    },
+    {
       "source": "control-components",
       "vhost": "/",
       "destination": "configuration.mixing.SetupTallyCCMRequest.3",
@@ -1029,6 +1140,22 @@
       "destination": "configuration.electioncontext.ElectionContextResponse.3",
       "destination_type": "queue",
       "routing_key": "configuration.electioncontext.ElectionContextResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.3",
       "arguments": {}
     },
     {
@@ -1141,6 +1268,22 @@
       "destination": "configuration.electioncontext.ElectionContextResponse.4",
       "destination_type": "queue",
       "routing_key": "configuration.electioncontext.ElectionContextResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.4",
       "arguments": {}
     },
     {
