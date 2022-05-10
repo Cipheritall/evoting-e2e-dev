@@ -379,6 +379,8 @@ services:
       MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
       DATABASE_USER: vote_verification
       DATABASE_PASSWORD: vote_verification
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_voting_server.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_voting_server.txt
     networks:
       - area-voter-portal
       - area-database
@@ -389,6 +391,7 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
+      - ./testdata/vote-verification/direct-trust/:/home/evote/keystore/
     oom_kill_disable: true
 
   voting-workflow:
