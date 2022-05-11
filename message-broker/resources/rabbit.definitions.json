@@ -559,6 +559,26 @@
       }
     },
     {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "voting.return-codes.CreateLCCShareResponse.1",
       "vhost": "control-components",
       "durable": true,
@@ -570,6 +590,26 @@
     },
     {
       "name": "voting.return-codes.CreateLVCCShareResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -619,6 +659,26 @@
       }
     },
     {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "voting.return-codes.CreateLCCShareResponse.2",
       "vhost": "control-components",
       "durable": true,
@@ -630,6 +690,26 @@
     },
     {
       "name": "voting.return-codes.CreateLVCCShareResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -679,6 +759,26 @@
       }
     },
     {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "voting.return-codes.CreateLCCShareResponse.3",
       "vhost": "control-components",
       "durable": true,
@@ -690,6 +790,26 @@
     },
     {
       "name": "voting.return-codes.CreateLVCCShareResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -739,6 +859,26 @@
       }
     },
     {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
       "name": "voting.return-codes.CreateLCCShareResponse.4",
       "vhost": "control-components",
       "durable": true,
@@ -750,6 +890,26 @@
     },
     {
       "name": "voting.return-codes.CreateLVCCShareResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -1476,6 +1636,134 @@
       "destination": "voting.return-codes.CreateLVCCShareResponse.4",
       "destination_type": "queue",
       "routing_key": "voting.return-codes.CreateLVCCShareResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.4",
       "arguments": {}
     },
     {
