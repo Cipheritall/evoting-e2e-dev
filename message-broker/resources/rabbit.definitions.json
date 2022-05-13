@@ -220,7 +220,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.1",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -230,7 +230,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.1",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -320,7 +320,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.2",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -330,7 +330,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.2",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -419,7 +419,7 @@
         "x-dead-letter-routing-key": "dead-letter"
       }
     },    {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.3",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -429,7 +429,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.3",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -519,7 +519,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.4",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -529,7 +529,7 @@
       }
     },
     {
-      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.4",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -1177,17 +1177,17 @@
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.1",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.1",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.1",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.1",
       "arguments": {}
     },
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.1",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.1",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
       "arguments": {}
     },
     {
@@ -1241,17 +1241,17 @@
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.2",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.2",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.2",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.2",
       "arguments": {}
     },
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.2",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.2",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.2",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.2",
       "arguments": {}
     },
     {
@@ -1305,17 +1305,17 @@
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.3",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.3",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.3",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.3",
       "arguments": {}
     },
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.3",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.3",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
       "arguments": {}
     },
     {
@@ -1433,17 +1433,17 @@
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.4",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.4",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsRequest.4",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.4",
       "arguments": {}
     },
     {
       "source": "evoting-exchange",
       "vhost": "control-components",
-      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.4",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.4",
       "destination_type": "queue",
-      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListsResponse.4",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.4",
       "arguments": {}
     },
     {
