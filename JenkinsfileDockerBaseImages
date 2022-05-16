@@ -1,6 +1,6 @@
 #!groovy
 /*
- * Copyright 2021 by Swiss Post, Information Technology Services
+ * Copyright 2022 by Swiss Post, Information Technology Services
 *
 */
 
@@ -105,33 +105,53 @@ pipeline {
 			}
 
 			steps {
+				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'SwissPost-INTBot', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS']]) {
+					sh "docker login -u ${GIT_USER} -p ${GIT_PASS} registry.gitlab.com"
 
-				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GITLAB_CRED_ID', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS']]) {
-//					sh "docker login -u ${GIT_USER} -p ${GIT_PASS} registry.gitlab.com"
-//
-//					// RABBITMQ
-//					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION} -f ./base-images/rabbitmq.dockerfile ./base-images/"
-//					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
-//
-//					// JAVA
-//					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION} -f ./base-images/published-base-images/java.dockerfile ./base-images"
-//					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
-//
-//					// TOMCAT-NATIVE-LIBS
-//					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION} -f ./base-images/published-base-images/tomcat-native-lib.dockerfile ./base-images"
-//					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
-//
-//					// TOMEE
-//					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION} -f ./base-images/published-base-images/tomee.dockerfile ./base-images"
-//					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
-//
-//					// APACHE
-//					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION} -f ./base-images/apache.dockerfile ./base-images/"
-//					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
-//
-//					// TOMCAT
-//					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION} -f ./base-images/published-base-images/tomcat.dockerfile ./base-images"
-//					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
+					// RABBITMQ
+					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION} -f ./base-images/rabbitmq.dockerfile ./base-images/"
+					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
+
+					// JAVA
+					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION} -f ./base-images/published-base-images/java.dockerfile ./base-images"
+					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
+
+					// TOMCAT-NATIVE-LIBS
+					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION} -f ./base-images/published-base-images/tomcat-native-lib.dockerfile ./base-images"
+					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
+
+					// TOMEE
+					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION} -f ./base-images/published-base-images/tomee.dockerfile ./base-images"
+					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
+
+					// APACHE
+					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION} -f ./base-images/apache.dockerfile ./base-images/"
+					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
+
+					// TOMCAT
+					sh "docker build --build-arg DOCKER_REGISTRY=registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev --build-arg http_proxy=outappl.pnet.ch:3128 --build-arg https_proxy=outappl.pnet.ch:3128 --no-cache --force-rm -t registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION} -f ./base-images/published-base-images/tomcat.dockerfile ./base-images"
+					sh "docker push registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
+				}
+			}
+		}
+
+		stage('Ask password for gitlab prod') {
+			steps {
+				script {
+					if (env.BRANCH_NAME == 'publication-develop' || env.BRANCH_NAME == 'publication-master') {
+						def askpass = input(
+								message: 'Please enter the password',
+								parameters: [
+										password(defaultValue: '',
+												description: '',
+												name: 'password')],
+								submitterParameter: 'submitter')
+						usernameVariable = askpass.submitter
+						passwordVariable = askpass.password
+						usernameVariable = 'SwissPost-Bot'
+					} else {
+						echo "No password required for integration"
+					}
 				}
 			}
 		}
@@ -143,54 +163,37 @@ pipeline {
 			}
 
 			steps {
+				script {
+					wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${passwordVariable}", var: 'passwordVariable']]]) {
+						sh "docker login -u ${usernameVariable} -p ${passwordVariable} registry.gitlab.com"
 
-				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GITLAB_CRED_ID', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS']]) {
-//					sh "docker login -u ${GIT_USER} -p ${GIT_PASS} registry.gitlab.com"
-//
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION}"
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
-//					sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
-//
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION}"
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
-//					sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
-//
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION}"
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
-//					sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
+						sh "docker pull registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
+
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION}"
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
+						sh "docker tag registry.gitlab.com/swisspost-evoting-int/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION} registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
+
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomee:${TOMEE_VERSION}"
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/h2:${COMPONENTS_VERSION}"
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat:${TOMCAT_VERSION}"
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/apache:${APACHE_VERSION}"
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/java:${JAVA_VERSION}"
+						sh "docker push registry.gitlab.com/swisspost-evoting/e-voting/evoting-e2e-dev/ev/rabbitmq:${RABBITMQ_VERSION}"
+					}
 				}
 			}
 		}
-
-		stage('Build and push - message-broker on artifactory') {
-
-			when {
-				expression { ARTIFACTORY == true }
-			}
-
-			steps {
-				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 's-cicd-evoting', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS']]) {
-					sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS} docker.tools.post.ch"
-
-					// MESSAGE-BROKER
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/message-broker:${COMPONENTS_VERSION} -f ./message-broker/message-broker.dockerfile ./message-broker/"
-					sh "docker push docker.tools.post.ch/ev/message-broker:${COMPONENTS_VERSION}"
-				}
-			}
-		}
-
 	}
 
 	post {
@@ -201,7 +204,7 @@ pipeline {
 			step([$class: 'StashNotifier'])
 		}
 		failure {
-			sendBuildMail(projectName: PROJECT_NAME, message: 'Hi, the docker base images + message-broker build and deploy has failed!!', onError: true, toCommitters: true)
+			sendBuildMail(projectName: PROJECT_NAME, message: 'Hi, the docker base images build and deploy has failed!!', onError: true, toCommitters: true)
 		}
 	}
 }
