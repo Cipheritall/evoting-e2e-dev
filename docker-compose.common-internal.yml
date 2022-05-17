@@ -39,6 +39,8 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=*:7055,server=y,suspend=n"
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       DB_ORACLE_USERNAME: admin_portal
@@ -62,6 +64,7 @@ services:
     # There is a Windows process running on port 8005.
     ports:
       - "8015:8005"
+      - "7055:7055"
     volumes:
       - ./testdata/admin-portal/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
     oom_kill_disable: true
