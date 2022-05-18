@@ -11,6 +11,9 @@ fi
 
 SDM_LOCAL_PATH=$1
 
+mkdir -p $SDM_LOCAL_PATH/integration
+mkdir -p $SDM_LOCAL_PATH/sdmConfig
+
 cp -R ../../testdata/sdm/config/. $SDM_LOCAL_PATH/config
 cp ../../testdata/sdm/config/database_password.properties $SDM_LOCAL_PATH/sdmConfig/database_password.properties
 cp -R ../../testdata/sdm/systemKeys/. $SDM_LOCAL_PATH/systemKeys
