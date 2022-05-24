@@ -527,7 +527,7 @@ services:
       KEY_NODE_ID: ccn_c1
       KEYSTORE: CCN_C1.p12
       KEYSTORE_PASSWORD_FILE: CCN_C1.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6025'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6025'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
@@ -572,7 +572,7 @@ services:
       KEY_NODE_ID: ccn_c2
       KEYSTORE: CCN_C2.p12
       KEYSTORE_PASSWORD_FILE: CCN_C2.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6026'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6026'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
@@ -617,7 +617,7 @@ services:
       KEY_NODE_ID: ccn_c3
       KEYSTORE: CCN_C3.p12
       KEYSTORE_PASSWORD_FILE: CCN_C3.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6027'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6027'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
@@ -662,7 +662,7 @@ services:
       KEY_NODE_ID: ccn_c4
       KEYSTORE: CCN_C4.p12
       KEYSTORE_PASSWORD_FILE: CCN_C4.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6028'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6028'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
@@ -698,7 +698,7 @@ services:
       SPRING_RABBITMQ_PASSWORD: mixing1
       NODEID: 1
       KEYS_NODEID: 1
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6029'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6029'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
@@ -735,7 +735,7 @@ services:
       SPRING_RABBITMQ_PASSWORD: mixing2
       NODEID: 2
       KEYS_NODEID: 2
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6030'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6030'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
@@ -771,7 +771,7 @@ services:
       SPRING_RABBITMQ_PASSWORD: mixing3
       NODEID: 3
       KEYS_NODEID: 3
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6031'
+      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6031'
       KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components

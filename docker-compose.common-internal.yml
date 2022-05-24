@@ -88,7 +88,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6006
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6006
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=api-gateway -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -134,7 +134,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6000
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6000
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=authentication -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -181,7 +181,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6008
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6008
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=certificate-registry -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -226,7 +226,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6009
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6009
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=extended-authentication -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -271,7 +271,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6001
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6001
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=election-information -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -318,7 +318,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6002
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6002
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=vote-material -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -365,7 +365,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6003
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6003
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=vote-verification -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -416,7 +416,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6004
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6004
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=voting-workflow -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -459,7 +459,7 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-        "-agentlib:jdwp=transport=dt_socket,address=6016,server=y,suspend=n"
+        "-agentlib:jdwp=transport=dt_socket,address=*:6016,server=y,suspend=n"
         '-Dserver.port=8016'
         '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=message-broker-orchestrator' '-Dotel.traces.exporter=jaeger'
         '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
@@ -501,7 +501,7 @@ services:
         -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
         -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
         -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6010
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6010
         -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=orchestrator -Dotel.traces.exporter=jaeger
         -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
@@ -598,7 +598,7 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-        "-agentlib:jdwp=transport=dt_socket,address=6090,server=y,suspend=n"
+        "-agentlib:jdwp=transport=dt_socket,address=*:6090,server=y,suspend=n"
         '-Dserver.port=8090'
         '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=sdm-backend' '-Dotel.traces.exporter=jaeger'
         '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
@@ -742,7 +742,7 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-          "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+          "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
           '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-1' '-Dotel.traces.exporter=jaeger'
           '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
       SPRING_DATASOURCE_USERNAME: control_component_1
@@ -789,7 +789,7 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-        "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
         '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-2' '-Dotel.traces.exporter=jaeger'
         '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
       SPRING_DATASOURCE_USERNAME: control_component_2
@@ -835,7 +835,7 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-        "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
         '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-3' '-Dotel.traces.exporter=jaeger'
         '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
       SPRING_DATASOURCE_USERNAME: control_component_3
@@ -881,7 +881,7 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-        "-agentlib:jdwp=transport=dt_socket,address=6025,server=y,suspend=n"
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
         '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-4' '-Dotel.traces.exporter=jaeger'
         '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
       SPRING_DATASOURCE_USERNAME: control_component_4
