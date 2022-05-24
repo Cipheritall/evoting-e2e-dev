@@ -38,7 +38,6 @@ services:
     mem_reservation: 1g
     mem_limit: 2500m
     memswap_limit: 3500m
-    cpus: 6
     oom_kill_disable: true
 
   admin-portal:
