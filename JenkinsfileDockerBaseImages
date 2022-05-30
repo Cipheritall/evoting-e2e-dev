@@ -72,7 +72,7 @@ pipeline {
 					sh "docker push docker.tools.post.ch/ev/rabbitmq:${RABBITMQ_VERSION}"
 
 					// JAVA
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/java:${JAVA_VERSION} -f ./base-images/java.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/java:${JAVA_VERSION} -f ./base-images/java17.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/java:${JAVA_VERSION}"
 
 					// TOMCAT-NATIVE-LIBS
@@ -80,15 +80,15 @@ pipeline {
 					sh "docker push docker.tools.post.ch/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
 
 					// TOMEE
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomee:${TOMEE_VERSION} -f ./base-images/tomee.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomee:${TOMEE_VERSION} -f ./base-images/tomee17.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/tomee:${TOMEE_VERSION}"
 
 					// APACHE
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/apache:${APACHE_VERSION} -f ./base-images/apache.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/apache:${APACHE_VERSION} -f ./base-images/apache17.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/apache:${APACHE_VERSION}"
 
 					// TOMCAT
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomcat:${TOMCAT_VERSION} -f ./base-images/tomcat.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomcat:${TOMCAT_VERSION} -f ./base-images/tomcat17.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/tomcat:${TOMCAT_VERSION}"
 
 					// ORACLE - Only build
