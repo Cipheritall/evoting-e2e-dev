@@ -8,7 +8,7 @@ version: "2.4"
 services:
 
   jaeger:
-    image : ${DOCKER_REGISTRY}/jaegertracing/all-in-one
+    image: ${DOCKER_REGISTRY}/jaegertracing/all-in-one
     hostname: jaegertracing
     ports:
       - "5775:5775"
@@ -17,7 +17,7 @@ services:
       - "9411:9411"
       - "14250:14250"
     environment:
-     COLLECTOR_ZIPKIN_HOST_PORT: 9411
+      COLLECTOR_ZIPKIN_HOST_PORT: 9411
     networks:
       - area-voter-portal
       - area-control-components
@@ -28,7 +28,7 @@ services:
       database:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/online-voting-admin/
+      context: ${EVOTING_HOME}/admin-portal/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         TC_HTTP_PORT: 8005
@@ -537,7 +537,7 @@ services:
       - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/keys_tmp/
     oom_kill_disable: true
 
-  vp-frontend:
+  voter-portal:
     build:
       context: ${EVOTING_HOME}/voter-portal/
       args:
@@ -545,9 +545,9 @@ services:
         APACHE_HTTP_PORT: 7000
         APACHE_HTTPS_PORT: 7001
         SECOND_FACTOR: dob
-    image: ev/vp-frontend:${EVOTING_VERSION}
-    container_name: vp-frontend
-    hostname: vp-frontend
+    image: ev/voter-portal:${EVOTING_VERSION}
+    container_name: voter-portal
+    hostname: voter-portal
     security_opt:
       - no-new-privileges
     environment:
@@ -559,8 +559,8 @@ services:
     ports:
       - "7000:7000"
     volumes:
-      - ./testdata/vp-frontend/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
-      - ./testdata/vp-frontend/httpd.conf:/etc/httpd/conf/httpd.conf
+      - ./testdata/voter-portal/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
+      - ./testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
     oom_kill_disable: true
 
   config-tools:
@@ -607,7 +607,7 @@ services:
       keystore_location: /home/evote/sdm/config/keystore
       database.password.location: /home/evote/sdm/config/database_password.properties
       ADMIN_PORTAL_HOST: http://admin-portal:8005
-      VOTING_PORTAL_HOST: http://vp-frontend:7000
+      VOTING_PORTAL_HOST: http://voter-portal:7000
       DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_sdm.jks
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_sdm.txt
     networks:
@@ -742,9 +742,9 @@ services:
       - no-new-privileges
     environment:
       JAVA_TOOL_OPTIONS: |-
-          "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
-          '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-1' '-Dotel.traces.exporter=jaeger'
-          '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-1' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
       SPRING_DATASOURCE_USERNAME: control_component_1
       SPRING_DATASOURCE_PASSWORD: control_component_1
       SPRING_RABBITMQ_USERNAME: control_components_1

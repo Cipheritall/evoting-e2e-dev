@@ -432,7 +432,7 @@ services:
     cpus: 0.5
     oom_kill_disable: true
 
-  vp-frontend:
+  voter-portal:
     build:
       context: ${EVOTING_HOME}/voter-portal/
       args:
@@ -440,9 +440,9 @@ services:
         APACHE_HTTP_PORT: 7000
         APACHE_HTTPS_PORT: 7001
         SECOND_FACTOR: yob
-    image: ev/vp-frontend:${EVOTING_VERSION}
-    container_name: vp-frontend
-    hostname: vp-frontend
+    image: ev/voter-portal:${EVOTING_VERSION}
+    container_name: voter-portal
+    hostname: voter-portal
     security_opt:
       - no-new-privileges
     environment:
@@ -454,8 +454,8 @@ services:
     ports:
       - "7000:7000"
     volumes:
-      - ./testdata/vp-frontend/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
-      - ./testdata/vp-frontend/httpd.conf:/etc/httpd/conf/httpd.conf
+      - ./testdata/voter-portal/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
+      - ./testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
     ulimits:
       nproc: 65535
       nofile:

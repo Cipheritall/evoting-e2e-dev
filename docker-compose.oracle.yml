@@ -9,7 +9,7 @@ services:
   database:
     build:
       context: ${EVOTING_HOME}/database/
-      dockerfile: oracle.dockerfile
+      dockerfile: oracle/oracle.dockerfile
       shm_size: 1g
       args:
         FLYWAY_URL: https://artifactory.tools.pnet.ch/artifactory/ext-binaries-local/org/flywaydb/flyway-commandline-7.7.2-linux-x64.tar.gz

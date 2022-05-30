@@ -9,5 +9,5 @@ set -x
 
 cd ../..
 docker-compose stop api-gateway voting-workflow extended-authentication admin-portal certificate-registry \
-election-information vote-verification vp-frontend authentication voter-material orchestrator config-tools
+election-information vote-verification voter-portal authentication voter-material orchestrator config-tools
 

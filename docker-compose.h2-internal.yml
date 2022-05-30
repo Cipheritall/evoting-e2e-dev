@@ -9,7 +9,7 @@ services:
   database:
     build:
       context: ${EVOTING_HOME}/database/
-      dockerfile: h2.dockerfile
+      dockerfile: h2/h2.dockerfile
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         FLYWAY_URL: https://artifactory.tools.pnet.ch/artifactory/ext-binaries-local/org/flywaydb/flyway-commandline-7.7.2-linux-x64.tar.gz
