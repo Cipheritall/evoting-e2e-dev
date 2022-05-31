@@ -11,7 +11,7 @@ def PROJECT_NAME = 'evoting-e2e-dev'
 
 //Base images version
 def RABBITMQ_VERSION = '3.7'
-def JAVA_VERSION = '17'
+def JAVA_VERSION = '17.0.3'
 def TOMCAT_NATIVE_LIBS_VERSION = '1.2.30'
 def TOMEE_VERSION = '8'
 def APACHE_VERSION = '2.4.37'

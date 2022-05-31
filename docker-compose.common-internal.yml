@@ -54,7 +54,6 @@ services:
       VOTING_WORKFLOW_INFORMATIONS_PATH: /api/ov/monitoring/v1
       EXTENDED_AUTHENTICATION_CONTEXT_URL: http://api-gateway:8011/ag-ws-rest/extendedauthentication
       OR_CONTEXT_URL: http://api-gateway:8011/ag-ws-rest
-      MIXING_DECRYPTION_PROCESS_PATH: /or/mixdec
       CHOICE_CODES_PROCESS_PATH: /or/choicecodes
       TENANT_ID: 100
     networks:
@@ -511,7 +510,7 @@ services:
       CC_MB_VHOST: control-components
       CC_MB_USER: orchestrator
       CC_MB_PASSWORD: orchestrator
-      CC_QUEUE_NAMES: '{"g1": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.1", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.1"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.1", "res": "configuration.return-codes.GenKeysCCRResponse.1"}}, "g2": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.2", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.2"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.2", "res": "configuration.return-codes.GenKeysCCRResponse.2"}}, "g3": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.3", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.3"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.3", "res": "configuration.return-codes.GenKeysCCRResponse.3"}}, "g4": {"cg-comp": {"req": "configuration.return-codes.GenEncLongCodeSharesRequest.4", "res": "configuration.return-codes.GenEncLongCodeSharesResponse.4"}, "cg-keygen": {"req": "configuration.return-codes.GenKeysCCRRequest.4", "res": "configuration.return-codes.GenKeysCCRResponse.4"}}, "m1": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.1", "res": "configuration.mixing.SetupTallyCCMResponse.1"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.1", "res": "tally.mixing.MixDecOnlineResponse.1"}}, "m2": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.2", "res": "configuration.mixing.SetupTallyCCMResponse.2"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.2", "res": "tally.mixing.MixDecOnlineResponse.2"}}, "m3": {"md-keygen": {"req": "configuration.mixing.SetupTallyCCMRequest.3", "res": "configuration.mixing.SetupTallyCCMResponse.3"}, "md-mixdec": {"req": "tally.mixing.MixDecOnlineRequest.3", "res": "tally.mixing.MixDecOnlineResponse.3"}}}'
+      CC_QUEUE_NAMES: '{"g1":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.1","res":"configuration.return-codes.GenEncLongCodeSharesResponse.1"}},"g2":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.2","res":"configuration.return-codes.GenEncLongCodeSharesResponse.2"}},"g3":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.3","res":"configuration.return-codes.GenEncLongCodeSharesResponse.3"}},"g4":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.4","res":"configuration.return-codes.GenEncLongCodeSharesResponse.4"}}}'
       CC_TOPIC_NAMES: '{"or-ha": "orchestrator-ha" }'
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
       CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
@@ -888,7 +887,6 @@ services:
       SPRING_DATASOURCE_PASSWORD: control_component_4
       SPRING_RABBITMQ_USERNAME: control_components_4
       SPRING_RABBITMQ_PASSWORD: control_components_4
-      MIXING_RABBITMQ_LISTENERS_ENABLED: "false"
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
