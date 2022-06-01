@@ -609,6 +609,7 @@ services:
       VOTING_PORTAL_HOST: http://voter-portal:7000
       DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_sdm.jks
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_sdm.txt
+      IMPORT_EXPORT_ZIP_PASSWORD: sdmpassword
     networks:
       - area-sdm
     ports:
