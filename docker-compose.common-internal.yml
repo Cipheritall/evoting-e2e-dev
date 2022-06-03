@@ -601,6 +601,8 @@ services:
         '-Dserver.port=8090'
         '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=sdm-backend' '-Dotel.traces.exporter=jaeger'
         '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+        '-Dmemory.chunk.size=1024000'
+        '-Dstorage.diskCache.bufferSize=7800'
       TZ: Europe/Zurich
       SMARTCARDS_PROFILE: e2e
       keystore_location: /home/evote/sdm/config/keystore
@@ -628,6 +630,7 @@ services:
       # Writing storage
       - ./testdata/smart-cards:/home/evote/sdm/smart-cards
       - ./testdata/sdmDB:/home/evote/sdm/sdmDB
+    oom_kill_disable: true
 
   message-broker-1:
     build:
