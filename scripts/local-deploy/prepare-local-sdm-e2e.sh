@@ -30,8 +30,8 @@ mkdir -p $SDM_LOCAL_PATH/smart-cards
 
 printf "\nadmin.portal.host=http://localhost:8015" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nsmartcards.profile=e2e" >>$SDM_LOCAL_PATH/../application.properties
-printf "\ndirect.trust.keystore.location="$SDM_LOCAL_PATH"/direct-trust/signing_keystore_sdm.jks" >>$SDM_LOCAL_PATH/../application.properties
-printf "\ndirect.trust.keystore.password.location="$SDM_LOCAL_PATH"/direct-trust/signing_pw_sdm.txt" >>$SDM_LOCAL_PATH/../application.properties
+printf "\nrole.isConfig=true" >>$SDM_LOCAL_PATH/../application.properties
+printf "\nrole.isTally=true" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
 
 echo "You can now run the Secure Data Manager.exe application!"
