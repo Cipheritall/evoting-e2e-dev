@@ -524,18 +524,16 @@ services:
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.1.DecryptionRequest
       VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.1.DecryptionResponse
       NODEID: 1
-      KEY_NODE_ID: ccn_c1
-      KEYSTORE: CCN_C1.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C1.txt
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_1.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_1.txt
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6025'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6025:6025"
     volumes:
-      - ./testdata/return-codes/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_1/:/home/evote/keystore/
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
@@ -569,18 +567,16 @@ services:
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.2.DecryptionRequest
       VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.2.DecryptionResponse
       NODEID: 2
-      KEY_NODE_ID: ccn_c2
-      KEYSTORE: CCN_C2.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C2.txt
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_2.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_2.txt
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6026'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6026:6026"
     volumes:
-      - ./testdata/return-codes/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_2/:/home/evote/keystore/
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
@@ -614,18 +610,16 @@ services:
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.3.DecryptionRequest
       VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.3.DecryptionResponse
       NODEID: 3
-      KEY_NODE_ID: ccn_c3
-      KEYSTORE: CCN_C3.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C3.txt
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_3.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_3.txt
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6027'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6027:6027"
     volumes:
-      - ./testdata/return-codes/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_3/:/home/evote/keystore/
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
@@ -659,18 +653,16 @@ services:
       VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.4.DecryptionRequest
       VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.4.DecryptionResponse
       NODEID: 4
-      KEY_NODE_ID: ccn_c4
-      KEYSTORE: CCN_C4.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C4.txt
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_4.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_4.txt
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6028'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6028:6028"
     volumes:
-      - ./testdata/return-codes/keystore-4:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_4/:/home/evote/keystore/
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
@@ -699,14 +691,13 @@ services:
       NODEID: 1
       KEYS_NODEID: 1
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6029'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6029:6029"
     volumes:
-      - ./testdata/distributed-mixing/keystore-1:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_1/:/home/evote/keystore/
     tty: true
     mem_limit: 250m
     memswap_limit: 370m
@@ -736,14 +727,13 @@ services:
       NODEID: 2
       KEYS_NODEID: 2
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6030'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6030:6030"
     volumes:
-      - ./testdata/distributed-mixing/keystore-2:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_2/:/home/evote/keystore/
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true
@@ -772,14 +762,13 @@ services:
       NODEID: 3
       KEYS_NODEID: 3
       JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6031'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
     networks:
       - area-control-components
       - area-database
     ports:
       - "6031:6031"
     volumes:
-      - ./testdata/distributed-mixing/keystore-3:${KEYSTORE_MOUNT_LOCATION}
+      - ./testdata/control-components/direct-trust/control_component_3/:/home/evote/keystore/
     mem_limit: 250m
     memswap_limit: 370m
     oom_kill_disable: true

@@ -30,15 +30,6 @@ case $SERVICE in
 authentication)
   $PREFIX docker exec -it authentication bash -c 'cp ./conf/password/keys_tmp/tenant_AU_100.properties ./conf/password/tenant/'
   ;;
-election-information)
-  $PREFIX docker exec -it election-information bash -c 'cp ./conf/password/keys_tmp/tenant_EI_100.properties ./conf/password/tenant/'
-  ;;
-vote-verification)
-  $PREFIX docker exec -it vote-verification bash -c 'cp ./conf/password/keys_tmp/tenant_VV_100.properties ./conf/password/tenant/'
-  ;;
-orchestrator)
-  $PREFIX docker exec -it orchestrator bash -c 'cp ./conf/password/keys_tmp/tenant_OR_100.properties ./conf/password/tenant/'
-  ;;
 *)
   echo -n "Invalid service name."
   ;;
