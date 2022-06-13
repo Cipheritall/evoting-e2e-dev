@@ -616,6 +616,7 @@ services:
       ROLE_IS_TALLY: "true"
       ROLE_IS_CONFIG: "true"
       IMPORT_EXPORT_ZIP_PASSWORD: sdmpassword
+      CHOICECODEGENERATIONCHUNKSIZE: 10
     networks:
       - area-sdm
     ports:

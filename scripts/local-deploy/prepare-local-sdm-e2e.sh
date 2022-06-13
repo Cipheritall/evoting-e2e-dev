@@ -33,5 +33,6 @@ printf "\nsmartcards.profile=e2e" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nrole.isConfig=true" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nrole.isTally=true" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
+printf "\nchoiceCodeGenerationChunkSize=10" >>$SDM_LOCAL_PATH/../application.properties
 
 echo "You can now run the Secure Data Manager.exe application!"
