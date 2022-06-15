@@ -617,6 +617,8 @@ services:
       ROLE_IS_CONFIG: "true"
       IMPORT_EXPORT_ZIP_PASSWORD: sdmpassword
       CHOICECODEGENERATIONCHUNKSIZE: 10
+      ARGON2ID_PARALLELISM: 1
+      ARGON2ID_MEMORY: 16384
     networks:
       - area-sdm
     ports:
