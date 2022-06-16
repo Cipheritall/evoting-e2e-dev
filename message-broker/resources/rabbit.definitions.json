@@ -549,16 +549,6 @@
       }
     },
     {
-      "name": "voting.return-codes.CreateLVCCShareRequest.1",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
       "name": "voting.return-codes.CreateLVCCShareHashRequest.1",
       "vhost": "control-components",
       "durable": true,
@@ -580,16 +570,6 @@
     },
     {
       "name": "voting.return-codes.CreateLCCShareResponse.1",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "voting.return-codes.CreateLVCCShareResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -649,16 +629,6 @@
       }
     },
     {
-      "name": "voting.return-codes.CreateLVCCShareRequest.2",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
       "name": "voting.return-codes.CreateLVCCShareHashRequest.2",
       "vhost": "control-components",
       "durable": true,
@@ -680,16 +650,6 @@
     },
     {
       "name": "voting.return-codes.CreateLCCShareResponse.2",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "voting.return-codes.CreateLVCCShareResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -749,16 +709,6 @@
       }
     },
     {
-      "name": "voting.return-codes.CreateLVCCShareRequest.3",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
       "name": "voting.return-codes.CreateLVCCShareHashRequest.3",
       "vhost": "control-components",
       "durable": true,
@@ -780,16 +730,6 @@
     },
     {
       "name": "voting.return-codes.CreateLCCShareResponse.3",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "voting.return-codes.CreateLVCCShareResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -849,16 +789,6 @@
       }
     },
     {
-      "name": "voting.return-codes.CreateLVCCShareRequest.4",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
       "name": "voting.return-codes.CreateLVCCShareHashRequest.4",
       "vhost": "control-components",
       "durable": true,
@@ -880,16 +810,6 @@
     },
     {
       "name": "voting.return-codes.CreateLCCShareResponse.4",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "voting.return-codes.CreateLVCCShareResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -1512,70 +1432,6 @@
       "destination": "voting.return-codes.CreateLCCShareResponse.4",
       "destination_type": "queue",
       "routing_key": "voting.return-codes.CreateLCCShareResponse.4",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareRequest.1",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareRequest.1",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareResponse.1",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareResponse.1",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareRequest.2",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareRequest.2",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareResponse.2",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareResponse.2",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareRequest.3",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareRequest.3",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareResponse.3",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareResponse.3",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareRequest.4",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareRequest.4",
-      "arguments": {}
-    },
-    {
-      "source": "evoting-exchange",
-      "vhost": "control-components",
-      "destination": "voting.return-codes.CreateLVCCShareResponse.4",
-      "destination_type": "queue",
-      "routing_key": "voting.return-codes.CreateLVCCShareResponse.4",
       "arguments": {}
     },
     {
