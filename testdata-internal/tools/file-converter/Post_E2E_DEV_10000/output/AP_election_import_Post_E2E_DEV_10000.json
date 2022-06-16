@@ -504,7 +504,6 @@
       "alias" : "EA_Post_E2E_DEV_100000",
       "title" : "EA_Post_E2E_DEV_100000",
       "description" : "EA_Post_E2E_DEV_100000",
-      "minimumThreshold" : "1",
       "electoralBoard" : [ "EA1", "EA2" ]
     } ],
     "translations" : [ {

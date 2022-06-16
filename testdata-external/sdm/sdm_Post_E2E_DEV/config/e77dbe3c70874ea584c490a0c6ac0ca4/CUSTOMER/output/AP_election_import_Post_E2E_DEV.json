@@ -320,7 +320,6 @@
       "alias" : "Post_E2E_DEV",
       "title" : "Post_E2E_DEV",
       "description" : "Post_E2E_DEV",
-      "minimumThreshold" : "1",
       "electoralBoard" : [ "EA1", "EA2" ]
     } ],
     "translations" : [ {
