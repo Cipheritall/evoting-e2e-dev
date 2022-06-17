@@ -613,8 +613,8 @@ services:
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION_CONFIG: /home/evote/keystore/config/signing_pw_sdm_config.txt
       DIRECT_TRUST_KEYSTORE_LOCATION_TALLY: /home/evote/keystore/tally/signing_keystore_sdm_tally.jks
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION_TALLY: /home/evote/keystore/tally/signing_pw_sdm_tally.txt
-      ROLE_IS_TALLY: "true"
-      ROLE_IS_CONFIG: "true"
+      ROLE_ISTALLY: "true"
+      ROLE_ISCONFIG: "true"
       IMPORT_EXPORT_ZIP_PASSWORD: sdmpassword
       CHOICECODEGENERATIONCHUNKSIZE: 10
       ARGON2ID_PARALLELISM: 1
