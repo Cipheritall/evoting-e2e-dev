@@ -34,7 +34,5 @@ printf "\nrole.isConfig=true" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nrole.isTally=true" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
 printf "\nchoiceCodeGenerationChunkSize=10" >>$SDM_LOCAL_PATH/../application.properties
-printf "\argon2id.parallelism=1" >>$SDM_LOCAL_PATH/../application.properties
-printf "\argon2id.memory=16384" >>$SDM_LOCAL_PATH/../application.properties
 
 echo "You can now run the Secure Data Manager.exe application!"
