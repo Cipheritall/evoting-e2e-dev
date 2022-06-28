@@ -26,7 +26,7 @@ load_argument() {
     done
 
   if [ "${DATABASE}" != "h2" ] && [ "${DATABASE}" != "oracle" ] && [ "${DATABASE}" != "h2-internal" ]; then
-    echo "Database argument must be either h2 or oracle."
+    echo "Database argument must be either h2, h2-internal or oracle."
     exit 1
   fi
 }
