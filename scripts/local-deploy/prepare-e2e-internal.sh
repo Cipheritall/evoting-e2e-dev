@@ -65,6 +65,8 @@ rebuild_service_images() {
       return 0
     fi
   fi
+  # With docker-compose v2, the config-tools image need to be explicitly pre-build to avoid failure in sdm image build.
+  docker-compose ${composeFileOptions} build config-tools
   docker-compose ${composeFileOptions} build
 }
 

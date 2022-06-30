@@ -628,7 +628,9 @@ services:
       - ./testdata/sdm/config:/home/evote/sdm/config
       - ./testdata/sdm/application-level-security/signed-http-headers/keystore:/home/evote/sdm/config/keystore
       - ./testdata/sdm/electionEvents:/home/evote/sdm/integration/electionEvents
-      - ./testdata/tools/file-converter:/home/evote/sdm/integration/electionEvents
+      - ./testdata/tools/file-converter/Post_E2E_DEV/output:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV/output
+      - ./testdata/tools/file-converter/Post_E2E_DEV_1000/output:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/output
+      - ./testdata/tools/file-converter/Post_E2E_DEV_10000/output:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_10000/output
       - ./testdata/tools/DIS/Post_E2E_DEV/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV/input
       - ./testdata/tools/DIS/Post_E2E_DEV_1000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/input
       - ./testdata/tools/DIS/Post_E2E_DEV_10000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_10000/input
