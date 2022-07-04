@@ -12,10 +12,10 @@ def PROJECT_NAME = 'evoting-e2e-dev'
 //Base images version
 def RABBITMQ_VERSION = '3.7'
 def JAVA_VERSION = '17.0.3'
-def TOMCAT_NATIVE_LIBS_VERSION = '1.2.30'
-def TOMEE_VERSION = '8'
+def TOMCAT_NATIVE_LIBS_VERSION = '1.2.33'
+def TOMEE_VERSION = '8.0.11'
 def APACHE_VERSION = '2.4.37'
-def TOMCAT_VERSION = '8.5.72'
+def TOMCAT_VERSION = '8.5.79'
 def ORACLEEXE_VERSION = '18.4.0-xe'
 
 pipeline {
@@ -72,7 +72,7 @@ pipeline {
 					sh "docker push docker.tools.post.ch/ev/rabbitmq:${RABBITMQ_VERSION}"
 
 					// JAVA
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/java:${JAVA_VERSION} -f ./base-images/java17.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/java:${JAVA_VERSION} -f ./base-images/java.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/java:${JAVA_VERSION}"
 
 					// TOMCAT-NATIVE-LIBS
@@ -80,15 +80,15 @@ pipeline {
 					sh "docker push docker.tools.post.ch/ev/tomcat-native-libs:${TOMCAT_NATIVE_LIBS_VERSION}"
 
 					// TOMEE
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomee:${TOMEE_VERSION} -f ./base-images/tomee17.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomee:${TOMEE_VERSION} -f ./base-images/tomee.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/tomee:${TOMEE_VERSION}"
 
 					// APACHE
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/apache:${APACHE_VERSION} -f ./base-images/apache17.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/apache:${APACHE_VERSION} -f ./base-images/apache.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/apache:${APACHE_VERSION}"
 
 					// TOMCAT
-					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomcat:${TOMCAT_VERSION} -f ./base-images/tomcat17.dockerfile ./base-images/"
+					sh "docker build --build-arg DOCKER_REGISTRY=docker.tools.post.ch --no-cache --force-rm -t docker.tools.post.ch/ev/tomcat:${TOMCAT_VERSION} -f ./base-images/tomcat.dockerfile ./base-images/"
 					sh "docker push docker.tools.post.ch/ev/tomcat:${TOMCAT_VERSION}"
 
 					// ORACLE - Only build
