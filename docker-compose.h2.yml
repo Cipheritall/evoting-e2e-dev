@@ -53,42 +53,32 @@ services:
       DATABASE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=VOTING_WORKFLOW
       DATABASE_DRIVER: org.h2.Driver
 
+  message-broker-orchestrator:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=MESSAGE_BROKER_ORCHESTRATOR
+      SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
+
   orchestrator:
     environment:
       DATABASE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=ORCHESTRATOR
       DATABASE_DRIVER: org.h2.Driver
 
-  return-codes-1:
+  control-component-1:
     environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=RETURN_CODES_1
+      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=CONTROL_COMPONENT_1
       SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
 
-  return-codes-2:
+  control-component-2:
     environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=RETURN_CODES_2
+      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=CONTROL_COMPONENT_2
       SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
 
-  return-codes-3:
+  control-component-3:
     environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=RETURN_CODES_3
+      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=CONTROL_COMPONENT_3
       SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
 
-  return-codes-4:
+  control-component-4:
     environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=RETURN_CODES_4
-      SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
-
-  distributed-mixing-1:
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=DISTRIBUTED_MIXING_1
-      SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
-
-  distributed-mixing-2:
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=DISTRIBUTED_MIXING_2
-      SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
-
-  distributed-mixing-3:
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=DISTRIBUTED_MIXING_3
+      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=CONTROL_COMPONENT_4
       SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
