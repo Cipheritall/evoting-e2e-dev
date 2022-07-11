@@ -6,6 +6,22 @@
 version: "2.4"
 
 services:
+
+  jaeger:
+    image: jaegertracing/all-in-one
+    hostname: jaegertracing
+    ports:
+      - "5775:5775"
+      - "5778:5778"
+      - "16686:16686"
+      - "9411:9411"
+      - "14250:14250"
+    environment:
+      COLLECTOR_ZIPKIN_HOST_PORT: 9411
+    networks:
+      - area-voter-portal
+      - area-control-components
+
   api-gateway:
     depends_on:
       database:
@@ -20,6 +36,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8011 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6006
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=api-gateway -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -31,22 +55,15 @@ services:
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
     networks:
       - area-voter-portal
       - area-database
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
     ports:
       - "6006:6006"
       - "8011:8011"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 500m
-    memswap_limit: 620m
-    cpus: 0.5
     oom_kill_disable: true
 
   authentication:
@@ -65,6 +82,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8000 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6000
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=authentication -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -88,14 +113,6 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   certificate-registry:
@@ -112,6 +129,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8008 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6008
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=certificate-registry -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -133,14 +158,6 @@ services:
       - "8008:8008"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 350m
-    memswap_limit: 470m
-    cpus: 0.5
     oom_kill_disable: true
 
   extended-authentication:
@@ -157,6 +174,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8009 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6009
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=extended-authentication -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -178,14 +203,6 @@ services:
       - "8009:8009"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   election-information:
@@ -202,6 +219,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8001 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6001
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=election-information -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -225,14 +250,6 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   voter-material:
@@ -249,6 +266,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8002 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6002
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=vote-material -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -270,14 +295,6 @@ services:
       - "8002:8002"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
     oom_kill_disable: true
 
   vote-verification:
@@ -296,6 +313,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8003 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6003
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=vote-verification -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -307,8 +332,11 @@ services:
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
+      MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
       DATABASE_USER: vote_verification
       DATABASE_PASSWORD: vote_verification
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_voting_server.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_voting_server.txt
     networks:
       - area-voter-portal
       - area-database
@@ -319,14 +347,7 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 650m
-    cpus: 0.5
+      - ./testdata/vote-verification/direct-trust/:/home/evote/keystore/
     oom_kill_disable: true
 
   voting-workflow:
@@ -343,6 +364,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8004 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6004
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=voting-workflow -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
@@ -364,21 +393,51 @@ services:
       - "8014:8004"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 600m
-    cpus: 0.5
+    oom_kill_disable: true
+
+  message-broker-orchestrator:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/voting-server/message-broker-orchestrator/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker-orchestrator:${EVOTING_VERSION}
+    container_name: message-broker-orchestrator
+    hostname: message-broker-orchestrator
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=*:6016,server=y,suspend=n"
+        '-Dserver.port=8016'
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=message-broker-orchestrator' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      TZ: Europe/Zurich
+      SERVER_PORT: 8016
+      SPRING_RABBITMQ_ADDRESSES: amqps://message-broker:5671
+      SPRING_RABBITMQ_VIRTUAL_HOST: control-components
+      SPRING_RABBITMQ_USERNAME: message_broker_orchestrator
+      SPRING_RABBITMQ_PASSWORD: message_broker_orchestrator
+      SPRING_DATASOURCE_USERNAME: message_broker_orchestrator
+      SPRING_DATASOURCE_PASSWORD: message_broker_orchestrator
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+    ports:
+      - "6016:6016"
+      - "8016:8016"
     oom_kill_disable: true
 
   orchestrator:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-3:
         condition: service_healthy
     build:
       context: ${EVOTING_HOME}/voting-server/orchestrator/
@@ -390,6 +449,14 @@ services:
     security_opt:
       - no-new-privileges
     environment:
+      CATALINA_OPTS: >-
+        -Dtc.http.port=8010 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
+        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
+        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
+        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
+        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6010
+        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=orchestrator -Dotel.traces.exporter=jaeger
+        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
       TZ: Europe/Zurich
       keystore_location: ${KEYSTORE_MOUNT_LOCATION}
       CC_MB_HOSTNAME: message-broker
@@ -397,7 +464,7 @@ services:
       CC_MB_VHOST: control-components
       CC_MB_USER: orchestrator
       CC_MB_PASSWORD: orchestrator
-      CC_QUEUE_NAMES: '{"g1":{"cg-comp":{"req":"return-codes.generation.1.ComputationRequest","res":"return-codes.generation.1.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.1.KeyGenerationRequest","res":"return-codes.generation.1.KeyGenerationResponse"}},"g2":{"cg-comp":{"req":"return-codes.generation.2.ComputationRequest","res":"return-codes.generation.2.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.2.KeyGenerationRequest","res":"return-codes.generation.2.KeyGenerationResponse"}},"g3":{"cg-comp":{"req":"return-codes.generation.3.ComputationRequest","res":"return-codes.generation.3.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.3.KeyGenerationRequest","res":"return-codes.generation.3.KeyGenerationResponse"}},"g4":{"cg-comp":{"req":"return-codes.generation.4.ComputationRequest","res":"return-codes.generation.4.ComputationResponse"},"cg-keygen":{"req":"return-codes.generation.4.KeyGenerationRequest","res":"return-codes.generation.4.KeyGenerationResponse"}},"v1":{"cv-comp":{"req":"return-codes.verification.1.ComputationRequest","res":"return-codes.verification.1.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.1.DecryptionRequest","res":"return-codes.verification.1.DecryptionResponse"}},"v2":{"cv-comp":{"req":"return-codes.verification.2.ComputationRequest","res":"return-codes.verification.2.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.2.DecryptionRequest","res":"return-codes.verification.2.DecryptionResponse"}},"v3":{"cv-comp":{"req":"return-codes.verification.3.ComputationRequest","res":"return-codes.verification.3.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.3.DecryptionRequest","res":"return-codes.verification.3.DecryptionResponse"}},"v4":{"cv-comp":{"req":"return-codes.verification.4.ComputationRequest","res":"return-codes.verification.4.ComputationResponse"},"cv-dec":{"req":"return-codes.verification.4.DecryptionRequest","res":"return-codes.verification.4.DecryptionResponse"}},"m1":{"md-keygen":{"req":"mixnet.1.KeyGenerationRequest","res":"mixnet.1.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.1.PartialMixingDecryptionRequest","res":"mixnet.1.PartialMixingDecryptionResponse"}},"m2":{"md-keygen":{"req":"mixnet.3.KeyGenerationRequest","res":"mixnet.3.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.3.PartialMixingDecryptionRequest","res":"mixnet.3.PartialMixingDecryptionResponse"}},"m3":{"md-keygen":{"req":"mixnet.2.KeyGenerationRequest","res":"mixnet.2.KeyGenerationResponse"},"md-mixdec":{"req":"mixnet.2.PartialMixingDecryptionRequest","res":"mixnet.2.PartialMixingDecryptionResponse"}}}'
+      CC_QUEUE_NAMES: '{"g1":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.1","res":"configuration.return-codes.GenEncLongCodeSharesResponse.1"}},"g2":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.2","res":"configuration.return-codes.GenEncLongCodeSharesResponse.2"}},"g3":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.3","res":"configuration.return-codes.GenEncLongCodeSharesResponse.3"}},"g4":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.4","res":"configuration.return-codes.GenEncLongCodeSharesResponse.4"}}}'
       CC_TOPIC_NAMES: '{"or-ha": "orchestrator-ha" }'
       AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
       CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
@@ -410,7 +477,6 @@ services:
       ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: orchestrator
       DATABASE_PASSWORD: orchestrator
-      MIXING_DECRYPT_REQUEST_QUEUE_PATTERN: mixnet.#nodeId#.PartialMixingDecryptionRequest
     networks:
       - area-voter-portal
       - area-database
@@ -422,17 +488,9 @@ services:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
       - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/tenant/
       - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 500m
-    memswap_limit: 620m
-    cpus: 0.5
     oom_kill_disable: true
 
-  vp-frontend:
+  voter-portal:
     build:
       context: ${EVOTING_HOME}/voter-portal/
       args:
@@ -440,9 +498,9 @@ services:
         APACHE_HTTP_PORT: 7000
         APACHE_HTTPS_PORT: 7001
         SECOND_FACTOR: yob
-    image: ev/vp-frontend:${EVOTING_VERSION}
-    container_name: vp-frontend
-    hostname: vp-frontend
+    image: ev/voter-portal:${EVOTING_VERSION}
+    container_name: voter-portal
+    hostname: voter-portal
     security_opt:
       - no-new-privileges
     environment:
@@ -450,361 +508,275 @@ services:
     networks:
       - area-frontend
       - area-voter-portal
-      - area-sdm
     ports:
       - "7000:7000"
     volumes:
-      - ./testdata/vp-frontend/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
-      - ./testdata/vp-frontend/httpd.conf:/etc/httpd/conf/httpd.conf
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    mem_limit: 50m
-    memswap_limit: 400m
-    cpus: 0.5
+      - ./testdata/voter-portal/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
+      - ./testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
     oom_kill_disable: true
 
-  message-broker:
+  message-broker-1:
     build:
       context: ./message-broker
       dockerfile: message-broker.dockerfile
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
     image: ev/message-broker:${EVOTING_VERSION}
-    container_name: message-broker
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    container_name: message-broker-1
+    hostname: message-broker-1
     security_opt:
       - no-new-privileges
     environment:
       TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
     networks:
       - area-control-components
       - area-message-broker
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    # The AMQP default port is 5672. We translate the port to avoid conflicts with Arquillian integration tests.
-    ports:
-      - "8020:5672"
-      - "5671:5671"
-      - "18020:15672"
-    mem_limit: 100m
-    memswap_limit: 400m
     oom_kill_disable: true
-    cpus: 0.5
 
-  return-codes-1:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker:
-        condition: service_healthy
+  message-broker-2:
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-1
-    hostname: return-codes-1
+    image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    container_name: message-broker-2
+    hostname: message-broker-2
+    depends_on:
+      message-broker-1:
+        condition: service_healthy
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_1
-      SPRING_DATASOURCE_PASSWORD: return_codes_1
-      SPRING_RABBITMQ_USERNAME: return-codes1
-      SPRING_RABBITMQ_PASSWORD: return-codes1
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    oom_kill_disable: true
+
+  message-broker-3:
+    build:
+      context: ./message-broker
+      dockerfile: message-broker.dockerfile
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/message-broker:${EVOTING_VERSION}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    container_name: message-broker-3
+    hostname: message-broker-3
+    depends_on:
+      message-broker-2:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges
+    environment:
+      TZ: Europe/Zurich
+      RABBITMQ_ERLANG_COOKIE: 'WIWVHCDTCIUAWANLMQAW'
+    networks:
+      - area-control-components
+      - area-message-broker
+    oom_kill_disable: true
+
+  haproxy:
+    image: haproxy:1.7
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    container_name: haproxy
+    hostname: message-broker
+    depends_on:
+      - message-broker-1
+      - message-broker-2
+      - message-broker-3
+    ports:
+      - "15672:15672"
+      - "5671:5671"
+    networks:
+      - area-voter-portal
+      - area-database
+      - area-message-broker
+
+  control-component-1:
+    depends_on:
+      database:
+        condition: service_healthy
+      message-broker-3:
+        condition: service_healthy
+    build:
+      context: ${EVOTING_HOME}/control-components/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-1
+    hostname: control-component-1
+    security_opt:
+      - no-new-privileges
+    environment:
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-1' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_1
+      SPRING_DATASOURCE_PASSWORD: control_component_1
+      SPRING_RABBITMQ_USERNAME: control_components_1
+      SPRING_RABBITMQ_PASSWORD: control_components_1
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.1.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.1.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.1.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.1.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.1.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.1.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.1.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.1.DecryptionResponse
       NODEID: 1
-      KEY_NODE_ID: ccn_c1
-      KEYSTORE: CCN_C1.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C1.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6025'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_1.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_1.txt
     networks:
       - area-control-components
       - area-database
     ports:
       - "6025:6025"
     volumes:
-      - ./testdata/return-codes/keystore-1:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
+      - ./testdata/control-components/direct-trust/control_component_1/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
     cpus: 0.5
 
-  return-codes-2:
+  control-component-2:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-3:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-2
-    hostname: return-codes-2
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-2
+    hostname: control-component-2
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_2
-      SPRING_DATASOURCE_PASSWORD: return_codes_2
-      SPRING_RABBITMQ_USERNAME: return-codes2
-      SPRING_RABBITMQ_PASSWORD: return-codes2
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-2' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_2
+      SPRING_DATASOURCE_PASSWORD: control_component_2
+      SPRING_RABBITMQ_USERNAME: control_components_2
+      SPRING_RABBITMQ_PASSWORD: control_components_2
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.2.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.2.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.2.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.2.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.2.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.2.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.2.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.2.DecryptionResponse
       NODEID: 2
-      KEY_NODE_ID: ccn_c2
-      KEYSTORE: CCN_C2.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C2.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6026'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_2.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_2.txt
     networks:
       - area-control-components
       - area-database
     ports:
-      - "6026:6026"
+      - "6026:6025"
     volumes:
-      - ./testdata/return-codes/keystore-2:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
+      - ./testdata/control-components/direct-trust/control_component_2/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
-    cpus: 0.5
 
-  return-codes-3:
+  control-component-3:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-3:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-3
-    hostname: return-codes-3
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-3
+    hostname: control-component-3
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_3
-      SPRING_DATASOURCE_PASSWORD: return_codes_3
-      SPRING_RABBITMQ_USERNAME: return-codes3
-      SPRING_RABBITMQ_PASSWORD: return-codes3
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-3' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_3
+      SPRING_DATASOURCE_PASSWORD: control_component_3
+      SPRING_RABBITMQ_USERNAME: control_components_3
+      SPRING_RABBITMQ_PASSWORD: control_components_3
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.3.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.3.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.3.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.3.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.3.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.3.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.3.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.3.DecryptionResponse
       NODEID: 3
-      KEY_NODE_ID: ccn_c3
-      KEYSTORE: CCN_C3.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C3.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6027'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_3.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_3.txt
     networks:
       - area-control-components
       - area-database
     ports:
-      - "6027:6027"
+      - "6027:6025"
     volumes:
-      - ./testdata/return-codes/keystore-3:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
+      - ./testdata/control-components/direct-trust/control_component_3/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
-    cpus: 0.5
 
-  return-codes-4:
+  control-component-4:
     depends_on:
       database:
         condition: service_healthy
-      message-broker:
+      message-broker-3:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/control-components/return-codes-service/
+      context: ${EVOTING_HOME}/control-components/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/return-codes:${EVOTING_VERSION}
-    container_name: return-codes-4
-    hostname: return-codes-4
+    image: ev/control-components:${EVOTING_VERSION}
+    container_name: control-component-4
+    hostname: control-component-4
     security_opt:
       - no-new-privileges
     environment:
-      SPRING_DATASOURCE_USERNAME: return_codes_4
-      SPRING_DATASOURCE_PASSWORD: return_codes_4
-      SPRING_RABBITMQ_USERNAME: return-codes4
-      SPRING_RABBITMQ_PASSWORD: return-codes4
+      JAVA_TOOL_OPTIONS: |-
+        "-agentlib:jdwp=transport=dt_socket,address=*:6025,server=y,suspend=n"
+        '-javaagent:/data/appl/libs/opentelemetry-javaagent.jar' '-Dotel.resource.attributes=service.name=control-component-4' '-Dotel.traces.exporter=jaeger'
+        '-Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250'
+      SPRING_DATASOURCE_USERNAME: control_component_4
+      SPRING_DATASOURCE_PASSWORD: control_component_4
+      SPRING_RABBITMQ_USERNAME: control_components_4
+      SPRING_RABBITMQ_PASSWORD: control_components_4
       SPRING_RABBITMQ_HOST: message-broker
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
-      GENERATION_COMPUTATION_REQUEST_QUEUE: return-codes.generation.4.ComputationRequest
-      GENERATION_COMPUTATION_RESPONSE_QUEUE: return-codes.generation.4.ComputationResponse
-      GENERATION_KEYGEN_REQUEST_QUEUE: return-codes.generation.4.KeyGenerationRequest
-      GENERATION_KEYGEN_RESPONSE_QUEUE: return-codes.generation.4.KeyGenerationResponse
-      VERIFICATION_COMPUTATION_REQUEST_QUEUE: return-codes.verification.4.ComputationRequest
-      VERIFICATION_COMPUTATION_RESPONSE_QUEUE: return-codes.verification.4.ComputationResponse
-      VERIFICATION_DECRYPTION_REQUEST_QUEUE: return-codes.verification.4.DecryptionRequest
-      VERIFICATION_DECRYPTION_RESPONSE_QUEUE: return-codes.verification.4.DecryptionResponse
       NODEID: 4
-      KEY_NODE_ID: ccn_c4
-      KEYSTORE: CCN_C4.p12
-      KEYSTORE_PASSWORD_FILE: CCN_C4.txt
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6028'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_4.jks
+      DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_4.txt
     networks:
       - area-control-components
       - area-database
     ports:
-      - "6028:6028"
+      - "6028:6025"
     volumes:
-      - ./testdata/return-codes/keystore-4:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
+      - ./testdata/control-components/direct-trust/control_component_4/:/home/evote/keystore/
+    mem_limit: 1024m
+    memswap_limit: 2048m
     oom_kill_disable: true
-    cpus: 0.5
-
-  distributed-mixing-1:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:${EVOTING_VERSION}
-    container_name: distributed-mixing-1
-    hostname: distributed-mixing-1
-    security_opt:
-      - no-new-privileges
-    environment:
-      SPRING_DATASOURCE_USERNAME: distributed_mixing_1
-      SPRING_DATASOURCE_PASSWORD: distributed_mixing_1
-      SPRING_RABBITMQ_USERNAME: mixing1
-      SPRING_RABBITMQ_PASSWORD: mixing1
-      NODEID: 1
-      KEYS_NODEID: 1
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6029'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
-    networks:
-      - area-control-components
-      - area-database
-    ports:
-      - "6029:6029"
-    volumes:
-      - ./testdata/distributed-mixing/keystore-1:${KEYSTORE_MOUNT_LOCATION}
-    tty: true
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
-
-  distributed-mixing-2:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:${EVOTING_VERSION}
-    container_name: distributed-mixing-2
-    hostname: distributed-mixing-2
-    security_opt:
-      - no-new-privileges
-    environment:
-      SPRING_DATASOURCE_USERNAME: distributed_mixing_2
-      SPRING_DATASOURCE_PASSWORD: distributed_mixing_2
-      SPRING_RABBITMQ_USERNAME: mixing2
-      SPRING_RABBITMQ_PASSWORD: mixing2
-      NODEID: 2
-      KEYS_NODEID: 2
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6030'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
-    networks:
-      - area-control-components
-      - area-database
-    ports:
-      - "6030:6030"
-    volumes:
-      - ./testdata/distributed-mixing/keystore-2:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
-
-  distributed-mixing-3:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/control-components/distributed-mixing-service/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/distributed-mixing:${EVOTING_VERSION}
-    container_name: distributed-mixing-3
-    hostname: distributed-mixing-3
-    security_opt:
-      - no-new-privileges
-    environment:
-      SPRING_DATASOURCE_USERNAME: distributed_mixing_3
-      SPRING_DATASOURCE_PASSWORD: distributed_mixing_3
-      SPRING_RABBITMQ_USERNAME: mixing3
-      SPRING_RABBITMQ_PASSWORD: mixing3
-      NODEID: 3
-      KEYS_NODEID: 3
-      JAVA_TOOL_OPTIONS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6031'
-      KEYS_KEYSTORE_DIR: file://${KEYSTORE_MOUNT_LOCATION}
-    networks:
-      - area-control-components
-      - area-database
-    ports:
-      - "6031:6031"
-    volumes:
-      - ./testdata/distributed-mixing/keystore-3:${KEYSTORE_MOUNT_LOCATION}
-    mem_limit: 250m
-    memswap_limit: 370m
-    oom_kill_disable: true
-    cpus: 0.5
 
 networks:
-  area-sdm:
-    driver: bridge
-    internal: false
   area-database:
     driver: bridge
     internal: false
