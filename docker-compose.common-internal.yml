@@ -8,7 +8,7 @@ version: "2.4"
 services:
 
   jaeger:
-    image: ${DOCKER_REGISTRY}/jaegertracing/all-in-one
+    image: jaegertracing/all-in-one
     hostname: jaegertracing
     ports:
       - "5775:5775"
@@ -720,7 +720,7 @@ services:
     oom_kill_disable: true
 
   haproxy:
-    image: ${DOCKER_REGISTRY}/haproxy:1.7
+    image: haproxy:1.7
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     container_name: haproxy
