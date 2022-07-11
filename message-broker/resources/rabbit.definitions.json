@@ -1,67 +1,5 @@
 {
   "rabbit_version": "3.7.26",
-  "users": [
-	{
-	  "name": "mixing2",
-	  "password_hash": "+S9dgmWpPpXzfBkHebI98ah2S3xpQxw9/UYjGuR4RnCCRTvA",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes2",
-	  "password_hash": "hsCGxgtx0xU7yLaH9JY0LI4d6SL3XrZlVwQ/mzBK47kDOjkw",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes3",
-	  "password_hash": "9ToDyiTnMoCQHRwWgMIDsrdYYyGQtWbn4ER3rLx21v84KxIv",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "mixing3",
-	  "password_hash": "NuTuyQkPUL3SPzQL2pN51+QAmMcHvfVRMKm8n6/djsXrUctk",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes1",
-	  "password_hash": "efUdZyCPxDZmWi/11pcoFUhaTq752xmhC+uW8gViJtI2rsm6",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "orchestrator",
-	  "password_hash": "D4fa5+aoHuB3kIrjweOxlswTkWoo04sfN5DJ5DHULWrmi13A",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "admin",
-	  "password_hash": "IotYRL9dea/Kv2Bo05Hk24r464o4aNDpNu3+D6o08LX462Ky",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": "administrator"
-	},
-	{
-	  "name": "control-components",
-	  "password_hash": "KgvQzmI2TTkGwiazjcItcb1mKLV9c3j+Ve8qMKIyAD/0xQJA",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "return-codes4",
-	  "password_hash": "4RGIqmUX83PnPLPrvoiW4LSSTmsiDUvTjFFQQzZJgq4n9WJa",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	},
-	{
-	  "name": "mixing1",
-	  "password_hash": "hFkoQ051cJ7WKVJNBlcz+PoGMKrqNTrAbJm7iLfttK8gK2Cy",
-	  "hashing_algorithm": "rabbit_password_hashing_sha256",
-	  "tags": ""
-	}
-  ],
   "vhosts": [
     {
       "name": "/"
@@ -70,93 +8,110 @@
       "name": "control-components"
     }
   ],
+  "users": [
+    {
+      "name": "control_components_1",
+      "password_hash": "PVBY9FQXq3U5EQbp/qXMfad4sl0ZqauxIwBdbvBJIVi0lvPH",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "control_components_2",
+      "password_hash": "CrkThja1dLskC97MYGqPsMnjftZR3ii3fVfzltb9IViGs4Ag",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "control_components_3",
+      "password_hash": "48dWFKsP4UbDQyXWF7F9qaYQ8mYZ/IqN2eobzSSvmB6BeRyL",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "control_components_4",
+      "password_hash": "RmrDN76wg8i8BL0OuHC+QDVRdZ33ADliPIlKgjVwHmPzmCTx",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "message_broker_orchestrator",
+      "password_hash": "3q2+7/VphvQ2Ej7G/ZYe4T6jT64BvROqYCbzRGkzjtQuG022",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "orchestrator",
+      "password_hash": "D4fa5+aoHuB3kIrjweOxlswTkWoo04sfN5DJ5DHULWrmi13A",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "admin",
+      "password_hash": "IotYRL9dea/Kv2Bo05Hk24r464o4aNDpNu3+D6o08LX462Ky",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
   "permissions": [
-	{
-	  "user": "return-codes1",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.1\\..*Response|return-codes\\.verification\\.1\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.1\\..*Request$|^return-codes\\.verification\\.1\\..*Request$"
-	},
-	{
-	  "user": "mixing1",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.1\\..*Response)$",
-	  "read": "^mixnet\\.1\\..*Request$"
-	},
-	{
-	  "user": "return-codes3",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.3\\..*Response|return-codes\\.verification\\.3\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.3\\..*Request$|^return-codes\\.verification\\.3\\..*Request$"
-	},
-	{
-	  "user": "mixing3",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.3\\..*Response)$",
-	  "read": "^mixnet\\.3\\..*Request$"
-	},
-	{
-	  "user": "return-codes4",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.4\\..*Response|return-codes\\.verification\\.4\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.4\\..*Request$|^return-codes\\.verification\\.4\\..*Request$"
-	},
-	{
-	  "user": "admin",
-	  "vhost": "control-components",
-	  "configure": ".*",
-	  "write": "^$",
-	  "read": "^$"
-	},
-	{
-	  "user": "mixing2",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|mixnet\\.2\\..*Response)$",
-	  "read": "^mixnet\\.2\\..*Request$"
-	},
-	{
-	  "user": "return-codes2",
-	  "vhost": "control-components",
-	  "configure": "^$",
-	  "write": "^(amq\\.gen.*|amq\\.default|return-codes\\.generation\\.2\\..*Response|return-codes\\.verification\\.2\\..*Response)$",
-	  "read": "^return-codes\\.generation\\.2\\..*Request$|^return-codes\\.verification\\.2\\..*Request$"
-	},
-	{
-	  "user": "orchestrator",
-	  "vhost": "control-components",
-	  "configure": "^amq\\.gen.*$",
-	  "write": "^(amq\\.gen.*|amq\\.default|orchestrator-ha)$",
-	  "read": "^(amq\\.gen.*|.*Response|orchestrator-ha)$"
-	},
-	{
-	  "user": "control-components",
-	  "vhost": "control-components",
-	  "configure": ".*",
-	  "write": ".*",
-	  "read": ".*"
-	},
-	{
-	  "user": "admin",
-	  "vhost": "/",
-	  "configure": ".*",
-	  "write": ".*",
-	  "read": ".*"
-	}
+    {
+      "user": "control_components_1",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "control_components_2",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "control_components_3",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "control_components_4",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "orchestrator",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "message_broker_orchestrator",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "admin",
+      "vhost": "control-components",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
   ],
   "topic_permissions": [],
   "parameters": [],
-  "global_parameters": [
-    {
-      "name": "cluster_name",
-      "value": "rabbit@73aa70051ad8"
-    }
-  ],
   "policies": [
     {
       "vhost": "control-components",
@@ -178,312 +133,810 @@
   ],
   "queues": [
     {
-      "name": "return-codes.generation.1.ComputationRequest",
+      "name": "dead-letter-queue",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
       "arguments": {}
     },
     {
-      "name": "return-codes.verification.3.ComputationResponse",
+      "name": "configuration.mixing.SetupTallyCCMRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.4.KeyGenerationRequest",
+      "name": "configuration.mixing.SetupTallyCCMResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.3.KeyGenerationRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.1.DecryptionRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.4.ComputationRequest",
+      "name": "configuration.return-codes.GenKeysCCRRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.1.ComputationResponse",
+      "name": "configuration.return-codes.GenKeysCCRResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.3.PartialMixingDecryptionResponse",
+      "name": "configuration.electioncontext.ElectionContextRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.3.ComputationResponse",
+      "name": "configuration.electioncontext.ElectionContextResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.1.KeyGenerationRequest",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.3.KeyGenerationResponse",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.2.KeyGenerationResponse",
+      "name": "configuration.mixing.SetupTallyCCMRequest.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.2.ComputationResponse",
+      "name": "configuration.mixing.SetupTallyCCMResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.2.ComputationRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesRequest.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.3.KeyGenerationRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.3.DecryptionResponse",
+      "name": "configuration.return-codes.GenKeysCCRRequest.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.3.ComputationRequest",
+      "name": "configuration.return-codes.GenKeysCCRResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.4.DecryptionRequest",
+      "name": "configuration.electioncontext.ElectionContextRequest.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.4.ComputationRequest",
+      "name": "configuration.electioncontext.ElectionContextResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.2.KeyGenerationRequest",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.1.DecryptionResponse",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.4.ComputationResponse",
+      "name": "configuration.mixing.SetupTallyCCMRequest.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.4.ComputationResponse",
+      "name": "configuration.mixing.SetupTallyCCMResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.1.PartialMixingDecryptionRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.1.KeyGenerationResponse",
+      "name": "configuration.return-codes.GenEncLongCodeSharesResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.4.DecryptionResponse",
+      "name": "configuration.return-codes.GenKeysCCRRequest.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.3.PartialMixingDecryptionRequest",
+      "name": "configuration.return-codes.GenKeysCCRResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.2.PartialMixingDecryptionRequest",
+      "name": "configuration.electioncontext.ElectionContextRequest.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.1.KeyGenerationRequest",
+      "name": "configuration.electioncontext.ElectionContextResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },    {
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.2.KeyGenerationResponse",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.2.ComputationResponse",
+      "name": "configuration.mixing.SetupTallyCCMRequest.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.4.KeyGenerationResponse",
+      "name": "configuration.mixing.SetupTallyCCMResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.2.DecryptionRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesRequest.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.3.DecryptionRequest",
+      "name": "configuration.return-codes.GenEncLongCodeSharesResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.1.PartialMixingDecryptionResponse",
+      "name": "configuration.return-codes.GenKeysCCRRequest.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.2.ComputationRequest",
+      "name": "configuration.return-codes.GenKeysCCRResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.1.ComputationRequest",
+      "name": "configuration.electioncontext.ElectionContextRequest.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.3.KeyGenerationResponse",
+      "name": "configuration.electioncontext.ElectionContextResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.2.PartialMixingDecryptionResponse",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "mixnet.1.KeyGenerationResponse",
+      "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.1.ComputationResponse",
+      "name": "voting.return-codes.CreateLCCShareRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.3.ComputationRequest",
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.generation.2.KeyGenerationRequest",
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     },
     {
-      "name": "return-codes.verification.2.DecryptionResponse",
+      "name": "voting.return-codes.CreateLCCShareResponse.1",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
-      "arguments": {}
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCRequest.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLCCShareRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLCCShareResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLCCShareRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLCCShareResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLCCShareRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLCCShareResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.CreateLVCCShareHashResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.VerifyLVCCShareHashResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "voting.return-codes.PartialDecryptPCCResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineRequest.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineResponse.1",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineRequest.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineResponse.2",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineRequest.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineResponse.3",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineRequest.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
+    },
+    {
+      "name": "tally.mixing.MixDecOnlineResponse.4",
+      "vhost": "control-components",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "dead-letter-exchange",
+        "x-dead-letter-routing-key": "dead-letter"
+      }
     }
   ],
   "exchanges": [
@@ -495,7 +948,683 @@
       "auto_delete": false,
       "internal": false,
       "arguments": {}
+    },
+    {
+      "name": "evoting-exchange",
+      "vhost": "control-components",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "dead-letter-exchange",
+      "vhost": "control-components",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "aggregator-topic-exchange",
+      "vhost": "control-components",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
     }
   ],
-  "bindings": []
+  "bindings": [
+    {
+      "source": "dead-letter-exchange",
+      "vhost": "control-components",
+      "destination": "dead-letter-queue",
+      "destination_type": "queue",
+      "routing_key": "dead-letter",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.mixing.SetupTallyCCMResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.mixing.SetupTallyCCMResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "control-components",
+      "vhost": "/",
+      "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.1",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.2",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.3",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.return-codes.GenKeysCCRResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.return-codes.GenKeysCCRResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.electioncontext.ElectionContextResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.electioncontext.ElectionContextResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.4",
+      "destination_type": "queue",
+      "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCRequest.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCResponse.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCRequest.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCResponse.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCRequest.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCResponse.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCRequest.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.PartialDecryptPCCResponse.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.PartialDecryptPCCResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareRequest.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareResponse.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareRequest.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareResponse.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareRequest.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareResponse.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareRequest.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLCCShareResponse.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLCCShareResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashRequest.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.CreateLVCCShareHashResponse.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.CreateLVCCShareHashResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.1",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.2",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.3",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashRequest.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "voting.return-codes.VerifyLVCCShareHashResponse.4",
+      "destination_type": "queue",
+      "routing_key": "voting.return-codes.VerifyLVCCShareHashResponse.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineRequest.1",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineRequest.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineResponse.1",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineResponse.1",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineRequest.2",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineRequest.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineResponse.2",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineResponse.2",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineRequest.3",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineRequest.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineResponse.3",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineResponse.3",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineRequest.4",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineRequest.4",
+      "arguments": {}
+    },
+    {
+      "source": "evoting-exchange",
+      "vhost": "control-components",
+      "destination": "tally.mixing.MixDecOnlineResponse.4",
+      "destination_type": "queue",
+      "routing_key": "tally.mixing.MixDecOnlineResponse.4",
+      "arguments": {}
+    }
+  ]
 }
