@@ -42,6 +42,56 @@ define_compose_file_options() {
   composeFileOptions="-f docker-compose.common.yml -f docker-compose.h2.yml"
 }
 
+prepare_multiple_sdm() {
+  echo "Unzipping secure-data-manager. Please wait..."
+
+  cd ..
+
+  rm -rf secure-data-manager*
+
+  evoting_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout -f e-voting/pom.xml)
+  SDM_LOCAL_PATH=./secure-data-manager-package-$evoting_version/win64/sdm
+
+  unzip "e-voting/secure-data-manager/packaging/target/secure-data-manager-package-$evoting_version.zip" -d ./secure-data-manager-package-$evoting_version
+
+  echo "Creating secure-data-manager files and directories. Please wait..."
+  mkdir -p secure-data-manager-$evoting_version
+  mkdir -p $SDM_LOCAL_PATH/sdmConfig
+
+  cp -R evoting-e2e-dev/testdata/sdm/config/. $SDM_LOCAL_PATH/config
+  cp -R evoting-e2e-dev/testdata/sdm/application-level-security/signed-http-headers/keystore/. $SDM_LOCAL_PATH/config/keystore
+  cp -R evoting-e2e-dev/testdata/sdm/systemKeys/. $SDM_LOCAL_PATH/systemKeys
+  cp -R evoting-e2e-dev/testdata/sdm/direct-trust/. $SDM_LOCAL_PATH/direct-trust
+  cp evoting-e2e-dev/testdata/sdm/config/database_password.properties $SDM_LOCAL_PATH/sdmConfig/database_password.properties
+  cp -R evoting-e2e-dev/testdata/sdm/tenant/. $SDM_LOCAL_PATH/tenant
+
+  mkdir -p $SDM_LOCAL_PATH/smart-cards
+
+  echo "Configuring global secure-data-manager instances properties. Please wait..."
+  printf "\nadmin.portal.enabled=false" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nsmartcards.profile=e2e" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nrole.isConfig=false" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nrole.isTally=false" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nchoiceCodeGenerationChunkSize=10" >>$SDM_LOCAL_PATH/../application.properties
+
+  echo "Creating configuration, decryption, and synchronisation secure-data-manager. Please wait..."
+  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/configuration
+  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/decryption
+  mv ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/synchronisation
+
+  echo "Configuring specific secure-data-manager instances properties. Please wait..."
+  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/configuration/win64/application.properties
+  sed -i 's/role.isTally=false/role.isTally=true/g' ./secure-data-manager-$evoting_version/decryption/win64/application.properties
+
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/configuration/win64/application.properties
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/decryption/win64/application.properties
+
+  echo "Setup completed! You can now run the synchronisation 'SecureDataManager.exe' application!"
+
+  cd evoting-e2e-dev
+}
+
 ##########################
 ########## Main ##########
 ##########################
@@ -53,4 +103,9 @@ rebuild_service_images
 echo "Starting all services"
 docker-compose ${composeFileOptions} stop
 docker-compose ${composeFileOptions} up -d --force-recreate
+
+echo "Extracting and configuring the three secure-data-manager instances (synchronisation, configuration, decryption)."
+prepare_multiple_sdm
+
+echo "Starting to listen on docker container logs..."
 docker-compose ${composeFileOptions} logs --follow | grep --colour "SEVERE\|ERROR\|WARN"

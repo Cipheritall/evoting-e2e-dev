@@ -40,7 +40,4 @@ cd evoting-e2e-dev
 ./scripts/prepare-e2e.sh
 cd ..
 
-echo "Configuring the multiple Secure Data Manager instances. Please wait..."
-./evoting-e2e-dev/scripts/prepare-multiple-sdm.sh
-
 echo "End-to-end environment of e-voting ready!"
