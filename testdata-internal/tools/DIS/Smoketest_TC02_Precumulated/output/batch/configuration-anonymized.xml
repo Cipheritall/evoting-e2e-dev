@@ -1,0 +1,5404 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configuration xmlns="http://www.evoting.ch/xmlns/config/4">
+	<header>
+		<fileDate>2020-02-05T08:43:29.082+01:00</fileDate>
+		<voterTotal>41</voterTotal>
+	</header>
+	<contest>
+		<contestIdentification>Smoketest_TC02_Precumulated</contestIdentification>
+		<contestDefaultLanguage>de</contestDefaultLanguage>
+		<contestDate>2015-10-18</contestDate>
+		<contestDescription>
+			<contestDescriptionInfo>
+				<language>de</language>
+				<contestDescription>Smoketest_TC02_Precumulated</contestDescription>
+			</contestDescriptionInfo>
+			<contestDescriptionInfo>
+				<language>fr</language>
+				<contestDescription>Smoketest_TC02_Precumulated</contestDescription>
+			</contestDescriptionInfo>
+			<contestDescriptionInfo>
+				<language>it</language>
+				<contestDescription>Smoketest_TC02_Precumulated</contestDescription>
+			</contestDescriptionInfo>
+			<contestDescriptionInfo>
+				<language>rm</language>
+				<contestDescription>Smoketest_TC02_Precumulated</contestDescription>
+			</contestDescriptionInfo>
+		</contestDescription>
+		<evotingFromDate>2022-01-10T00:00:00+01:00</evotingFromDate>
+		<evotingToDate>2022-05-31T23:59:59+01:00</evotingToDate>
+		<extendedAuthenticationKeys>
+			<keyName>birthYear</keyName>
+		</extendedAuthenticationKeys>
+		<electionInformation>
+			<election>
+				<electionIdentification>nr_st_gallen</electionIdentification>
+				<domainOfInfluence>1AFD21E8-4DA8-11E6-89C7-00155D28151E</domainOfInfluence>
+				<typeOfElection>1</typeOfElection>
+				<electionDescription>
+					<electionDescriptionInfo>
+						<language>de</language>
+						<electionDescription>Nationalratswahl 2015 Kanton St. Gallen</electionDescription>
+					</electionDescriptionInfo>
+					<electionDescriptionInfo>
+						<language>fr</language>
+						<electionDescription>Nationalratswahl 2015 Kanton St. Gallen</electionDescription>
+					</electionDescriptionInfo>
+					<electionDescriptionInfo>
+						<language>it</language>
+						<electionDescription>Nationalratswahl 2015 Kanton St. Gallen</electionDescription>
+					</electionDescriptionInfo>
+					<electionDescriptionInfo>
+						<language>rm</language>
+						<electionDescription>Nationalratswahl 2015 Kanton St. Gallen</electionDescription>
+					</electionDescriptionInfo>
+				</electionDescription>
+				<numberOfMandates>12</numberOfMandates>
+				<writeInsAllowed>false</writeInsAllowed>
+				<candidateAccumulation>2</candidateAccumulation>
+				<uiProperties>
+					<property>
+						<key>list.attribute.1.text</key>
+						<value>%listIndentureNumber% - %listDescription%</value>
+					</property>
+					<property>
+						<key>list.attribute.1.text.translation.de</key>
+						<value>%listIndentureNumber% - %listDescription%</value>
+					</property>
+					<property>
+						<key>list.attribute.1.text.translation.fr</key>
+						<value>%listIndentureNumber% - %listDescription%</value>
+					</property>
+					<property>
+						<key>list.attribute.1.text.translation.it</key>
+						<value>%listIndentureNumber% - %listDescription%</value>
+					</property>
+					<property>
+						<key>list.attribute.1.text.translation.rm</key>
+						<value>%listIndentureNumber% - %listDescription%</value>
+					</property>
+					<property>
+						<key>list.attribute.1.header.translation.de</key>
+						<value>Party Name</value>
+					</property>
+					<property>
+						<key>list.attribute.1.header.translation.fr</key>
+						<value>Party Name</value>
+					</property>
+					<property>
+						<key>list.attribute.1.header.translation.it</key>
+						<value>Party Name</value>
+					</property>
+					<property>
+						<key>list.attribute.1.header.translation.rm</key>
+						<value>Party Name</value>
+					</property>
+					<property>
+						<key>list.attribute.4.text</key>
+						<value>%listUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.4.text.translation.de</key>
+						<value>%listUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.4.text.translation.fr</key>
+						<value>%listUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.4.text.translation.it</key>
+						<value>%listUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.4.text.translation.rm</key>
+						<value>%listUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.4.header.translation.de</key>
+						<value>Listenverbindung</value>
+					</property>
+					<property>
+						<key>list.attribute.4.header.translation.fr</key>
+						<value>Apparentment</value>
+					</property>
+					<property>
+						<key>list.attribute.4.header.translation.it</key>
+						<value>Apparentamento di liste</value>
+					</property>
+					<property>
+						<key>list.attribute.4.header.translation.rm</key>
+						<value>Colliaziun da glistas</value>
+					</property>
+					<property>
+						<key>list.attribute.5.text</key>
+						<value>%subListUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.5.text.translation.de</key>
+						<value>%subListUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.5.text.translation.fr</key>
+						<value>%subListUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.5.text.translation.it</key>
+						<value>%subListUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.5.text.translation.rm</key>
+						<value>%subListUnion%</value>
+					</property>
+					<property>
+						<key>list.attribute.5.header.translation.de</key>
+						<value>Unterlistenverbindung</value>
+					</property>
+					<property>
+						<key>list.attribute.5.header.translation.fr</key>
+						<value>Sous-apparentement</value>
+					</property>
+					<property>
+						<key>list.attribute.5.header.translation.it</key>
+						<value>Sottocongiunzione di liste</value>
+					</property>
+					<property>
+						<key>list.attribute.5.header.translation.rm</key>
+						<value>Sutcolliaziun da glistas</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text</key>
+						<value>%candidateReferenceOnPosition% %candidateFamilyName% %candidateCallName% (%listDescriptionShort%)</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.de</key>
+						<value>%candidateReferenceOnPosition% %candidateFamilyName% %candidateCallName% (%listDescriptionShort%)</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.fr</key>
+						<value>%candidateReferenceOnPosition% %candidateFamilyName% %candidateCallName% (%listDescriptionShort%)</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.it</key>
+						<value>%candidateReferenceOnPosition% %candidateFamilyName% %candidateCallName% (%listDescriptionShort%)</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.rm</key>
+						<value>%candidateReferenceOnPosition% %candidateFamilyName% %candidateCallName% (%listDescriptionShort%)</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.de</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.fr</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.it</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.rm</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text</key>
+						<value>%candidateTextOnPosition%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.de</key>
+						<value>%candidateTextOnPosition%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.fr</key>
+						<value>%candidateTextOnPosition%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.it</key>
+						<value>%candidateTextOnPosition%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.rm</key>
+						<value>%candidateTextOnPosition%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.de</key>
+						<value>Candidate Text on Position</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.fr</key>
+						<value>Candidate Text on Position</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.it</key>
+						<value>Candidate Text on Position</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.rm</key>
+						<value>Candidate Text on Position</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.de</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.fr</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.it</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.rm</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.de</key>
+						<value>Text bisheriger Kandidat</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.fr</key>
+						<value>Candidate Incumbent Text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.it</key>
+						<value>Candidate Incumbent Text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.rm</key>
+						<value>Candidate Incumbent Text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.text</key>
+						<value>%initialAccumulation%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.text.translation.de</key>
+						<value>%initialAccumulation%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.text.translation.fr</key>
+						<value>%initialAccumulation%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.text.translation.it</key>
+						<value>%initialAccumulation%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.text.translation.rm</key>
+						<value>%initialAccumulation%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.de</key>
+						<value>Initiales Kumulieren</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.fr</key>
+						<value>Cumul initial</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.it</key>
+						<value>Cumulo iniziale</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.rm</key>
+						<value>Cumular inizial</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.de</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.fr</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.it</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.rm</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.de</key>
+						<value>Position on List DE</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.fr</key>
+						<value>Position on List FR</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.it</key>
+						<value>Position on List IT</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.rm</key>
+						<value>Position on List RM</value>
+					</property>
+				</uiProperties>
+			</election>
+			<candidate>
+				<candidateIdentification>0101</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Burkhard</familyName>
+				<callName>Andreas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1990-08-12</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Ackerhusweg 10</street>
+					<houseNumber>10</houseNumber>
+					<swissZipCode>9642</swissZipCode>
+					<town>8606 Greifensee</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>1</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0102</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Strasser</familyName>
+				<callName>Andrina</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1991-09-14</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Im Bitzi 3</street>
+					<houseNumber>3</houseNumber>
+					<swissZipCode>9523</swissZipCode>
+					<town>9542 Münchwilen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>2</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0103</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Steinmann</familyName>
+				<callName>Cristina</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1989-10-22</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Töbelistrasse 10</street>
+					<houseNumber>10</houseNumber>
+					<swissZipCode>9526</swissZipCode>
+					<town>6265 Roggliswil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>3</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0104</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Hutter</familyName>
+				<callName>Fabian</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1988-03-08</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Giessenstrasse 1</street>
+					<houseNumber>1</houseNumber>
+					<swissZipCode>9434</swissZipCode>
+					<town>9444 Diepoldsau</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>4</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0105</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Meier</familyName>
+				<callName>Florian</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1989-03-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Neudorfstrasse 20</street>
+					<houseNumber>20</houseNumber>
+					<swissZipCode>9463</swissZipCode>
+					<town>9463 Oberriet</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>5</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0106</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Frei</familyName>
+				<callName>Luca</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1996-10-07</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Wisenweg 4</street>
+					<houseNumber>4</houseNumber>
+					<swissZipCode>9473</swissZipCode>
+					<town>9464 Rüthi</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>6</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0107</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Berisha</familyName>
+				<callName>Prend</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1993-06-01</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Obere Bahnhofstrasse 48</street>
+					<houseNumber>48</houseNumber>
+					<swissZipCode>9500</swissZipCode>
+					<town>9500 Wil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>7</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0108</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Mösch</familyName>
+				<callName>Raphael</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1986-03-26</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Rietbergstrasse 37</street>
+					<houseNumber>37</houseNumber>
+					<swissZipCode>9403</swissZipCode>
+					<town>5070 Frick</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>8</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0109</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Koch</familyName>
+				<callName>Sandro</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1994-02-07</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Bergwerkstrasse 7a</street>
+					<houseNumber>7a</houseNumber>
+					<swissZipCode>7320</swissZipCode>
+					<town>7111 Pitasch</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>9</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0110</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Morelli</familyName>
+				<callName>Sandro</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1990-01-17</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Haldenstrasse 27</street>
+					<houseNumber>27</houseNumber>
+					<swissZipCode>8717</swissZipCode>
+					<town>8820 Wädenswil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>10</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0111</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Hofstetter</familyName>
+				<callName>Thomas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1987-10-21</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Eisenbahnstrasse 5</street>
+					<houseNumber>5</houseNumber>
+					<swissZipCode>8717</swissZipCode>
+					<town>8717 Benken</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>11</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0112</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Rasaj</familyName>
+				<callName>Veton</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1996-02-23</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Grünaustrasse 31</street>
+					<houseNumber>31</houseNumber>
+					<swissZipCode>9016</swissZipCode>
+					<town>9016 St.Gallen-Tablat</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>12</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0201</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Lamprecht</familyName>
+				<callName>Odilo</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1987-04-10</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Rosenbüchelstrasse 29</street>
+					<houseNumber>29</houseNumber>
+					<swissZipCode>9014</swissZipCode>
+					<town>6541 Santa Maria in Calanca</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>1</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0202</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Stäheli</familyName>
+				<callName>Pascal</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1989-06-03</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Haselstrasse 15a</street>
+					<houseNumber>15a</houseNumber>
+					<swissZipCode>9014</swissZipCode>
+					<town>9014 St.Gallen-Straubenzell</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>2</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0203</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Bünzli</familyName>
+				<callName>Fabienne</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1990-09-23</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Kolumbanstrasse 14</street>
+					<houseNumber>14</houseNumber>
+					<swissZipCode>9008</swissZipCode>
+					<town>8124 Maur</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>3</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0204</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Flückiger</familyName>
+				<callName>Marc</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1981-06-17</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Zürcherstrasse 3</street>
+					<houseNumber>3</houseNumber>
+					<swissZipCode>9500</swissZipCode>
+					<town>3472 Wynigen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>4</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0205</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Zhuta</familyName>
+				<callName>Egzon</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1989-10-06</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Badstrasse 4</street>
+					<houseNumber>4</houseNumber>
+					<swissZipCode>9436</swissZipCode>
+					<town>9436 Balgach</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>5</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0206</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Maron</familyName>
+				<callName>Lucio</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1983-08-22</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Aubrigstrasse 26</street>
+					<houseNumber>26</houseNumber>
+					<swissZipCode>8645</swissZipCode>
+					<town>8919 Rottenschwil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>6</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0207</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Senn</familyName>
+				<callName>Pascal</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1990-08-06</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Volksgartenstrasse 23</street>
+					<houseNumber>23</houseNumber>
+					<swissZipCode>9470</swissZipCode>
+					<town>9470 Buchs</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>7</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0208</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Fritschi</familyName>
+				<callName>Stefan</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1994-10-03</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Parkstrasse 16</street>
+					<houseNumber>16</houseNumber>
+					<swissZipCode>9000</swissZipCode>
+					<town>8737 Gommiswald</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>8</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0209</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Blank</familyName>
+				<callName>Thomas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1988-08-17</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Rietstrasse 13</street>
+					<houseNumber>13</houseNumber>
+					<swissZipCode>9436</swissZipCode>
+					<town>9443 Widnau</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>9</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0210</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Schweizer</familyName>
+				<callName>Jannik</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1991-01-12</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Rotschürstrasse 17b</street>
+					<houseNumber>17b</houseNumber>
+					<swissZipCode>9500</swissZipCode>
+					<town>9542 Münchwilen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>10</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0211</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Wehrle</familyName>
+				<callName>Louis</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1995-02-02</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Ebenalpstrasse 7</street>
+					<houseNumber>7</houseNumber>
+					<swissZipCode>9010</swissZipCode>
+					<town>9313 Muolen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>11</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0212</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Barman</familyName>
+				<callName>Yusuf</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1991-12-23</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>St.Gallerstrasse 29</street>
+					<houseNumber>29</houseNumber>
+					<swissZipCode>9400</swissZipCode>
+					<town>9400 Rorschach</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>12</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0301</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Büchler</familyName>
+				<callName>Jakob</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1952-05-29</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Matt 927</street>
+					<houseNumber>927</houseNumber>
+					<swissZipCode>8723</swissZipCode>
+					<town>9050 Appenzell</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>1</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0302</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Ritter</familyName>
+				<callName>Markus</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1967-04-19</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Krans 4</street>
+					<houseNumber>4</houseNumber>
+					<swissZipCode>9450</swissZipCode>
+					<town>9450 Altstätten</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>2</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0303</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Dürr</familyName>
+				<callName>Barbara</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1963-03-05</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Karmaad 1924</street>
+					<houseNumber>1924</houseNumber>
+					<swissZipCode>9473</swissZipCode>
+					<town>9473 Gams</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>3</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0304</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Storchenegger</familyName>
+				<callName>Martha</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1964-04-27</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Schachenstrasse 5</street>
+					<houseNumber>5</houseNumber>
+					<swissZipCode>9243</swissZipCode>
+					<town>9243 Jonschwil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>4</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0305</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Suter</familyName>
+				<callName>Yvonne</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1977-05-19</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Spinnereistrasse 42</street>
+					<houseNumber>42</houseNumber>
+					<swissZipCode>8645</swissZipCode>
+					<town>8645 Rapperswil-Jona</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>5</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0306</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Ammann</familyName>
+				<callName>Thomas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1964-07-13</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Buchholzstrasse 3</street>
+					<houseNumber>3</houseNumber>
+					<swissZipCode>9464</swissZipCode>
+					<town>9463 Oberriet, 9533 Kirchberg</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>6</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0307</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Bischofberger</familyName>
+				<callName>Felix</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1968-02-18</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Dorfstrasse 11</street>
+					<houseNumber>11</houseNumber>
+					<swissZipCode>9423</swissZipCode>
+					<town>9425 Thal-Altenrhein</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>7</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0308</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Damann</familyName>
+				<callName>Bruno</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1957-01-10</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Friedbergstrasse 49</street>
+					<houseNumber>49</houseNumber>
+					<swissZipCode>9200</swissZipCode>
+					<town>8508 Homburg</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>8</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0309</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Fust</familyName>
+				<callName>Lukas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1983-01-17</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Schalkhusenstrasse 13</street>
+					<houseNumber>13</houseNumber>
+					<swissZipCode>9533</swissZipCode>
+					<town>9607 Mosnang</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>9</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0310</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Imper-Filli</familyName>
+				<callName>David</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1964-07-03</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Untergasse 38</street>
+					<houseNumber>38</houseNumber>
+					<swissZipCode>8888</swissZipCode>
+					<town>8887 Mels, 8730 Uznach</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>10</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0311</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Paganini</familyName>
+				<callName>Nicolo</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1966-06-08</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Alpsteinstrasse 18a</street>
+					<houseNumber>18a</houseNumber>
+					<swissZipCode>9030</swissZipCode>
+					<town>9220 Bischofszell</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>11</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0312</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Sartory</familyName>
+				<callName>Beda</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1950-08-17</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Neugrubenstrasse 5</street>
+					<houseNumber>5</houseNumber>
+					<swissZipCode>9500</swissZipCode>
+					<town>9500 Wil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>12</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0401</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Oppliger</familyName>
+				<callName>Hans</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1957-01-11</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Spengelgass 12</street>
+					<houseNumber>12</houseNumber>
+					<swissZipCode>9467</swissZipCode>
+					<town>3534 Signau</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>1</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0402</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Müller</familyName>
+				<callName>Jascha</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1965-11-30</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Scheidwegstrasse 36</street>
+					<houseNumber>36</houseNumber>
+					<swissZipCode>9016</swissZipCode>
+					<town>8594 Güttingen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>2</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0403</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Schweizer</familyName>
+				<callName>Ursi</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1963-01-22</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Wildhauserstrasse 8</street>
+					<houseNumber>8</houseNumber>
+					<swissZipCode>9473</swissZipCode>
+					<town>3416 Affoltern</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>3</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0404</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Rutz</familyName>
+				<callName>Roman</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1985-03-24</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Kirchgasse 47</street>
+					<houseNumber>47</houseNumber>
+					<swissZipCode>9500</swissZipCode>
+					<town>9633 Hemberg</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>4</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0405</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Bertoldo</familyName>
+				<callName>Daniel</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1961-06-11</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hochwachtstrasse 9</street>
+					<houseNumber>9</houseNumber>
+					<swissZipCode>9000</swissZipCode>
+					<town>8810 Horgen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>5</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0406</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Gubelmann</familyName>
+				<callName>Irene</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1958-09-13</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Heinrich Federerstrasse 8</street>
+					<houseNumber>8</houseNumber>
+					<swissZipCode>9442</swissZipCode>
+					<town>9442 Berneck</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>6</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0407</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Stübi</familyName>
+				<callName>Samuel</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1990-01-18</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Konkordiastrasse 22</street>
+					<houseNumber>22</houseNumber>
+					<swissZipCode>9000</swissZipCode>
+					<town>3665 Wattenwil</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>7</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0408</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Bärlocher</familyName>
+				<callName>Wieland</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1965-07-02</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Tannacker 21</street>
+					<houseNumber>21</houseNumber>
+					<swissZipCode>9305</swissZipCode>
+					<town>9000 St.Gallen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>8</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0409</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Sutter</familyName>
+				<callName>Franz</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1973-07-27</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Im Buechwald 45</street>
+					<houseNumber>45</houseNumber>
+					<swissZipCode>9242</swissZipCode>
+					<town>8050 Appenzell</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>9</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0410</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Knaus</familyName>
+				<callName>Markus</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1961-07-19</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Lindenstrasse 128</street>
+					<houseNumber>128</houseNumber>
+					<swissZipCode>9000</swissZipCode>
+					<town>9633 Hemberg</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>10</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0411</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Gächter</familyName>
+				<callName>Katharina</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1962-11-10</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Fabrikstrasse 23</street>
+					<houseNumber>23</houseNumber>
+					<swissZipCode>9472</swissZipCode>
+					<town>9472 Grabs</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>11</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0412</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Eugster</familyName>
+				<callName>Samuel</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1991-03-19</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Langgasse 84</street>
+					<houseNumber>84</houseNumber>
+					<swissZipCode>9008</swissZipCode>
+					<town>9410 Heiden</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>12</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0501</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Trappitsch</familyName>
+				<callName>Daniel</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1965-05-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Wetti 41</street>
+					<houseNumber>41</houseNumber>
+					<swissZipCode>9470</swissZipCode>
+					<town>8792 Zollikon</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>1</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0502</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Varga</familyName>
+				<callName>Irene</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-09-19</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Weiherstrasse 17</street>
+					<houseNumber>17</houseNumber>
+					<swissZipCode>9305</swissZipCode>
+					<town>9000 St.Gallen</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>2</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0503</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Rohrer</familyName>
+				<callName>Erich</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1952-02-26</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Ebnetstrasse 15</street>
+					<houseNumber>15</houseNumber>
+					<swissZipCode>9302</swissZipCode>
+					<town>9470 Buchs</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>3</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0504</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Osterwalder Godenne</familyName>
+				<callName>Luzia</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1961-07-08</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Schorenstrasse 1</street>
+					<houseNumber>1</houseNumber>
+					<swissZipCode>9000</swissZipCode>
+					<town>9030 Gaiserwald</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>4</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>0505</candidateIdentification>
+				<mrMrs>1</mrMrs>
+				<familyName>Weibel</familyName>
+				<callName>Christiane</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>dummy cd</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1962-06-08</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Rotachstrasse 14</street>
+					<houseNumber>14</houseNumber>
+					<swissZipCode>9000</swissZipCode>
+					<town>6288 Schongau, 9427 Wolfhalden</town>
+				</dwellingAddress>
+				<swiss/>
+				<referenceOnPosition>5</referenceOnPosition>
+			</candidate>
+			<list>
+				<listIdentification>1</listIdentification>
+				<listIndentureNumber>1</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>JCVP</listDescriptionShort>
+						<listDescription>CVP Kanton St.Gallen, Junge CVP</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>1</listOrderOfPrecedence>
+				<listEmpty>false</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>84568c21-b442-3347-9025-208078724419</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>0101</candidateReferenceOnPosition>
+					<candidateIdentification>0101</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Burkhard Andreas, Student Rechtswissenschaften Universität Bern, Ebnat-Kappel</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>f80d1a9e-a2ec-329c-a2dd-929f3f0100d2</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>0102</candidateReferenceOnPosition>
+					<candidateIdentification>0102</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Strasser Andrina, Studentin Maschinentechnik ZHAW, Züberwangen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>5c53ad03-3fb4-3260-bbbf-530f616b707c</candidateListIdentification>
+					<positionOnList>3</positionOnList>
+					<candidateReferenceOnPosition>0103</candidateReferenceOnPosition>
+					<candidateIdentification>0103</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Steinmann Cristina, Account Managerin, B. Sc. in Business Administration, Zuckenriet</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>29767ae7-4520-31fd-af2f-894b36f63a01</candidateListIdentification>
+					<positionOnList>4</positionOnList>
+					<candidateReferenceOnPosition>0104</candidateReferenceOnPosition>
+					<candidateIdentification>0104</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Hutter Fabian, Versuchstechniker, Student FH, Au</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>d79c5504-1aa0-3bf3-91f8-61b8b427c8a6</candidateListIdentification>
+					<positionOnList>5</positionOnList>
+					<candidateReferenceOnPosition>0105</candidateReferenceOnPosition>
+					<candidateIdentification>0105</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Meier Florian, Student Geographie/Geschichte, Oberriet</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>218c99d1-28a0-3970-b88c-8dbcc86db4ac</candidateListIdentification>
+					<positionOnList>6</positionOnList>
+					<candidateReferenceOnPosition>0106</candidateReferenceOnPosition>
+					<candidateIdentification>0106</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Frei Luca, Kaufmann EFZ, Gams</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>9cbc8f35-a34d-39fa-9d84-a1a777d6b54c</candidateListIdentification>
+					<positionOnList>7</positionOnList>
+					<candidateReferenceOnPosition>0107</candidateReferenceOnPosition>
+					<candidateIdentification>0107</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Berisha Prend, Kaufmann EFZ mit Berufsmatura, Sachbearbeiter Innendienst, Wil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>479ac7fe-e977-323f-8eb9-bb2d4cb0b800</candidateListIdentification>
+					<positionOnList>8</positionOnList>
+					<candidateReferenceOnPosition>0108</candidateReferenceOnPosition>
+					<candidateIdentification>0108</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Mösch Raphael, Geschäftsführer und Mitbegründer Start-Up Unternehmen, Goldach</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>94e19ca9-5774-39da-a1a9-401843307181</candidateListIdentification>
+					<positionOnList>9</positionOnList>
+					<candidateReferenceOnPosition>0109</candidateReferenceOnPosition>
+					<candidateIdentification>0109</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Koch Sandro, Student, Sargans</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>6d9f9371-57ab-39b7-96ff-c85f24940f04</candidateListIdentification>
+					<positionOnList>10</positionOnList>
+					<candidateReferenceOnPosition>0110</candidateReferenceOnPosition>
+					<candidateIdentification>0110</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Morelli Sandro, Student Rechtswissenschaften, B. A. HSG, Präsident JCVP Kanton St.Gallen, Benken</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6</candidateListIdentification>
+					<positionOnList>11</positionOnList>
+					<candidateReferenceOnPosition>0111</candidateReferenceOnPosition>
+					<candidateIdentification>0111</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Hofstetter Thomas, Business Engineer, B. Sc. in Betriebsökonomie FH, Benken</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>013ee9d4-928a-3590-bf76-2b1aa723946d</candidateListIdentification>
+					<positionOnList>12</positionOnList>
+					<candidateReferenceOnPosition>0112</candidateReferenceOnPosition>
+					<candidateIdentification>0112</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Rasaj Veton, Kaufmann mit Berufsmatura, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+			<list>
+				<listIdentification>2</listIdentification>
+				<listIndentureNumber>2</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>JFSG</listDescriptionShort>
+						<listDescription>FDP Kanton St.Gallen - Jungfreisinnige</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>12</listOrderOfPrecedence>
+				<listEmpty>false</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>24566884-f235-3d1a-9986-b185b952550f</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>0201</candidateReferenceOnPosition>
+					<candidateIdentification>0201</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Lamprecht Odilo, Betriebsökonom, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>bb5e1c43-2aec-3153-97df-058a03698e99</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>0202</candidateReferenceOnPosition>
+					<candidateIdentification>0202</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Stäheli Pascal, Consultant, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>e636ae60-871d-3c47-8e0d-c40db0adb10c</candidateListIdentification>
+					<positionOnList>3</positionOnList>
+					<candidateReferenceOnPosition>0203</candidateReferenceOnPosition>
+					<candidateIdentification>0203</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Bünzli Fabienne, Projektleiterin Wirtschafts- und Kommunikationsberatung, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>ac51183e-6ced-39ee-adef-2022b8bc045f</candidateListIdentification>
+					<positionOnList>4</positionOnList>
+					<candidateReferenceOnPosition>0204</candidateReferenceOnPosition>
+					<candidateIdentification>0204</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Flückiger Marc, Geschäftsführer, Wil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>93ec8746-628f-35d8-a08e-087d93675583</candidateListIdentification>
+					<positionOnList>5</positionOnList>
+					<candidateReferenceOnPosition>0205</candidateReferenceOnPosition>
+					<candidateIdentification>0205</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Zhuta Egzon, B. Sc. Bauingenieurwesen ZFH, Balgach</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>6d0766bf-a6b1-3d9b-aa79-4b981a7de92b</candidateListIdentification>
+					<positionOnList>6</positionOnList>
+					<candidateReferenceOnPosition>0206</candidateReferenceOnPosition>
+					<candidateIdentification>0206</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Maron Lucio, Historiker, Jona</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>91bfc29e-d3cc-30cb-83c6-674115cb2bb7</candidateListIdentification>
+					<positionOnList>7</positionOnList>
+					<candidateReferenceOnPosition>0207</candidateReferenceOnPosition>
+					<candidateIdentification>0207</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Senn Pascal, Elektroplaner, Buchs</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>a18ca64b-d4a0-3827-b217-ee84e75f5f5c</candidateListIdentification>
+					<positionOnList>8</positionOnList>
+					<candidateReferenceOnPosition>0208</candidateReferenceOnPosition>
+					<candidateIdentification>0208</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Fritschi Stefan, Steuerberater, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>98035898-1b6d-3fb6-8a8c-eb736bb67446</candidateListIdentification>
+					<positionOnList>9</positionOnList>
+					<candidateReferenceOnPosition>0209</candidateReferenceOnPosition>
+					<candidateIdentification>0209</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Blank Thomas, Fachmann Sozialhilfe GFS, Balgach</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>0dc0791b-d302-3e33-861e-0e89311324e1</candidateListIdentification>
+					<positionOnList>10</positionOnList>
+					<candidateReferenceOnPosition>0210</candidateReferenceOnPosition>
+					<candidateIdentification>0210</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Schweizer Jannik, Dipl. BMA HF, Wil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>b71584cc-3fe9-34c0-b264-8ecbac9a67d3</candidateListIdentification>
+					<positionOnList>11</positionOnList>
+					<candidateReferenceOnPosition>0211</candidateReferenceOnPosition>
+					<candidateIdentification>0211</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Wehrle Louis, Detailhandelsfachmann, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>304cb4d7-bb93-3975-9098-806b6b944655</candidateListIdentification>
+					<positionOnList>12</positionOnList>
+					<candidateReferenceOnPosition>0212</candidateReferenceOnPosition>
+					<candidateIdentification>0212</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Barman Yusuf, Angestellter Sicherheitsdienst, Student, Rorschach</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+			<list>
+				<listIdentification>3</listIdentification>
+				<listIndentureNumber>3</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>CVP</listDescriptionShort>
+						<listDescription>CVP Kanton St.Gallen, Hauptliste</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>17</listOrderOfPrecedence>
+				<listEmpty>false</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>22f5d3f6-36fd-3105-b66a-9efa28ca0cc2</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>0301</candidateReferenceOnPosition>
+					<candidateIdentification>0301</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Büchler Jakob, Meisterlandwirt, Maseltrangen (bisher)</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>05d80bb6-0a08-38c6-82c9-e589e461ab61</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>0302</candidateReferenceOnPosition>
+					<candidateIdentification>0302</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Ritter Markus, Meisterlandwirt, Wirtschaftsingenieur FH, Altstätten (bisher)</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>c60776d1-6f6f-3a4e-88ce-bf446675a93d</candidateListIdentification>
+					<positionOnList>3</positionOnList>
+					<candidateReferenceOnPosition>0303</candidateReferenceOnPosition>
+					<candidateIdentification>0303</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Dürr Barbara, kfm. Angestellte, Dipl. Bäuerin, Präsidentin St.Galler Bäuerinnenverband, Gams</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>04c1c26b-d4db-33ae-a45f-74418b445311</candidateListIdentification>
+					<positionOnList>4</positionOnList>
+					<candidateReferenceOnPosition>0304</candidateReferenceOnPosition>
+					<candidateIdentification>0304</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Storchenegger Martha, Dipl. Pflegefachfrau HF, Kantonsrätin, Präsidentin CVP Frauen Kanton SG, Jonschwil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>6d0cd17d-b032-38fc-a281-608465eeb3fb</candidateListIdentification>
+					<positionOnList>5</positionOnList>
+					<candidateReferenceOnPosition>0305</candidateReferenceOnPosition>
+					<candidateIdentification>0305</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Suter Yvonne, lic.rer.publ. HSG, Direktorin, Leiterin Kompetenzzentrum für nachhaltige Anlagen, Kantonsrätin, Jona</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>b260335d-0afa-37f1-a604-5dc58aee6268</candidateListIdentification>
+					<positionOnList>6</positionOnList>
+					<candidateReferenceOnPosition>0306</candidateReferenceOnPosition>
+					<candidateIdentification>0306</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Ammann Thomas, Gemeindepräsident, Kantonsrat, Fraktionspräsident, Rüthi</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>f24e6e12-aff3-3b19-9d25-7f47973b9fb7</candidateListIdentification>
+					<positionOnList>7</positionOnList>
+					<candidateReferenceOnPosition>0307</candidateReferenceOnPosition>
+					<candidateIdentification>0307</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Bischofberger Felix, Postunternehmer, Kantonsrat, Präsident CSP Kanton SG, Altenrhein</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>7a5a67c4-29a3-3eae-ba45-d18ddd7caa92</candidateListIdentification>
+					<positionOnList>8</positionOnList>
+					<candidateReferenceOnPosition>0308</candidateReferenceOnPosition>
+					<candidateIdentification>0308</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Damann Bruno, Dr.med., Facharzt für Allgemeinmedizin, Stadtrat, Kantonsrat, Gossau</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5</candidateListIdentification>
+					<positionOnList>9</positionOnList>
+					<candidateReferenceOnPosition>0309</candidateReferenceOnPosition>
+					<candidateIdentification>0309</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Fust Lukas, Bankangestellter, Gemeinderat, Kirchberg</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>7aea83c8-d288-3916-b6b0-3548739c5967</candidateListIdentification>
+					<positionOnList>10</positionOnList>
+					<candidateReferenceOnPosition>0310</candidateReferenceOnPosition>
+					<candidateIdentification>0310</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Imper-Filli David, Dipl.Natw. ETH, Geologe, Kantonsrat 2000-2015, Heiligkreuz</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>a0bfeb14-cfcd-37ea-8665-6f4980af9a77</candidateListIdentification>
+					<positionOnList>11</positionOnList>
+					<candidateReferenceOnPosition>0311</candidateReferenceOnPosition>
+					<candidateIdentification>0311</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Paganini Nicolo, Direktor Olma Messen, lic.iur. HSG et lic.rer.pol., Abtwil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>857a5289-f305-3a52-acba-35a97df960eb</candidateListIdentification>
+					<positionOnList>12</positionOnList>
+					<candidateReferenceOnPosition>0312</candidateReferenceOnPosition>
+					<candidateIdentification>0312</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Sartory Beda, Unternehmer, Krisenmanager, ehem. Stadtrat und Kantonsrat, Wil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+			<list>
+				<listIdentification>4</listIdentification>
+				<listIndentureNumber>4</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>EVP</listDescriptionShort>
+						<listDescription>EVP, Evangelische Volkspartei</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>18</listOrderOfPrecedence>
+				<listEmpty>false</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>85d3218d-cf93-3412-aba0-cde8be35c4e9</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>0401</candidateReferenceOnPosition>
+					<candidateIdentification>0401</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Oppliger Hans, Kantonsrat, Dipl.Ing.Agr. ETH, Frümsen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>0e969e14-f212-3e48-8964-6b55aefe652f</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>0402</candidateReferenceOnPosition>
+					<candidateIdentification>0402</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Müller Jascha, Kantonsrat, Kdt Milizfeuerwehr, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>ed6dc050-6008-3e3b-bbce-de22209bf70a</candidateListIdentification>
+					<positionOnList>3</positionOnList>
+					<candidateReferenceOnPosition>0403</candidateReferenceOnPosition>
+					<candidateIdentification>0403</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Schweizer Ursi, Schulleiterin, Handarbeitslehrerin, Gams</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>02fdf42d-cb84-32bd-b4b1-aa350b286fb4</candidateListIdentification>
+					<positionOnList>4</positionOnList>
+					<candidateReferenceOnPosition>0404</candidateReferenceOnPosition>
+					<candidateIdentification>0404</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Rutz Roman, M. A. HSG, Dipl. Wipäd, Mittelschullehrer, Stadtparlamentarier, Wil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>3cad482d-f29b-35f4-a8d4-f98c71e504ca</candidateListIdentification>
+					<positionOnList>5</positionOnList>
+					<candidateReferenceOnPosition>0405</candidateReferenceOnPosition>
+					<candidateIdentification>0405</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Bertoldo Daniel, Diakon, Mediator, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>a8c46881-17da-33ae-a0fa-3159aaa3784c</candidateListIdentification>
+					<positionOnList>6</positionOnList>
+					<candidateReferenceOnPosition>0406</candidateReferenceOnPosition>
+					<candidateIdentification>0406</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Gubelmann Irene, Hausfrau, Drogistin, Berneck</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>25a5f140-c6d8-3fcd-9f47-1fa79eeef930</candidateListIdentification>
+					<positionOnList>7</positionOnList>
+					<candidateReferenceOnPosition>0407</candidateReferenceOnPosition>
+					<candidateIdentification>0407</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Stübi Samuel, Student, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>9ef4e397-6e5a-3cd1-a396-61896f978468</candidateListIdentification>
+					<positionOnList>8</positionOnList>
+					<candidateReferenceOnPosition>0408</candidateReferenceOnPosition>
+					<candidateIdentification>0408</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Bärlocher Wieland, Meisterlandwirt, Leiter regionale Fachstelle für Datenschutz, Berg</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>3e89d424-0ffa-3793-80d8-e84dd992f878</candidateListIdentification>
+					<positionOnList>9</positionOnList>
+					<candidateReferenceOnPosition>0409</candidateReferenceOnPosition>
+					<candidateIdentification>0409</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Sutter Franz, Qualifizierungstechniker, Oberuzwil</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>678af565-b5ca-35bc-a15e-562b9815c9a8</candidateListIdentification>
+					<positionOnList>10</positionOnList>
+					<candidateReferenceOnPosition>0410</candidateReferenceOnPosition>
+					<candidateIdentification>0410</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Knaus Markus, Hauswart, techn. Stickereizeichner, Stadtparlamentarier, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>f86d514c-dfcb-301c-be5a-5e887df1da9e</candidateListIdentification>
+					<positionOnList>11</positionOnList>
+					<candidateReferenceOnPosition>0411</candidateReferenceOnPosition>
+					<candidateIdentification>0411</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Gächter Katharina, Gemeinderätin, Grabs</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>345694e5-1951-3175-b77b-c1e9e05ba871</candidateListIdentification>
+					<positionOnList>12</positionOnList>
+					<candidateReferenceOnPosition>0412</candidateReferenceOnPosition>
+					<candidateIdentification>0412</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Eugster Samuel, Student, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+			<list>
+				<listIdentification>5</listIdentification>
+				<listIndentureNumber>5</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>PFSG</listDescriptionShort>
+						<listDescription>Parteifrei SG</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Dummy list</listDescriptionShort>
+						<listDescription>Dummy list</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>19</listOrderOfPrecedence>
+				<listEmpty>false</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>42b0e5ce-1a25-3086-ac9b-3d6257d384ce</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>0501</candidateReferenceOnPosition>
+					<candidateIdentification>0501</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Trappitsch Daniel, Geschäftsführer, techn. Kaufmann, Naturheilpraktiker, Autor, Dozent, Buchs</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>42b0e5ce-1a25-3086-ac9b-3d6257d384ce</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>0501</candidateReferenceOnPosition>
+					<candidateIdentification>0501</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Trappitsch Daniel, Geschäftsführer, techn. Kaufmann, Naturheilpraktiker, Autor, Dozent, Buchs</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>ccbcd6b8-bc05-3d57-8449-9f66fae542f0</candidateListIdentification>
+					<positionOnList>3</positionOnList>
+					<candidateReferenceOnPosition>0502</candidateReferenceOnPosition>
+					<candidateIdentification>0502</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Varga Irene, Dipl.Natw. ETH, Dipl.Inf. Projektmanagement, freie Künstlerin, freie Denkerin, Berg</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>ccbcd6b8-bc05-3d57-8449-9f66fae542f0</candidateListIdentification>
+					<positionOnList>4</positionOnList>
+					<candidateReferenceOnPosition>0502</candidateReferenceOnPosition>
+					<candidateIdentification>0502</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Varga Irene, Dipl.Natw. ETH, Dipl.Inf. Projektmanagement, freie Künstlerin, freie Denkerin, Berg</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>4a5fbb3a-1731-3b56-8609-1bff952e633c</candidateListIdentification>
+					<positionOnList>5</positionOnList>
+					<candidateReferenceOnPosition>0503</candidateReferenceOnPosition>
+					<candidateIdentification>0503</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Rohrer Erich, Industriespengler, Engelburg</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>4a5fbb3a-1731-3b56-8609-1bff952e633c</candidateListIdentification>
+					<positionOnList>6</positionOnList>
+					<candidateReferenceOnPosition>0503</candidateReferenceOnPosition>
+					<candidateIdentification>0503</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Rohrer Erich, Industriespengler, Engelburg</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>6b0e9643-baec-33b7-8db1-c2b67aa176d2</candidateListIdentification>
+					<positionOnList>7</positionOnList>
+					<candidateReferenceOnPosition>0504</candidateReferenceOnPosition>
+					<candidateIdentification>0504</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Osterwalder Godenne Luzia, Naturheilpraktikerin, Geschäftsführerin, Autorin, Koordinatorin GWÖ CH, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>6b0e9643-baec-33b7-8db1-c2b67aa176d2</candidateListIdentification>
+					<positionOnList>8</positionOnList>
+					<candidateReferenceOnPosition>0504</candidateReferenceOnPosition>
+					<candidateIdentification>0504</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Osterwalder Godenne Luzia, Naturheilpraktikerin, Geschäftsführerin, Autorin, Koordinatorin GWÖ CH, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>d4af673a-2e62-3428-930d-622f9f84ac71</candidateListIdentification>
+					<positionOnList>9</positionOnList>
+					<candidateReferenceOnPosition>0505</candidateReferenceOnPosition>
+					<candidateIdentification>0505</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Weibel Christiane , Kunsttherapeutin i.A. Fachbereich Mal-/Gestaltungstherapie, freie Künstlerin, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>d4af673a-2e62-3428-930d-622f9f84ac71</candidateListIdentification>
+					<positionOnList>10</positionOnList>
+					<candidateReferenceOnPosition>0505</candidateReferenceOnPosition>
+					<candidateIdentification>0505</candidateIdentification>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Weibel Christiane , Kunsttherapeutin i.A. Fachbereich Mal-/Gestaltungstherapie, freie Künstlerin, St.Gallen</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>dummy cd</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+			<list>
+				<listIdentification>99</listIdentification>
+				<listIndentureNumber>99</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>Leer</listDescriptionShort>
+						<listDescription>Leer</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Blanc</listDescriptionShort>
+						<listDescription>Blanc</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Bianco</listDescriptionShort>
+						<listDescription>Bianco</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Vid</listDescriptionShort>
+						<listDescription>Vid</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>24</listOrderOfPrecedence>
+				<listEmpty>true</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>4ea3eb45-4872-3418-81d9-1e928937fc1b</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>99.01</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>d2838d83-b21e-3758-b3db-428094b8c39f</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>99.02</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>c2275508-2e7e-33e7-8fb8-4aaa48979288</candidateListIdentification>
+					<positionOnList>3</positionOnList>
+					<candidateReferenceOnPosition>99.03</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>0e08a1c6-62d3-3e54-8642-6792536ba039</candidateListIdentification>
+					<positionOnList>4</positionOnList>
+					<candidateReferenceOnPosition>99.04</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>899e6604-8374-370d-961c-e1537d2f7d53</candidateListIdentification>
+					<positionOnList>5</positionOnList>
+					<candidateReferenceOnPosition>99.05</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>1a6ea144-5fe6-376a-a659-aa8d72bb2ad8</candidateListIdentification>
+					<positionOnList>6</positionOnList>
+					<candidateReferenceOnPosition>99.06</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>790b8d3e-509f-3e89-a2a5-5d7f99800961</candidateListIdentification>
+					<positionOnList>7</positionOnList>
+					<candidateReferenceOnPosition>99.07</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>a9c5318f-fdaa-30b5-b46b-e0fc2563ede7</candidateListIdentification>
+					<positionOnList>8</positionOnList>
+					<candidateReferenceOnPosition>99.08</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>e75c475b-61e3-3e3c-9b7e-4db53ace600a</candidateListIdentification>
+					<positionOnList>9</positionOnList>
+					<candidateReferenceOnPosition>99.09</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>1350af2d-f20a-373d-9664-707d0c5bd599</candidateListIdentification>
+					<positionOnList>10</positionOnList>
+					<candidateReferenceOnPosition>99.10</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>da296aff-c3a1-3ab3-8de9-eb3228a69d31</candidateListIdentification>
+					<positionOnList>11</positionOnList>
+					<candidateReferenceOnPosition>99.11</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>0bd3b1c0-109e-3366-bc09-9245b342df2b</candidateListIdentification>
+					<positionOnList>12</positionOnList>
+					<candidateReferenceOnPosition>99.12</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+			<listUnion>
+				<listUnionIdentification>2</listUnionIdentification>
+				<listUnionDescription>
+					<listUnionDescriptionInfo>
+						<language>de</language>
+						<listUnionDescription>Listenverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+					<listUnionDescriptionInfo>
+						<language>fr</language>
+						<listUnionDescription>Listenunterverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+					<listUnionDescriptionInfo>
+						<language>it</language>
+						<listUnionDescription>Listenunterverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+					<listUnionDescriptionInfo>
+						<language>rm</language>
+						<listUnionDescription>Listenunterverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+				</listUnionDescription>
+				<listUnionType>1</listUnionType>
+				<referencedList>1</referencedList>
+				<referencedList>3</referencedList>
+				<referencedList>4</referencedList>
+			</listUnion>
+			<listUnion>
+				<listUnionIdentification>6</listUnionIdentification>
+				<listUnionDescription>
+					<listUnionDescriptionInfo>
+						<language>de</language>
+						<listUnionDescription>Listenunterverbindung1</listUnionDescription>
+					</listUnionDescriptionInfo>
+					<listUnionDescriptionInfo>
+						<language>fr</language>
+						<listUnionDescription>Listenunterverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+					<listUnionDescriptionInfo>
+						<language>it</language>
+						<listUnionDescription>Listenunterverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+					<listUnionDescriptionInfo>
+						<language>rm</language>
+						<listUnionDescription>Listenunterverbindung2</listUnionDescription>
+					</listUnionDescriptionInfo>
+				</listUnionDescription>
+				<listUnionType>2</listUnionType>
+				<referencedList>2</referencedList>
+				<referencedList>5</referencedList>
+			</listUnion>
+		</electionInformation>
+		<electionInformation>
+			<election>
+				<electionIdentification>staenderat_sg</electionIdentification>
+				<domainOfInfluence>1AFF92E9-4DA8-11E6-89C7-00155D28151E</domainOfInfluence>
+				<typeOfElection>2</typeOfElection>
+				<electionDescription>
+					<electionDescriptionInfo>
+						<language>de</language>
+						<electionDescriptionShort>Ständerat</electionDescriptionShort>
+						<electionDescription>Ständeratswahlen Kanton St. Gallen 2015 (1. Wahlgang)</electionDescription>
+					</electionDescriptionInfo>
+					<electionDescriptionInfo>
+						<language>fr</language>
+						<electionDescriptionShort>Conseil des Etats</electionDescriptionShort>
+						<electionDescription>Election du Conseil des Etats Canton St. Gallen 2015 (1. Wahlgang)</electionDescription>
+					</electionDescriptionInfo>
+					<electionDescriptionInfo>
+						<language>it</language>
+						<electionDescriptionShort>Conseil des Etats</electionDescriptionShort>
+						<electionDescription>Election du Conseil des Etats Canton St. Gallen 2015 (1. Wahlgang)</electionDescription>
+					</electionDescriptionInfo>
+					<electionDescriptionInfo>
+						<language>rm</language>
+						<electionDescriptionShort>Ständerat</electionDescriptionShort>
+						<electionDescription>Ständeratswahl Kanton St. Gallen 2015 (1. Wahlgang)</electionDescription>
+					</electionDescriptionInfo>
+				</electionDescription>
+				<numberOfMandates>2</numberOfMandates>
+				<writeInsAllowed>false</writeInsAllowed>
+				<candidateAccumulation>1</candidateAccumulation>
+				<uiProperties>
+					<property>
+						<key>candidate.attribute.1.text</key>
+						<value>%candidateFamilyName% %candidateCallName%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.de</key>
+						<value>%candidateFamilyName% %candidateCallName%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.fr</key>
+						<value>%candidateFamilyName% %candidateCallName%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.it</key>
+						<value>%candidateFamilyName% %candidateCallName%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.text.translation.rm</key>
+						<value>%candidateFamilyName% %candidateCallName%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.de</key>
+						<value>Candidate name</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.fr</key>
+						<value>Candidate name</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.it</key>
+						<value>Candidate name</value>
+					</property>
+					<property>
+						<key>candidate.attribute.1.header.translation.rm</key>
+						<value>Candidate name</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text</key>
+						<value>%candidateText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.de</key>
+						<value>%candidateText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.fr</key>
+						<value>%candidateText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.it</key>
+						<value>%candidateText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.text.translation.rm</key>
+						<value>%candidateText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.de</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.fr</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.it</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.2.header.translation.rm</key>
+						<value>Candidate text</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.de</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.fr</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.it</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.text.translation.rm</key>
+						<value>%incumbentText%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.de</key>
+						<value>Incumbent</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.fr</key>
+						<value>Incumbent</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.it</key>
+						<value>Incumbent</value>
+					</property>
+					<property>
+						<key>candidate.attribute.3.header.translation.rm</key>
+						<value>Incumbent</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.text</key>
+						<value>%initialAccumulation%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.de</key>
+						<value>Initiales Kumulieren</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.fr</key>
+						<value>Cumul initial</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.it</key>
+						<value>Cumulo iniziale</value>
+					</property>
+					<property>
+						<key>candidate.attribute.4.header.translation.rm</key>
+						<value>Cumular inizial</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.de</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.fr</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.it</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.text.translation.rm</key>
+						<value>%positionOnList%</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.de</key>
+						<value>Position on List DE</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.fr</key>
+						<value>Position on List FR</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.it</key>
+						<value>Position on List IT</value>
+					</property>
+					<property>
+						<key>candidate.attribute.5.header.translation.rm</key>
+						<value>Position on List RM</value>
+					</property>
+				</uiProperties>
+			</election>
+			<candidate>
+				<candidateIdentification>CAND-7101</candidateIdentification>
+				<familyName>Keller-Sutter</familyName>
+				<firstName>Karin</firstName>
+				<callName>Karin</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Wil (FDP) (bisher)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Wil (FDP) (bisher)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Wil (FDP) (bisher)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Wil (FDP) (bisher)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1960-03-01</dateOfBirth>
+				<sex>2</sex>
+				<incumbent>
+					<incumbent>true</incumbent>
+					<incumbentText>
+						<incumbentTextInfo>
+							<language>de</language>
+							<incumbentText>Bisher</incumbentText>
+						</incumbentTextInfo>
+						<incumbentTextInfo>
+							<language>fr</language>
+							<incumbentText>sortant/e</incumbentText>
+						</incumbentTextInfo>
+						<incumbentTextInfo>
+							<language>it</language>
+							<incumbentText>uscente</incumbentText>
+						</incumbentTextInfo>
+						<incumbentTextInfo>
+							<language>rm</language>
+							<incumbentText>uscant</incumbentText>
+						</incumbentTextInfo>
+					</incumbentText>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Buochs</origin>
+				</swiss>
+				<position>1</position>
+				<referenceOnPosition>01</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7102</candidateIdentification>
+				<familyName>Rechsteiner</familyName>
+				<firstName>Paul</firstName>
+				<callName>Paul</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>St. Gallen (SP) (bisher)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>St. Gallen (SP) (bisher)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>St. Gallen (SP) (bisher)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>St. Gallen (SP) (bisher)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>true</incumbent>
+					<incumbentText>
+						<incumbentTextInfo>
+							<language>de</language>
+							<incumbentText>Bisher</incumbentText>
+						</incumbentTextInfo>
+						<incumbentTextInfo>
+							<language>fr</language>
+							<incumbentText>sortant/e</incumbentText>
+						</incumbentTextInfo>
+						<incumbentTextInfo>
+							<language>it</language>
+							<incumbentText>uscente</incumbentText>
+						</incumbentTextInfo>
+						<incumbentTextInfo>
+							<language>rm</language>
+							<incumbentText>uscant</incumbentText>
+						</incumbentTextInfo>
+					</incumbentText>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>2</position>
+				<referenceOnPosition>02</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7103</candidateIdentification>
+				<familyName>Ammann</familyName>
+				<firstName>Richard</firstName>
+				<callName>Richard</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Abtwil (BDP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Abtwil (BDP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Abtwil (BDP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Abtwil (BDP)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>3</position>
+				<referenceOnPosition>03</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7104</candidateIdentification>
+				<familyName>Ammann</familyName>
+				<firstName>Thomas</firstName>
+				<callName>Thomas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Rüthi (CVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Rüthi (CVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Rüthi (CVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Rüthi (CVP)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>4</position>
+				<referenceOnPosition>04</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7105</candidateIdentification>
+				<familyName>Gilli</familyName>
+				<firstName>Yvonne</firstName>
+				<callName>Yvonne</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Wil (GRÜNE)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Wil (GRÜNE)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Wil (GRÜNE)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Wil (GRÜNE)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>5</position>
+				<referenceOnPosition>05</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7106</candidateIdentification>
+				<familyName>Graf</familyName>
+				<firstName>Andreas</firstName>
+				<callName>Andreas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Steinach (Parteifrei)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Steinach (Parteifrei)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Steinach (Parteifrei)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Steinach (Parteifrei)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>6</position>
+				<referenceOnPosition>06</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7107</candidateIdentification>
+				<familyName>Kessler</familyName>
+				<firstName>Margrit</firstName>
+				<callName>Margrit</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Altstätten (glp)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Altstätten (glp)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Altstätten (glp)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Altstätten (glp)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>7</position>
+				<referenceOnPosition>07</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7108</candidateIdentification>
+				<familyName>Müller</familyName>
+				<firstName>Thomas</firstName>
+				<callName>Thomas</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Rorschach (SVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Rorschach (SVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Rorschach (SVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Rorschach (SVP)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>8</position>
+				<referenceOnPosition>08</referenceOnPosition>
+			</candidate>
+			<candidate>
+				<candidateIdentification>CAND-7109</candidateIdentification>
+				<familyName>Oppliger</familyName>
+				<firstName>Hans</firstName>
+				<callName>Hans</callName>
+				<candidateText>
+					<candidateTextInfo>
+						<language>de</language>
+						<candidateText>Frümsen (EVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>fr</language>
+						<candidateText>Frümsen (EVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>it</language>
+						<candidateText>Frümsen (EVP)</candidateText>
+					</candidateTextInfo>
+					<candidateTextInfo>
+						<language>rm</language>
+						<candidateText>Frümsen (EVP)</candidateText>
+					</candidateTextInfo>
+				</candidateText>
+				<dateOfBirth>1959-08-05</dateOfBirth>
+				<sex>1</sex>
+				<incumbent>
+					<incumbent>false</incumbent>
+				</incumbent>
+				<dwellingAddress>
+					<street>Hauptstrasse</street>
+					<swissZipCode>3185</swissZipCode>
+					<town>Schmitten</town>
+				</dwellingAddress>
+				<swiss>
+					<origin>Emmetten</origin>
+				</swiss>
+				<position>9</position>
+				<referenceOnPosition>09</referenceOnPosition>
+			</candidate>
+			<list>
+				<listIdentification>List99</listIdentification>
+				<listIndentureNumber>99</listIndentureNumber>
+				<listDescription>
+					<listDescriptionInfo>
+						<language>de</language>
+						<listDescriptionShort>Leer</listDescriptionShort>
+						<listDescription>Leer</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>fr</language>
+						<listDescriptionShort>Blanc</listDescriptionShort>
+						<listDescription>Blanc</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>it</language>
+						<listDescriptionShort>Bianco</listDescriptionShort>
+						<listDescription>Bianco</listDescription>
+					</listDescriptionInfo>
+					<listDescriptionInfo>
+						<language>rm</language>
+						<listDescriptionShort>Vid</listDescriptionShort>
+						<listDescription>Vid</listDescription>
+					</listDescriptionInfo>
+				</listDescription>
+				<listOrderOfPrecedence>1</listOrderOfPrecedence>
+				<listEmpty>true</listEmpty>
+				<candidatePosition>
+					<candidateListIdentification>0638675e-7fdf-34e3-acc2-ed8445f046d4</candidateListIdentification>
+					<positionOnList>1</positionOnList>
+					<candidateReferenceOnPosition>99.01</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+				<candidatePosition>
+					<candidateListIdentification>91193e64-885e-3001-af2a-f249d39ad835</candidateListIdentification>
+					<positionOnList>2</positionOnList>
+					<candidateReferenceOnPosition>99.02</candidateReferenceOnPosition>
+					<candidateTextOnPosition>
+						<candidateTextInfo>
+							<language>de</language>
+							<candidateText>Kein Name ausgewählt</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>fr</language>
+							<candidateText>Aucun nom sélectionné</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>it</language>
+							<candidateText>Nessun nominativo selezionato</candidateText>
+						</candidateTextInfo>
+						<candidateTextInfo>
+							<language>rm</language>
+							<candidateText>Nagin num selecziunà</candidateText>
+						</candidateTextInfo>
+					</candidateTextOnPosition>
+				</candidatePosition>
+			</list>
+		</electionInformation>
+	</contest>
+	<authorizations>
+		<authorization>
+			<authorizationIdentification>1071997c-2198-37bb-ae20-46368ff0c4bc</authorizationIdentification>
+			<authorizationName>Wünnewil-Flamatt</authorizationName>
+			<authorizationAlias>FR-CH-1|FR-MU-2309 + FR-CT-1|FR-MU-2309</authorizationAlias>
+			<authorizationTest>true</authorizationTest>
+			<authorizationFromDate>2022-01-10T00:00:00+01:00</authorizationFromDate>
+			<authorizationToDate>2022-05-31T23:59:59+01:00</authorizationToDate>
+			<authorizationGracePeriod>900</authorizationGracePeriod>
+			<authorizationObject>
+				<domainOfInfluence>
+					<id>1AFD21E8-4DA8-11E6-89C7-00155D28151E</id>
+					<cantonCode>FR</cantonCode>
+					<type>CH</type>
+					<localId>1</localId>
+				</domainOfInfluence>
+				<countingCircle>
+					<id>FR-MU-2309</id>
+					<name>Wünnewil-Flamatt</name>
+				</countingCircle>
+			</authorizationObject>
+			<authorizationObject>
+				<domainOfInfluence>
+					<id>1AFF92E9-4DA8-11E6-89C7-00155D28151E</id>
+					<cantonCode>FR</cantonCode>
+					<type>CT</type>
+					<localId>1</localId>
+				</domainOfInfluence>
+				<countingCircle>
+					<id>FR-MU-2309</id>
+					<name>Wünnewil-Flamatt</name>
+				</countingCircle>
+			</authorizationObject>
+		</authorization>
+		<authorization>
+			<authorizationIdentification>692cf97f-aabc-3e70-bd42-10204b3dc995</authorizationIdentification>
+			<authorizationName>Wünnewil-Flamatt_2</authorizationName>
+			<authorizationAlias>FR-CH-1|FR-MU-2309</authorizationAlias>
+			<authorizationTest>true</authorizationTest>
+			<authorizationFromDate>2022-01-10T00:00:00+01:00</authorizationFromDate>
+			<authorizationToDate>2022-05-31T23:59:59+01:00</authorizationToDate>
+			<authorizationGracePeriod>900</authorizationGracePeriod>
+			<authorizationObject>
+				<domainOfInfluence>
+					<id>1AFD21E8-4DA8-11E6-89C7-00155D28151E</id>
+					<cantonCode>FR</cantonCode>
+					<type>CH</type>
+					<localId>1</localId>
+				</domainOfInfluence>
+				<countingCircle>
+					<id>FR-MU-2309</id>
+					<name>Wünnewil-Flamatt</name>
+				</countingCircle>
+			</authorizationObject>
+		</authorization>
+	</authorizations>
+	<register>
+		<voter>
+			<voterIdentification>1</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>2</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>3</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>4</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>5</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>6</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>7</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>8</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>9</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>10</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>11</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>12</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>13</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>14</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>15</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>16</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>17</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>18</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>19</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>20</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>21</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>22</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>23</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>24</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>25</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>26</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>27</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>28</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>29</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>30</voterIdentification>
+			<authorization>1071997c-2198-37bb-ae20-46368ff0c4bc</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>31</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>32</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>33</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>34</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>35</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>36</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>37</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>38</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>39</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>40</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+		<voter>
+			<voterIdentification>41</voterIdentification>
+			<authorization>692cf97f-aabc-3e70-bd42-10204b3dc995</authorization>
+			<extendedAuthenticationKeys>
+				<extendedAuthenticationKey>
+					<name>birthYear</name>
+					<value>1960</value>
+				</extendedAuthenticationKey>
+			</extendedAuthenticationKeys>
+			<sex>MALE</sex>
+			<voterType>SWISSRESIDENT</voterType>
+		</voter>
+	</register>
+</configuration>
