@@ -153,6 +153,18 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
+### Online SDM - Request and import the CC-Keys
+
+This function provides the public keys of the control components. 
+These keys are crucial for verifiability and privacy protection in the cryptographic protocol.
+
+**Workflow:**
+1. Select your election event in the SDM.	
+2. Click on **REQUEST CC KEYS** to start the import.
+3. Wait for successful confirmation by the SDM.
+
+---
+
 ### Online SDM - Compute Voting Card Sets
 
 **Workflow:**
