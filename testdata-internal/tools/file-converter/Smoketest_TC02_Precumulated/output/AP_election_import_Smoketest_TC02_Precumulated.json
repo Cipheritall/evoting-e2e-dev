@@ -1,0 +1,5297 @@
+{
+  "electionEvents" : [ {
+    "alias" : "Smoketest_TC02_Precumulated",
+    "title" : "Smoketest_TC02_Precumulated",
+    "description" : "Smoketest_TC02_Precumulated",
+    "dateFrom" : "2022-01-10 00:00",
+    "dateTo" : "2022-05-31 23:59",
+    "gracePeriod" : 900,
+    "timeZone" : "+01:00",
+    "ballots" : [ {
+      "entityId" : "ballot_1",
+      "alias" : "ballot_1",
+      "title" : "ballot_nr_st_gallen_staenderat_sg",
+      "description" : "ballot_nr_st_gallen_staenderat_sg",
+      "contests" : [ {
+        "entityId" : "contest_nr_st_gallen"
+      }, {
+        "entityId" : "contest_staenderat_sg"
+      } ]
+    }, {
+      "entityId" : "ballot_2",
+      "alias" : "ballot_2",
+      "title" : "ballot_nr_st_gallen",
+      "description" : "ballot_nr_st_gallen",
+      "contests" : [ {
+        "entityId" : "contest_nr_st_gallen"
+      } ]
+    } ],
+    "contests" : [ {
+      "entityId" : "contest_nr_st_gallen",
+      "title" : "Nationalratswahl 2015 Kanton St. Gallen",
+      "alias" : "nr_st_gallen",
+      "description" : "Nationalratswahl 2015 Kanton St. Gallen",
+      "explanationText" : "",
+      "template" : "listsAndCandidates",
+      "fullBlank" : "true",
+      "extraDataTypes" : {
+        "listType" : [ {
+          "name" : "Party Name",
+          "key" : "attribute1"
+        }, {
+          "name" : "Listenverbindung",
+          "key" : "apparentment"
+        }, {
+          "name" : "Unterlistenverbindung",
+          "key" : "sousApparentment"
+        } ],
+        "candidateType" : [ {
+          "name" : "Candidate text",
+          "key" : "attribute1"
+        }, {
+          "name" : "Candidate Text on Position",
+          "key" : "attribute2"
+        }, {
+          "name" : "Text bisheriger Kandidat",
+          "key" : "attribute3"
+        }, {
+          "name" : "Initiales Kumulieren",
+          "key" : "initialAccumulation"
+        }, {
+          "name" : "Position on List DE",
+          "key" : "positionOnList"
+        } ]
+      },
+      "attributes" : [ {
+        "alias" : "1",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "1 - CVP Kanton St.Gallen, Junge CVP"
+        }, {
+          "text" : "Listenverbindung2"
+        }, {
+          "text" : ""
+        } ],
+        "children" : [ {
+          "alias" : "84568c21-b442-3347-9025-208078724419",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0101 Burkhard Andreas (JCVP)"
+          }, {
+            "text" : "Burkhard Andreas, Student Rechtswissenschaften Universität Bern, Ebnat-Kappel"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "1"
+          } ]
+        }, {
+          "alias" : "f80d1a9e-a2ec-329c-a2dd-929f3f0100d2",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0102 Strasser Andrina (JCVP)"
+          }, {
+            "text" : "Strasser Andrina, Studentin Maschinentechnik ZHAW, Züberwangen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "2"
+          } ]
+        }, {
+          "alias" : "5c53ad03-3fb4-3260-bbbf-530f616b707c",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0103 Steinmann Cristina (JCVP)"
+          }, {
+            "text" : "Steinmann Cristina, Account Managerin, B. Sc. in Business Administration, Zuckenriet"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "3"
+          } ]
+        }, {
+          "alias" : "29767ae7-4520-31fd-af2f-894b36f63a01",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0104 Hutter Fabian (JCVP)"
+          }, {
+            "text" : "Hutter Fabian, Versuchstechniker, Student FH, Au"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "4"
+          } ]
+        }, {
+          "alias" : "d79c5504-1aa0-3bf3-91f8-61b8b427c8a6",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0105 Meier Florian (JCVP)"
+          }, {
+            "text" : "Meier Florian, Student Geographie/Geschichte, Oberriet"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "5"
+          } ]
+        }, {
+          "alias" : "218c99d1-28a0-3970-b88c-8dbcc86db4ac",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0106 Frei Luca (JCVP)"
+          }, {
+            "text" : "Frei Luca, Kaufmann EFZ, Gams"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "6"
+          } ]
+        }, {
+          "alias" : "9cbc8f35-a34d-39fa-9d84-a1a777d6b54c",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0107 Berisha Prend (JCVP)"
+          }, {
+            "text" : "Berisha Prend, Kaufmann EFZ mit Berufsmatura, Sachbearbeiter Innendienst, Wil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "7"
+          } ]
+        }, {
+          "alias" : "479ac7fe-e977-323f-8eb9-bb2d4cb0b800",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0108 Mösch Raphael (JCVP)"
+          }, {
+            "text" : "Mösch Raphael, Geschäftsführer und Mitbegründer Start-Up Unternehmen, Goldach"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "8"
+          } ]
+        }, {
+          "alias" : "94e19ca9-5774-39da-a1a9-401843307181",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0109 Koch Sandro (JCVP)"
+          }, {
+            "text" : "Koch Sandro, Student, Sargans"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "9"
+          } ]
+        }, {
+          "alias" : "6d9f9371-57ab-39b7-96ff-c85f24940f04",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0110 Morelli Sandro (JCVP)"
+          }, {
+            "text" : "Morelli Sandro, Student Rechtswissenschaften, B. A. HSG, Präsident JCVP Kanton St.Gallen, Benken"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "10"
+          } ]
+        }, {
+          "alias" : "6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0111 Hofstetter Thomas (JCVP)"
+          }, {
+            "text" : "Hofstetter Thomas, Business Engineer, B. Sc. in Betriebsökonomie FH, Benken"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "11"
+          } ]
+        }, {
+          "alias" : "013ee9d4-928a-3590-bf76-2b1aa723946d",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0112 Rasaj Veton (JCVP)"
+          }, {
+            "text" : "Rasaj Veton, Kaufmann mit Berufsmatura, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "12"
+          } ]
+        } ]
+      }, {
+        "alias" : "2",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "2 - FDP Kanton St.Gallen - Jungfreisinnige"
+        }, {
+          "text" : ""
+        }, {
+          "text" : "Listenunterverbindung1"
+        } ],
+        "children" : [ {
+          "alias" : "24566884-f235-3d1a-9986-b185b952550f",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0201 Lamprecht Odilo (JFSG)"
+          }, {
+            "text" : "Lamprecht Odilo, Betriebsökonom, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "1"
+          } ]
+        }, {
+          "alias" : "bb5e1c43-2aec-3153-97df-058a03698e99",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0202 Stäheli Pascal (JFSG)"
+          }, {
+            "text" : "Stäheli Pascal, Consultant, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "2"
+          } ]
+        }, {
+          "alias" : "e636ae60-871d-3c47-8e0d-c40db0adb10c",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0203 Bünzli Fabienne (JFSG)"
+          }, {
+            "text" : "Bünzli Fabienne, Projektleiterin Wirtschafts- und Kommunikationsberatung, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "3"
+          } ]
+        }, {
+          "alias" : "ac51183e-6ced-39ee-adef-2022b8bc045f",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0204 Flückiger Marc (JFSG)"
+          }, {
+            "text" : "Flückiger Marc, Geschäftsführer, Wil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "4"
+          } ]
+        }, {
+          "alias" : "93ec8746-628f-35d8-a08e-087d93675583",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0205 Zhuta Egzon (JFSG)"
+          }, {
+            "text" : "Zhuta Egzon, B. Sc. Bauingenieurwesen ZFH, Balgach"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "5"
+          } ]
+        }, {
+          "alias" : "6d0766bf-a6b1-3d9b-aa79-4b981a7de92b",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0206 Maron Lucio (JFSG)"
+          }, {
+            "text" : "Maron Lucio, Historiker, Jona"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "6"
+          } ]
+        }, {
+          "alias" : "91bfc29e-d3cc-30cb-83c6-674115cb2bb7",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0207 Senn Pascal (JFSG)"
+          }, {
+            "text" : "Senn Pascal, Elektroplaner, Buchs"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "7"
+          } ]
+        }, {
+          "alias" : "a18ca64b-d4a0-3827-b217-ee84e75f5f5c",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0208 Fritschi Stefan (JFSG)"
+          }, {
+            "text" : "Fritschi Stefan, Steuerberater, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "8"
+          } ]
+        }, {
+          "alias" : "98035898-1b6d-3fb6-8a8c-eb736bb67446",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0209 Blank Thomas (JFSG)"
+          }, {
+            "text" : "Blank Thomas, Fachmann Sozialhilfe GFS, Balgach"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "9"
+          } ]
+        }, {
+          "alias" : "0dc0791b-d302-3e33-861e-0e89311324e1",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0210 Schweizer Jannik (JFSG)"
+          }, {
+            "text" : "Schweizer Jannik, Dipl. BMA HF, Wil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "10"
+          } ]
+        }, {
+          "alias" : "b71584cc-3fe9-34c0-b264-8ecbac9a67d3",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0211 Wehrle Louis (JFSG)"
+          }, {
+            "text" : "Wehrle Louis, Detailhandelsfachmann, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "11"
+          } ]
+        }, {
+          "alias" : "304cb4d7-bb93-3975-9098-806b6b944655",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0212 Barman Yusuf (JFSG)"
+          }, {
+            "text" : "Barman Yusuf, Angestellter Sicherheitsdienst, Student, Rorschach"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "12"
+          } ]
+        } ]
+      }, {
+        "alias" : "3",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "3 - CVP Kanton St.Gallen, Hauptliste"
+        }, {
+          "text" : "Listenverbindung2"
+        }, {
+          "text" : ""
+        } ],
+        "children" : [ {
+          "alias" : "22f5d3f6-36fd-3105-b66a-9efa28ca0cc2",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0301 Büchler Jakob (CVP)"
+          }, {
+            "text" : "Büchler Jakob, Meisterlandwirt, Maseltrangen (bisher)"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "1"
+          } ]
+        }, {
+          "alias" : "05d80bb6-0a08-38c6-82c9-e589e461ab61",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0302 Ritter Markus (CVP)"
+          }, {
+            "text" : "Ritter Markus, Meisterlandwirt, Wirtschaftsingenieur FH, Altstätten (bisher)"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "2"
+          } ]
+        }, {
+          "alias" : "c60776d1-6f6f-3a4e-88ce-bf446675a93d",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0303 Dürr Barbara (CVP)"
+          }, {
+            "text" : "Dürr Barbara, kfm. Angestellte, Dipl. Bäuerin, Präsidentin St.Galler Bäuerinnenverband, Gams"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "3"
+          } ]
+        }, {
+          "alias" : "04c1c26b-d4db-33ae-a45f-74418b445311",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0304 Storchenegger Martha (CVP)"
+          }, {
+            "text" : "Storchenegger Martha, Dipl. Pflegefachfrau HF, Kantonsrätin, Präsidentin CVP Frauen Kanton SG, Jonschwil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "4"
+          } ]
+        }, {
+          "alias" : "6d0cd17d-b032-38fc-a281-608465eeb3fb",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0305 Suter Yvonne (CVP)"
+          }, {
+            "text" : "Suter Yvonne, lic.rer.publ. HSG, Direktorin, Leiterin Kompetenzzentrum für nachhaltige Anlagen, Kantonsrätin, Jona"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "5"
+          } ]
+        }, {
+          "alias" : "b260335d-0afa-37f1-a604-5dc58aee6268",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0306 Ammann Thomas (CVP)"
+          }, {
+            "text" : "Ammann Thomas, Gemeindepräsident, Kantonsrat, Fraktionspräsident, Rüthi"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "6"
+          } ]
+        }, {
+          "alias" : "f24e6e12-aff3-3b19-9d25-7f47973b9fb7",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0307 Bischofberger Felix (CVP)"
+          }, {
+            "text" : "Bischofberger Felix, Postunternehmer, Kantonsrat, Präsident CSP Kanton SG, Altenrhein"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "7"
+          } ]
+        }, {
+          "alias" : "7a5a67c4-29a3-3eae-ba45-d18ddd7caa92",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0308 Damann Bruno (CVP)"
+          }, {
+            "text" : "Damann Bruno, Dr.med., Facharzt für Allgemeinmedizin, Stadtrat, Kantonsrat, Gossau"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "8"
+          } ]
+        }, {
+          "alias" : "5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0309 Fust Lukas (CVP)"
+          }, {
+            "text" : "Fust Lukas, Bankangestellter, Gemeinderat, Kirchberg"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "9"
+          } ]
+        }, {
+          "alias" : "7aea83c8-d288-3916-b6b0-3548739c5967",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0310 Imper-Filli David (CVP)"
+          }, {
+            "text" : "Imper-Filli David, Dipl.Natw. ETH, Geologe, Kantonsrat 2000-2015, Heiligkreuz"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "10"
+          } ]
+        }, {
+          "alias" : "a0bfeb14-cfcd-37ea-8665-6f4980af9a77",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0311 Paganini Nicolo (CVP)"
+          }, {
+            "text" : "Paganini Nicolo, Direktor Olma Messen, lic.iur. HSG et lic.rer.pol., Abtwil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "11"
+          } ]
+        }, {
+          "alias" : "857a5289-f305-3a52-acba-35a97df960eb",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0312 Sartory Beda (CVP)"
+          }, {
+            "text" : "Sartory Beda, Unternehmer, Krisenmanager, ehem. Stadtrat und Kantonsrat, Wil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "12"
+          } ]
+        } ]
+      }, {
+        "alias" : "4",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "4 - EVP, Evangelische Volkspartei"
+        }, {
+          "text" : "Listenverbindung2"
+        }, {
+          "text" : ""
+        } ],
+        "children" : [ {
+          "alias" : "85d3218d-cf93-3412-aba0-cde8be35c4e9",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0401 Oppliger Hans (EVP)"
+          }, {
+            "text" : "Oppliger Hans, Kantonsrat, Dipl.Ing.Agr. ETH, Frümsen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "1"
+          } ]
+        }, {
+          "alias" : "0e969e14-f212-3e48-8964-6b55aefe652f",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0402 Müller Jascha (EVP)"
+          }, {
+            "text" : "Müller Jascha, Kantonsrat, Kdt Milizfeuerwehr, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "2"
+          } ]
+        }, {
+          "alias" : "ed6dc050-6008-3e3b-bbce-de22209bf70a",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0403 Schweizer Ursi (EVP)"
+          }, {
+            "text" : "Schweizer Ursi, Schulleiterin, Handarbeitslehrerin, Gams"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "3"
+          } ]
+        }, {
+          "alias" : "02fdf42d-cb84-32bd-b4b1-aa350b286fb4",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0404 Rutz Roman (EVP)"
+          }, {
+            "text" : "Rutz Roman, M. A. HSG, Dipl. Wipäd, Mittelschullehrer, Stadtparlamentarier, Wil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "4"
+          } ]
+        }, {
+          "alias" : "3cad482d-f29b-35f4-a8d4-f98c71e504ca",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0405 Bertoldo Daniel (EVP)"
+          }, {
+            "text" : "Bertoldo Daniel, Diakon, Mediator, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "5"
+          } ]
+        }, {
+          "alias" : "a8c46881-17da-33ae-a0fa-3159aaa3784c",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0406 Gubelmann Irene (EVP)"
+          }, {
+            "text" : "Gubelmann Irene, Hausfrau, Drogistin, Berneck"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "6"
+          } ]
+        }, {
+          "alias" : "25a5f140-c6d8-3fcd-9f47-1fa79eeef930",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0407 Stübi Samuel (EVP)"
+          }, {
+            "text" : "Stübi Samuel, Student, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "7"
+          } ]
+        }, {
+          "alias" : "9ef4e397-6e5a-3cd1-a396-61896f978468",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0408 Bärlocher Wieland (EVP)"
+          }, {
+            "text" : "Bärlocher Wieland, Meisterlandwirt, Leiter regionale Fachstelle für Datenschutz, Berg"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "8"
+          } ]
+        }, {
+          "alias" : "3e89d424-0ffa-3793-80d8-e84dd992f878",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0409 Sutter Franz (EVP)"
+          }, {
+            "text" : "Sutter Franz, Qualifizierungstechniker, Oberuzwil"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "9"
+          } ]
+        }, {
+          "alias" : "678af565-b5ca-35bc-a15e-562b9815c9a8",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0410 Knaus Markus (EVP)"
+          }, {
+            "text" : "Knaus Markus, Hauswart, techn. Stickereizeichner, Stadtparlamentarier, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "10"
+          } ]
+        }, {
+          "alias" : "f86d514c-dfcb-301c-be5a-5e887df1da9e",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0411 Gächter Katharina (EVP)"
+          }, {
+            "text" : "Gächter Katharina, Gemeinderätin, Grabs"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "11"
+          } ]
+        }, {
+          "alias" : "345694e5-1951-3175-b77b-c1e9e05ba871",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0412 Eugster Samuel (EVP)"
+          }, {
+            "text" : "Eugster Samuel, Student, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "1"
+          }, {
+            "text" : "12"
+          } ]
+        } ]
+      }, {
+        "alias" : "5",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "5 - Parteifrei SG"
+        }, {
+          "text" : ""
+        }, {
+          "text" : "Listenunterverbindung1"
+        } ],
+        "children" : [ {
+          "alias" : "42b0e5ce-1a25-3086-ac9b-3d6257d384ce",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0501 Trappitsch Daniel (PFSG)"
+          }, {
+            "text" : "Trappitsch Daniel, Geschäftsführer, techn. Kaufmann, Naturheilpraktiker, Autor, Dozent, Buchs"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "2"
+          }, {
+            "text" : "1,2"
+          } ]
+        }, {
+          "alias" : "ccbcd6b8-bc05-3d57-8449-9f66fae542f0",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0502 Varga Irene (PFSG)"
+          }, {
+            "text" : "Varga Irene, Dipl.Natw. ETH, Dipl.Inf. Projektmanagement, freie Künstlerin, freie Denkerin, Berg"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "2"
+          }, {
+            "text" : "3,4"
+          } ]
+        }, {
+          "alias" : "4a5fbb3a-1731-3b56-8609-1bff952e633c",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0503 Rohrer Erich (PFSG)"
+          }, {
+            "text" : "Rohrer Erich, Industriespengler, Engelburg"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "2"
+          }, {
+            "text" : "5,6"
+          } ]
+        }, {
+          "alias" : "6b0e9643-baec-33b7-8db1-c2b67aa176d2",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0504 Osterwalder Godenne Luzia (PFSG)"
+          }, {
+            "text" : "Osterwalder Godenne Luzia, Naturheilpraktikerin, Geschäftsführerin, Autorin, Koordinatorin GWÖ CH, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "2"
+          }, {
+            "text" : "7,8"
+          } ]
+        }, {
+          "alias" : "d4af673a-2e62-3428-930d-622f9f84ac71",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "0505 Weibel Christiane (PFSG)"
+          }, {
+            "text" : "Weibel Christiane , Kunsttherapeutin i.A. Fachbereich Mal-/Gestaltungstherapie, freie Künstlerin, St.Gallen"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "2"
+          }, {
+            "text" : "9,10"
+          } ]
+        } ]
+      } ],
+      "questions" : [ {
+        "alias" : "lists",
+        "max" : "1",
+        "min" : "0",
+        "writeIn" : "false",
+        "choices" : [ "1", "2", "3", "4", "5" ],
+        "fusions" : [ ],
+        "accumulation" : "1",
+        "blankText" : "Leer"
+      }, {
+        "alias" : "candidates",
+        "max" : "12",
+        "min" : "1",
+        "writeIn" : "false",
+        "choices" : [ "84568c21-b442-3347-9025-208078724419", "f80d1a9e-a2ec-329c-a2dd-929f3f0100d2", "5c53ad03-3fb4-3260-bbbf-530f616b707c", "29767ae7-4520-31fd-af2f-894b36f63a01", "d79c5504-1aa0-3bf3-91f8-61b8b427c8a6", "218c99d1-28a0-3970-b88c-8dbcc86db4ac", "9cbc8f35-a34d-39fa-9d84-a1a777d6b54c", "479ac7fe-e977-323f-8eb9-bb2d4cb0b800", "94e19ca9-5774-39da-a1a9-401843307181", "6d9f9371-57ab-39b7-96ff-c85f24940f04", "6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6", "013ee9d4-928a-3590-bf76-2b1aa723946d", "24566884-f235-3d1a-9986-b185b952550f", "bb5e1c43-2aec-3153-97df-058a03698e99", "e636ae60-871d-3c47-8e0d-c40db0adb10c", "ac51183e-6ced-39ee-adef-2022b8bc045f", "93ec8746-628f-35d8-a08e-087d93675583", "6d0766bf-a6b1-3d9b-aa79-4b981a7de92b", "91bfc29e-d3cc-30cb-83c6-674115cb2bb7", "a18ca64b-d4a0-3827-b217-ee84e75f5f5c", "98035898-1b6d-3fb6-8a8c-eb736bb67446", "0dc0791b-d302-3e33-861e-0e89311324e1", "b71584cc-3fe9-34c0-b264-8ecbac9a67d3", "304cb4d7-bb93-3975-9098-806b6b944655", "22f5d3f6-36fd-3105-b66a-9efa28ca0cc2", "05d80bb6-0a08-38c6-82c9-e589e461ab61", "c60776d1-6f6f-3a4e-88ce-bf446675a93d", "04c1c26b-d4db-33ae-a45f-74418b445311", "6d0cd17d-b032-38fc-a281-608465eeb3fb", "b260335d-0afa-37f1-a604-5dc58aee6268", "f24e6e12-aff3-3b19-9d25-7f47973b9fb7", "7a5a67c4-29a3-3eae-ba45-d18ddd7caa92", "5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5", "7aea83c8-d288-3916-b6b0-3548739c5967", "a0bfeb14-cfcd-37ea-8665-6f4980af9a77", "857a5289-f305-3a52-acba-35a97df960eb", "85d3218d-cf93-3412-aba0-cde8be35c4e9", "0e969e14-f212-3e48-8964-6b55aefe652f", "ed6dc050-6008-3e3b-bbce-de22209bf70a", "02fdf42d-cb84-32bd-b4b1-aa350b286fb4", "3cad482d-f29b-35f4-a8d4-f98c71e504ca", "a8c46881-17da-33ae-a0fa-3159aaa3784c", "25a5f140-c6d8-3fcd-9f47-1fa79eeef930", "9ef4e397-6e5a-3cd1-a396-61896f978468", "3e89d424-0ffa-3793-80d8-e84dd992f878", "678af565-b5ca-35bc-a15e-562b9815c9a8", "f86d514c-dfcb-301c-be5a-5e887df1da9e", "345694e5-1951-3175-b77b-c1e9e05ba871", "42b0e5ce-1a25-3086-ac9b-3d6257d384ce", "42b0e5ce-1a25-3086-ac9b-3d6257d384ce", "ccbcd6b8-bc05-3d57-8449-9f66fae542f0", "ccbcd6b8-bc05-3d57-8449-9f66fae542f0", "4a5fbb3a-1731-3b56-8609-1bff952e633c", "4a5fbb3a-1731-3b56-8609-1bff952e633c", "6b0e9643-baec-33b7-8db1-c2b67aa176d2", "6b0e9643-baec-33b7-8db1-c2b67aa176d2", "d4af673a-2e62-3428-930d-622f9f84ac71", "d4af673a-2e62-3428-930d-622f9f84ac71" ],
+        "fusions" : [ ],
+        "accumulation" : "2",
+        "blankText" : "Kein Name ausgewählt"
+      } ]
+    }, {
+      "entityId" : "contest_staenderat_sg",
+      "title" : "Ständeratswahlen Kanton St. Gallen 2015 (1. Wahlgang)",
+      "alias" : "staenderat_sg",
+      "description" : "Ständeratswahlen Kanton St. Gallen 2015 (1. Wahlgang)",
+      "explanationText" : "",
+      "template" : "listsAndCandidates",
+      "fullBlank" : "true",
+      "extraDataTypes" : {
+        "listType" : [ {
+          "name" : "Liste Beschreibung",
+          "key" : "attribute1"
+        } ],
+        "candidateType" : [ {
+          "name" : "Candidate name",
+          "key" : "attribute1"
+        }, {
+          "name" : "Candidate text",
+          "key" : "attribute2"
+        }, {
+          "name" : "Incumbent",
+          "key" : "attribute3"
+        } ]
+      },
+      "attributes" : [ {
+        "alias" : "list_for_CAND-7101",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Keller-Sutter Karin"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7101",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Keller-Sutter Karin"
+          }, {
+            "text" : "Wil (FDP) (bisher)"
+          }, {
+            "text" : "Bisher"
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7102",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Rechsteiner Paul"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7102",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Rechsteiner Paul"
+          }, {
+            "text" : "St. Gallen (SP) (bisher)"
+          }, {
+            "text" : "Bisher"
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7103",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Ammann Richard"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7103",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Richard"
+          }, {
+            "text" : "Abtwil (BDP)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7104",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Ammann Thomas"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7104",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Thomas"
+          }, {
+            "text" : "Rüthi (CVP)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7105",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Gilli Yvonne"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7105",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Gilli Yvonne"
+          }, {
+            "text" : "Wil (GRÜNE)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7106",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Graf Andreas"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7106",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Graf Andreas"
+          }, {
+            "text" : "Steinach (Parteifrei)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7107",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Kessler Margrit"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7107",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Kessler Margrit"
+          }, {
+            "text" : "Altstätten (glp)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7108",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Müller Thomas"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7108",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Müller Thomas"
+          }, {
+            "text" : "Rorschach (SVP)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      }, {
+        "alias" : "list_for_CAND-7109",
+        "extraDataType" : "listType",
+        "extraDataValues" : [ {
+          "text" : "Oppliger Hans"
+        } ],
+        "children" : [ {
+          "alias" : "CAND-7109",
+          "extraDataType" : "candidateType",
+          "extraDataValues" : [ {
+            "text" : "Oppliger Hans"
+          }, {
+            "text" : "Frümsen (EVP)"
+          }, {
+            "text" : ""
+          } ]
+        } ]
+      } ],
+      "questions" : [ {
+        "alias" : "candidates",
+        "max" : "2",
+        "min" : "1",
+        "writeIn" : "false",
+        "choices" : [ "CAND-7101", "CAND-7102", "CAND-7103", "CAND-7104", "CAND-7105", "CAND-7106", "CAND-7107", "CAND-7108", "CAND-7109" ],
+        "fusions" : [ ],
+        "accumulation" : "1",
+        "blankText" : "Kein Name ausgewählt"
+      } ]
+    } ],
+    "ballotBoxes" : [ {
+      "entityId" : "1071997c-2198-37bb-ae20-46368ff0c4bc",
+      "alias" : "FR-CH-1|FR-MU-2309 + FR-CT-1|FR-MU-2309",
+      "title" : "Wünnewil-Flamatt",
+      "description" : "Wünnewil-FlamattFR-CH-1|FR-MU-2309 + FR-CT-1|FR-MU-2309",
+      "dateFrom" : "2022-01-10 00:00",
+      "dateTo" : "2022-05-31 23:59",
+      "gracePeriod" : 900,
+      "timeZone" : "+01:00",
+      "ballot" : {
+        "entityId" : "ballot_1"
+      },
+      "electoralAuthority" : {
+        "entityId" : "ea1"
+      },
+      "test" : true
+    }, {
+      "entityId" : "692cf97f-aabc-3e70-bd42-10204b3dc995",
+      "alias" : "FR-CH-1|FR-MU-2309",
+      "title" : "Wünnewil-Flamatt_2",
+      "description" : "Wünnewil-Flamatt_2FR-CH-1|FR-MU-2309",
+      "dateFrom" : "2022-01-10 00:00",
+      "dateTo" : "2022-05-31 23:59",
+      "gracePeriod" : 900,
+      "timeZone" : "+01:00",
+      "ballot" : {
+        "entityId" : "ballot_2"
+      },
+      "electoralAuthority" : {
+        "entityId" : "ea1"
+      },
+      "test" : true
+    } ],
+    "votingCardSets" : [ {
+      "entityId" : "vcs_Wünnewil-Flamatt",
+      "alias" : "vcs_FR-CH-1|FR-MU-2309 + FR-CT-1|FR-MU-2309",
+      "title" : "vcs_Wünnewil-Flamatt",
+      "description" : "vcs_Wünnewil-FlamattFR-CH-1|FR-MU-2309 + FR-CT-1|FR-MU-2309",
+      "numberOfVotingCardsToGenerate" : 30,
+      "ballotBox" : {
+        "entityId" : "1071997c-2198-37bb-ae20-46368ff0c4bc"
+      }
+    }, {
+      "entityId" : "vcs_Wünnewil-Flamatt_2",
+      "alias" : "vcs_FR-CH-1|FR-MU-2309",
+      "title" : "vcs_Wünnewil-Flamatt_2",
+      "description" : "vcs_Wünnewil-Flamatt_2FR-CH-1|FR-MU-2309",
+      "numberOfVotingCardsToGenerate" : 11,
+      "ballotBox" : {
+        "entityId" : "692cf97f-aabc-3e70-bd42-10204b3dc995"
+      }
+    } ],
+    "electoralAuthorities" : [ {
+      "entityId" : "ea1",
+      "alias" : "ea1",
+      "title" : "ea1",
+      "description" : "ea1",
+      "minimumThreshold" : "1",
+      "electoralBoard" : [ "Member 1", "Member 2" ]
+    } ],
+    "translations" : [ {
+      "entityId" : "contest_nr_st_gallen",
+      "locale" : "de-CH",
+      "texts" : {
+        "title" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "description" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Party Name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Listenverbindung",
+            "key" : "apparentment"
+          }, {
+            "name" : "Unterlistenverbindung",
+            "key" : "sousApparentment"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate text",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate Text on Position",
+            "key" : "attribute2"
+          }, {
+            "name" : "Text bisheriger Kandidat",
+            "key" : "attribute3"
+          }, {
+            "name" : "Initiales Kumulieren",
+            "key" : "initialAccumulation"
+          }, {
+            "name" : "Position on List DE",
+            "key" : "positionOnList"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "1",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "1 - CVP Kanton St.Gallen, Junge CVP"
+          }, {
+            "text" : "Listenverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "84568c21-b442-3347-9025-208078724419",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0101 Burkhard Andreas (JCVP)"
+            }, {
+              "text" : "Burkhard Andreas, Student Rechtswissenschaften Universität Bern, Ebnat-Kappel"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "f80d1a9e-a2ec-329c-a2dd-929f3f0100d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0102 Strasser Andrina (JCVP)"
+            }, {
+              "text" : "Strasser Andrina, Studentin Maschinentechnik ZHAW, Züberwangen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "5c53ad03-3fb4-3260-bbbf-530f616b707c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0103 Steinmann Cristina (JCVP)"
+            }, {
+              "text" : "Steinmann Cristina, Account Managerin, B. Sc. in Business Administration, Zuckenriet"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "29767ae7-4520-31fd-af2f-894b36f63a01",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0104 Hutter Fabian (JCVP)"
+            }, {
+              "text" : "Hutter Fabian, Versuchstechniker, Student FH, Au"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "d79c5504-1aa0-3bf3-91f8-61b8b427c8a6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0105 Meier Florian (JCVP)"
+            }, {
+              "text" : "Meier Florian, Student Geographie/Geschichte, Oberriet"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "218c99d1-28a0-3970-b88c-8dbcc86db4ac",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0106 Frei Luca (JCVP)"
+            }, {
+              "text" : "Frei Luca, Kaufmann EFZ, Gams"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "9cbc8f35-a34d-39fa-9d84-a1a777d6b54c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0107 Berisha Prend (JCVP)"
+            }, {
+              "text" : "Berisha Prend, Kaufmann EFZ mit Berufsmatura, Sachbearbeiter Innendienst, Wil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "479ac7fe-e977-323f-8eb9-bb2d4cb0b800",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0108 Mösch Raphael (JCVP)"
+            }, {
+              "text" : "Mösch Raphael, Geschäftsführer und Mitbegründer Start-Up Unternehmen, Goldach"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "94e19ca9-5774-39da-a1a9-401843307181",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0109 Koch Sandro (JCVP)"
+            }, {
+              "text" : "Koch Sandro, Student, Sargans"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "6d9f9371-57ab-39b7-96ff-c85f24940f04",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0110 Morelli Sandro (JCVP)"
+            }, {
+              "text" : "Morelli Sandro, Student Rechtswissenschaften, B. A. HSG, Präsident JCVP Kanton St.Gallen, Benken"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0111 Hofstetter Thomas (JCVP)"
+            }, {
+              "text" : "Hofstetter Thomas, Business Engineer, B. Sc. in Betriebsökonomie FH, Benken"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "013ee9d4-928a-3590-bf76-2b1aa723946d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0112 Rasaj Veton (JCVP)"
+            }, {
+              "text" : "Rasaj Veton, Kaufmann mit Berufsmatura, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "2",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "2 - FDP Kanton St.Gallen - Jungfreisinnige"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung1"
+          } ],
+          "children" : [ {
+            "alias" : "24566884-f235-3d1a-9986-b185b952550f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0201 Lamprecht Odilo (JFSG)"
+            }, {
+              "text" : "Lamprecht Odilo, Betriebsökonom, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "bb5e1c43-2aec-3153-97df-058a03698e99",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0202 Stäheli Pascal (JFSG)"
+            }, {
+              "text" : "Stäheli Pascal, Consultant, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "e636ae60-871d-3c47-8e0d-c40db0adb10c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0203 Bünzli Fabienne (JFSG)"
+            }, {
+              "text" : "Bünzli Fabienne, Projektleiterin Wirtschafts- und Kommunikationsberatung, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "ac51183e-6ced-39ee-adef-2022b8bc045f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0204 Flückiger Marc (JFSG)"
+            }, {
+              "text" : "Flückiger Marc, Geschäftsführer, Wil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "93ec8746-628f-35d8-a08e-087d93675583",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0205 Zhuta Egzon (JFSG)"
+            }, {
+              "text" : "Zhuta Egzon, B. Sc. Bauingenieurwesen ZFH, Balgach"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "6d0766bf-a6b1-3d9b-aa79-4b981a7de92b",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0206 Maron Lucio (JFSG)"
+            }, {
+              "text" : "Maron Lucio, Historiker, Jona"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "91bfc29e-d3cc-30cb-83c6-674115cb2bb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0207 Senn Pascal (JFSG)"
+            }, {
+              "text" : "Senn Pascal, Elektroplaner, Buchs"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "a18ca64b-d4a0-3827-b217-ee84e75f5f5c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0208 Fritschi Stefan (JFSG)"
+            }, {
+              "text" : "Fritschi Stefan, Steuerberater, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "98035898-1b6d-3fb6-8a8c-eb736bb67446",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0209 Blank Thomas (JFSG)"
+            }, {
+              "text" : "Blank Thomas, Fachmann Sozialhilfe GFS, Balgach"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "0dc0791b-d302-3e33-861e-0e89311324e1",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0210 Schweizer Jannik (JFSG)"
+            }, {
+              "text" : "Schweizer Jannik, Dipl. BMA HF, Wil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "b71584cc-3fe9-34c0-b264-8ecbac9a67d3",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0211 Wehrle Louis (JFSG)"
+            }, {
+              "text" : "Wehrle Louis, Detailhandelsfachmann, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "304cb4d7-bb93-3975-9098-806b6b944655",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0212 Barman Yusuf (JFSG)"
+            }, {
+              "text" : "Barman Yusuf, Angestellter Sicherheitsdienst, Student, Rorschach"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "3",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "3 - CVP Kanton St.Gallen, Hauptliste"
+          }, {
+            "text" : "Listenverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "22f5d3f6-36fd-3105-b66a-9efa28ca0cc2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0301 Büchler Jakob (CVP)"
+            }, {
+              "text" : "Büchler Jakob, Meisterlandwirt, Maseltrangen (bisher)"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "05d80bb6-0a08-38c6-82c9-e589e461ab61",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0302 Ritter Markus (CVP)"
+            }, {
+              "text" : "Ritter Markus, Meisterlandwirt, Wirtschaftsingenieur FH, Altstätten (bisher)"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "c60776d1-6f6f-3a4e-88ce-bf446675a93d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0303 Dürr Barbara (CVP)"
+            }, {
+              "text" : "Dürr Barbara, kfm. Angestellte, Dipl. Bäuerin, Präsidentin St.Galler Bäuerinnenverband, Gams"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "04c1c26b-d4db-33ae-a45f-74418b445311",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0304 Storchenegger Martha (CVP)"
+            }, {
+              "text" : "Storchenegger Martha, Dipl. Pflegefachfrau HF, Kantonsrätin, Präsidentin CVP Frauen Kanton SG, Jonschwil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "6d0cd17d-b032-38fc-a281-608465eeb3fb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0305 Suter Yvonne (CVP)"
+            }, {
+              "text" : "Suter Yvonne, lic.rer.publ. HSG, Direktorin, Leiterin Kompetenzzentrum für nachhaltige Anlagen, Kantonsrätin, Jona"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "b260335d-0afa-37f1-a604-5dc58aee6268",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0306 Ammann Thomas (CVP)"
+            }, {
+              "text" : "Ammann Thomas, Gemeindepräsident, Kantonsrat, Fraktionspräsident, Rüthi"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "f24e6e12-aff3-3b19-9d25-7f47973b9fb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0307 Bischofberger Felix (CVP)"
+            }, {
+              "text" : "Bischofberger Felix, Postunternehmer, Kantonsrat, Präsident CSP Kanton SG, Altenrhein"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "7a5a67c4-29a3-3eae-ba45-d18ddd7caa92",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0308 Damann Bruno (CVP)"
+            }, {
+              "text" : "Damann Bruno, Dr.med., Facharzt für Allgemeinmedizin, Stadtrat, Kantonsrat, Gossau"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0309 Fust Lukas (CVP)"
+            }, {
+              "text" : "Fust Lukas, Bankangestellter, Gemeinderat, Kirchberg"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "7aea83c8-d288-3916-b6b0-3548739c5967",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0310 Imper-Filli David (CVP)"
+            }, {
+              "text" : "Imper-Filli David, Dipl.Natw. ETH, Geologe, Kantonsrat 2000-2015, Heiligkreuz"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "a0bfeb14-cfcd-37ea-8665-6f4980af9a77",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0311 Paganini Nicolo (CVP)"
+            }, {
+              "text" : "Paganini Nicolo, Direktor Olma Messen, lic.iur. HSG et lic.rer.pol., Abtwil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "857a5289-f305-3a52-acba-35a97df960eb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0312 Sartory Beda (CVP)"
+            }, {
+              "text" : "Sartory Beda, Unternehmer, Krisenmanager, ehem. Stadtrat und Kantonsrat, Wil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "4",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "4 - EVP, Evangelische Volkspartei"
+          }, {
+            "text" : "Listenverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "85d3218d-cf93-3412-aba0-cde8be35c4e9",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0401 Oppliger Hans (EVP)"
+            }, {
+              "text" : "Oppliger Hans, Kantonsrat, Dipl.Ing.Agr. ETH, Frümsen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "0e969e14-f212-3e48-8964-6b55aefe652f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0402 Müller Jascha (EVP)"
+            }, {
+              "text" : "Müller Jascha, Kantonsrat, Kdt Milizfeuerwehr, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "ed6dc050-6008-3e3b-bbce-de22209bf70a",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0403 Schweizer Ursi (EVP)"
+            }, {
+              "text" : "Schweizer Ursi, Schulleiterin, Handarbeitslehrerin, Gams"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "02fdf42d-cb84-32bd-b4b1-aa350b286fb4",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0404 Rutz Roman (EVP)"
+            }, {
+              "text" : "Rutz Roman, M. A. HSG, Dipl. Wipäd, Mittelschullehrer, Stadtparlamentarier, Wil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "3cad482d-f29b-35f4-a8d4-f98c71e504ca",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0405 Bertoldo Daniel (EVP)"
+            }, {
+              "text" : "Bertoldo Daniel, Diakon, Mediator, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "a8c46881-17da-33ae-a0fa-3159aaa3784c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0406 Gubelmann Irene (EVP)"
+            }, {
+              "text" : "Gubelmann Irene, Hausfrau, Drogistin, Berneck"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "25a5f140-c6d8-3fcd-9f47-1fa79eeef930",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0407 Stübi Samuel (EVP)"
+            }, {
+              "text" : "Stübi Samuel, Student, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "9ef4e397-6e5a-3cd1-a396-61896f978468",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0408 Bärlocher Wieland (EVP)"
+            }, {
+              "text" : "Bärlocher Wieland, Meisterlandwirt, Leiter regionale Fachstelle für Datenschutz, Berg"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "3e89d424-0ffa-3793-80d8-e84dd992f878",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0409 Sutter Franz (EVP)"
+            }, {
+              "text" : "Sutter Franz, Qualifizierungstechniker, Oberuzwil"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "678af565-b5ca-35bc-a15e-562b9815c9a8",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0410 Knaus Markus (EVP)"
+            }, {
+              "text" : "Knaus Markus, Hauswart, techn. Stickereizeichner, Stadtparlamentarier, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "f86d514c-dfcb-301c-be5a-5e887df1da9e",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0411 Gächter Katharina (EVP)"
+            }, {
+              "text" : "Gächter Katharina, Gemeinderätin, Grabs"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "345694e5-1951-3175-b77b-c1e9e05ba871",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0412 Eugster Samuel (EVP)"
+            }, {
+              "text" : "Eugster Samuel, Student, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "5",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "5 - Parteifrei SG"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung1"
+          } ],
+          "children" : [ {
+            "alias" : "42b0e5ce-1a25-3086-ac9b-3d6257d384ce",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0501 Trappitsch Daniel (PFSG)"
+            }, {
+              "text" : "Trappitsch Daniel, Geschäftsführer, techn. Kaufmann, Naturheilpraktiker, Autor, Dozent, Buchs"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "1,2"
+            } ]
+          }, {
+            "alias" : "ccbcd6b8-bc05-3d57-8449-9f66fae542f0",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0502 Varga Irene (PFSG)"
+            }, {
+              "text" : "Varga Irene, Dipl.Natw. ETH, Dipl.Inf. Projektmanagement, freie Künstlerin, freie Denkerin, Berg"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "3,4"
+            } ]
+          }, {
+            "alias" : "4a5fbb3a-1731-3b56-8609-1bff952e633c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0503 Rohrer Erich (PFSG)"
+            }, {
+              "text" : "Rohrer Erich, Industriespengler, Engelburg"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "5,6"
+            } ]
+          }, {
+            "alias" : "6b0e9643-baec-33b7-8db1-c2b67aa176d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0504 Osterwalder Godenne Luzia (PFSG)"
+            }, {
+              "text" : "Osterwalder Godenne Luzia, Naturheilpraktikerin, Geschäftsführerin, Autorin, Koordinatorin GWÖ CH, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "7,8"
+            } ]
+          }, {
+            "alias" : "d4af673a-2e62-3428-930d-622f9f84ac71",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0505 Weibel Christiane (PFSG)"
+            }, {
+              "text" : "Weibel Christiane , Kunsttherapeutin i.A. Fachbereich Mal-/Gestaltungstherapie, freie Künstlerin, St.Gallen"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "9,10"
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "lists",
+          "max" : "1",
+          "min" : "0",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Leer"
+        }, {
+          "alias" : "candidates",
+          "max" : "12",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "2",
+          "blankText" : "Kein Name ausgewählt"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_staenderat_sg",
+      "locale" : "de-CH",
+      "texts" : {
+        "title" : "Ständeratswahlen Kanton St. Gallen 2015 (1. Wahlgang)",
+        "description" : "Ständeratswahlen Kanton St. Gallen 2015 (1. Wahlgang)",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Liste Beschreibung",
+            "key" : "attribute1"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate text",
+            "key" : "attribute2"
+          }, {
+            "name" : "Incumbent",
+            "key" : "attribute3"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "list_for_CAND-7101",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Keller-Sutter Karin"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7101",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Keller-Sutter Karin"
+            }, {
+              "text" : "Wil (FDP) (bisher)"
+            }, {
+              "text" : "Bisher"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7102",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Rechsteiner Paul"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7102",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Rechsteiner Paul"
+            }, {
+              "text" : "St. Gallen (SP) (bisher)"
+            }, {
+              "text" : "Bisher"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7103",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Richard"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7103",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Richard"
+            }, {
+              "text" : "Abtwil (BDP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7104",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7104",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Thomas"
+            }, {
+              "text" : "Rüthi (CVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7105",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Gilli Yvonne"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7105",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Gilli Yvonne"
+            }, {
+              "text" : "Wil (GRÜNE)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7106",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Graf Andreas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7106",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Graf Andreas"
+            }, {
+              "text" : "Steinach (Parteifrei)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7107",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Kessler Margrit"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7107",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Kessler Margrit"
+            }, {
+              "text" : "Altstätten (glp)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7108",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Müller Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7108",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Müller Thomas"
+            }, {
+              "text" : "Rorschach (SVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7109",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Oppliger Hans"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7109",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Oppliger Hans"
+            }, {
+              "text" : "Frümsen (EVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "candidates",
+          "max" : "2",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Kein Name ausgewählt"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_nr_st_gallen",
+      "locale" : "fr-CH",
+      "texts" : {
+        "title" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "description" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Party Name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Apparentment",
+            "key" : "apparentment"
+          }, {
+            "name" : "Sous-apparentement",
+            "key" : "sousApparentment"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate text",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate Text on Position",
+            "key" : "attribute2"
+          }, {
+            "name" : "Candidate Incumbent Text",
+            "key" : "attribute3"
+          }, {
+            "name" : "Cumul initial",
+            "key" : "initialAccumulation"
+          }, {
+            "name" : "Position on List FR",
+            "key" : "positionOnList"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "1",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "1 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "84568c21-b442-3347-9025-208078724419",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0101 Burkhard Andreas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "f80d1a9e-a2ec-329c-a2dd-929f3f0100d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0102 Strasser Andrina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "5c53ad03-3fb4-3260-bbbf-530f616b707c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0103 Steinmann Cristina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "29767ae7-4520-31fd-af2f-894b36f63a01",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0104 Hutter Fabian (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "d79c5504-1aa0-3bf3-91f8-61b8b427c8a6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0105 Meier Florian (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "218c99d1-28a0-3970-b88c-8dbcc86db4ac",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0106 Frei Luca (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "9cbc8f35-a34d-39fa-9d84-a1a777d6b54c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0107 Berisha Prend (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "479ac7fe-e977-323f-8eb9-bb2d4cb0b800",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0108 Mösch Raphael (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "94e19ca9-5774-39da-a1a9-401843307181",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0109 Koch Sandro (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "6d9f9371-57ab-39b7-96ff-c85f24940f04",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0110 Morelli Sandro (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0111 Hofstetter Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "013ee9d4-928a-3590-bf76-2b1aa723946d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0112 Rasaj Veton (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "2",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "2 - Dummy list"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung2"
+          } ],
+          "children" : [ {
+            "alias" : "24566884-f235-3d1a-9986-b185b952550f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0201 Lamprecht Odilo (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "bb5e1c43-2aec-3153-97df-058a03698e99",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0202 Stäheli Pascal (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "e636ae60-871d-3c47-8e0d-c40db0adb10c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0203 Bünzli Fabienne (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "ac51183e-6ced-39ee-adef-2022b8bc045f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0204 Flückiger Marc (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "93ec8746-628f-35d8-a08e-087d93675583",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0205 Zhuta Egzon (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "6d0766bf-a6b1-3d9b-aa79-4b981a7de92b",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0206 Maron Lucio (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "91bfc29e-d3cc-30cb-83c6-674115cb2bb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0207 Senn Pascal (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "a18ca64b-d4a0-3827-b217-ee84e75f5f5c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0208 Fritschi Stefan (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "98035898-1b6d-3fb6-8a8c-eb736bb67446",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0209 Blank Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "0dc0791b-d302-3e33-861e-0e89311324e1",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0210 Schweizer Jannik (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "b71584cc-3fe9-34c0-b264-8ecbac9a67d3",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0211 Wehrle Louis (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "304cb4d7-bb93-3975-9098-806b6b944655",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0212 Barman Yusuf (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "3",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "3 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "22f5d3f6-36fd-3105-b66a-9efa28ca0cc2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0301 Büchler Jakob (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "05d80bb6-0a08-38c6-82c9-e589e461ab61",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0302 Ritter Markus (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "c60776d1-6f6f-3a4e-88ce-bf446675a93d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0303 Dürr Barbara (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "04c1c26b-d4db-33ae-a45f-74418b445311",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0304 Storchenegger Martha (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "6d0cd17d-b032-38fc-a281-608465eeb3fb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0305 Suter Yvonne (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "b260335d-0afa-37f1-a604-5dc58aee6268",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0306 Ammann Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "f24e6e12-aff3-3b19-9d25-7f47973b9fb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0307 Bischofberger Felix (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "7a5a67c4-29a3-3eae-ba45-d18ddd7caa92",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0308 Damann Bruno (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0309 Fust Lukas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "7aea83c8-d288-3916-b6b0-3548739c5967",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0310 Imper-Filli David (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "a0bfeb14-cfcd-37ea-8665-6f4980af9a77",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0311 Paganini Nicolo (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "857a5289-f305-3a52-acba-35a97df960eb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0312 Sartory Beda (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "4",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "4 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "85d3218d-cf93-3412-aba0-cde8be35c4e9",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0401 Oppliger Hans (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "0e969e14-f212-3e48-8964-6b55aefe652f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0402 Müller Jascha (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "ed6dc050-6008-3e3b-bbce-de22209bf70a",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0403 Schweizer Ursi (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "02fdf42d-cb84-32bd-b4b1-aa350b286fb4",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0404 Rutz Roman (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "3cad482d-f29b-35f4-a8d4-f98c71e504ca",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0405 Bertoldo Daniel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "a8c46881-17da-33ae-a0fa-3159aaa3784c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0406 Gubelmann Irene (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "25a5f140-c6d8-3fcd-9f47-1fa79eeef930",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0407 Stübi Samuel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "9ef4e397-6e5a-3cd1-a396-61896f978468",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0408 Bärlocher Wieland (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "3e89d424-0ffa-3793-80d8-e84dd992f878",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0409 Sutter Franz (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "678af565-b5ca-35bc-a15e-562b9815c9a8",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0410 Knaus Markus (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "f86d514c-dfcb-301c-be5a-5e887df1da9e",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0411 Gächter Katharina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "345694e5-1951-3175-b77b-c1e9e05ba871",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0412 Eugster Samuel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "5",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "5 - Dummy list"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung2"
+          } ],
+          "children" : [ {
+            "alias" : "42b0e5ce-1a25-3086-ac9b-3d6257d384ce",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0501 Trappitsch Daniel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "1,2"
+            } ]
+          }, {
+            "alias" : "ccbcd6b8-bc05-3d57-8449-9f66fae542f0",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0502 Varga Irene (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "3,4"
+            } ]
+          }, {
+            "alias" : "4a5fbb3a-1731-3b56-8609-1bff952e633c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0503 Rohrer Erich (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "5,6"
+            } ]
+          }, {
+            "alias" : "6b0e9643-baec-33b7-8db1-c2b67aa176d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0504 Osterwalder Godenne Luzia (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "7,8"
+            } ]
+          }, {
+            "alias" : "d4af673a-2e62-3428-930d-622f9f84ac71",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0505 Weibel Christiane (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "9,10"
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "lists",
+          "max" : "1",
+          "min" : "0",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Blanc"
+        }, {
+          "alias" : "candidates",
+          "max" : "12",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "2",
+          "blankText" : "Aucun nom sélectionné"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_staenderat_sg",
+      "locale" : "fr-CH",
+      "texts" : {
+        "title" : "Election du Conseil des Etats Canton St. Gallen 2015 (1. Wahlgang)",
+        "description" : "Election du Conseil des Etats Canton St. Gallen 2015 (1. Wahlgang)",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Liste description",
+            "key" : "attribute1"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate text",
+            "key" : "attribute2"
+          }, {
+            "name" : "Incumbent",
+            "key" : "attribute3"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "list_for_CAND-7101",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Keller-Sutter Karin"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7101",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Keller-Sutter Karin"
+            }, {
+              "text" : "Wil (FDP) (bisher)"
+            }, {
+              "text" : "sortant/e"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7102",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Rechsteiner Paul"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7102",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Rechsteiner Paul"
+            }, {
+              "text" : "St. Gallen (SP) (bisher)"
+            }, {
+              "text" : "sortant/e"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7103",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Richard"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7103",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Richard"
+            }, {
+              "text" : "Abtwil (BDP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7104",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7104",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Thomas"
+            }, {
+              "text" : "Rüthi (CVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7105",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Gilli Yvonne"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7105",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Gilli Yvonne"
+            }, {
+              "text" : "Wil (GRÜNE)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7106",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Graf Andreas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7106",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Graf Andreas"
+            }, {
+              "text" : "Steinach (Parteifrei)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7107",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Kessler Margrit"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7107",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Kessler Margrit"
+            }, {
+              "text" : "Altstätten (glp)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7108",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Müller Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7108",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Müller Thomas"
+            }, {
+              "text" : "Rorschach (SVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7109",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Oppliger Hans"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7109",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Oppliger Hans"
+            }, {
+              "text" : "Frümsen (EVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "candidates",
+          "max" : "2",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Aucun nom sélectionné"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_nr_st_gallen",
+      "locale" : "rm-CH",
+      "texts" : {
+        "title" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "description" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Party Name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Colliaziun da glistas",
+            "key" : "apparentment"
+          }, {
+            "name" : "Sutcolliaziun da glistas",
+            "key" : "sousApparentment"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate text",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate Text on Position",
+            "key" : "attribute2"
+          }, {
+            "name" : "Candidate Incumbent Text",
+            "key" : "attribute3"
+          }, {
+            "name" : "Cumular inizial",
+            "key" : "initialAccumulation"
+          }, {
+            "name" : "Position on List RM",
+            "key" : "positionOnList"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "1",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "1 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "84568c21-b442-3347-9025-208078724419",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0101 Burkhard Andreas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "f80d1a9e-a2ec-329c-a2dd-929f3f0100d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0102 Strasser Andrina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "5c53ad03-3fb4-3260-bbbf-530f616b707c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0103 Steinmann Cristina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "29767ae7-4520-31fd-af2f-894b36f63a01",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0104 Hutter Fabian (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "d79c5504-1aa0-3bf3-91f8-61b8b427c8a6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0105 Meier Florian (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "218c99d1-28a0-3970-b88c-8dbcc86db4ac",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0106 Frei Luca (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "9cbc8f35-a34d-39fa-9d84-a1a777d6b54c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0107 Berisha Prend (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "479ac7fe-e977-323f-8eb9-bb2d4cb0b800",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0108 Mösch Raphael (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "94e19ca9-5774-39da-a1a9-401843307181",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0109 Koch Sandro (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "6d9f9371-57ab-39b7-96ff-c85f24940f04",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0110 Morelli Sandro (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0111 Hofstetter Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "013ee9d4-928a-3590-bf76-2b1aa723946d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0112 Rasaj Veton (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "2",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "2 - Dummy list"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung2"
+          } ],
+          "children" : [ {
+            "alias" : "24566884-f235-3d1a-9986-b185b952550f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0201 Lamprecht Odilo (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "bb5e1c43-2aec-3153-97df-058a03698e99",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0202 Stäheli Pascal (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "e636ae60-871d-3c47-8e0d-c40db0adb10c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0203 Bünzli Fabienne (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "ac51183e-6ced-39ee-adef-2022b8bc045f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0204 Flückiger Marc (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "93ec8746-628f-35d8-a08e-087d93675583",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0205 Zhuta Egzon (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "6d0766bf-a6b1-3d9b-aa79-4b981a7de92b",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0206 Maron Lucio (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "91bfc29e-d3cc-30cb-83c6-674115cb2bb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0207 Senn Pascal (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "a18ca64b-d4a0-3827-b217-ee84e75f5f5c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0208 Fritschi Stefan (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "98035898-1b6d-3fb6-8a8c-eb736bb67446",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0209 Blank Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "0dc0791b-d302-3e33-861e-0e89311324e1",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0210 Schweizer Jannik (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "b71584cc-3fe9-34c0-b264-8ecbac9a67d3",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0211 Wehrle Louis (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "304cb4d7-bb93-3975-9098-806b6b944655",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0212 Barman Yusuf (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "3",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "3 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "22f5d3f6-36fd-3105-b66a-9efa28ca0cc2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0301 Büchler Jakob (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "05d80bb6-0a08-38c6-82c9-e589e461ab61",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0302 Ritter Markus (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "c60776d1-6f6f-3a4e-88ce-bf446675a93d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0303 Dürr Barbara (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "04c1c26b-d4db-33ae-a45f-74418b445311",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0304 Storchenegger Martha (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "6d0cd17d-b032-38fc-a281-608465eeb3fb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0305 Suter Yvonne (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "b260335d-0afa-37f1-a604-5dc58aee6268",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0306 Ammann Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "f24e6e12-aff3-3b19-9d25-7f47973b9fb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0307 Bischofberger Felix (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "7a5a67c4-29a3-3eae-ba45-d18ddd7caa92",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0308 Damann Bruno (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0309 Fust Lukas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "7aea83c8-d288-3916-b6b0-3548739c5967",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0310 Imper-Filli David (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "a0bfeb14-cfcd-37ea-8665-6f4980af9a77",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0311 Paganini Nicolo (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "857a5289-f305-3a52-acba-35a97df960eb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0312 Sartory Beda (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "4",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "4 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "85d3218d-cf93-3412-aba0-cde8be35c4e9",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0401 Oppliger Hans (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "0e969e14-f212-3e48-8964-6b55aefe652f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0402 Müller Jascha (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "ed6dc050-6008-3e3b-bbce-de22209bf70a",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0403 Schweizer Ursi (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "02fdf42d-cb84-32bd-b4b1-aa350b286fb4",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0404 Rutz Roman (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "3cad482d-f29b-35f4-a8d4-f98c71e504ca",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0405 Bertoldo Daniel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "a8c46881-17da-33ae-a0fa-3159aaa3784c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0406 Gubelmann Irene (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "25a5f140-c6d8-3fcd-9f47-1fa79eeef930",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0407 Stübi Samuel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "9ef4e397-6e5a-3cd1-a396-61896f978468",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0408 Bärlocher Wieland (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "3e89d424-0ffa-3793-80d8-e84dd992f878",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0409 Sutter Franz (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "678af565-b5ca-35bc-a15e-562b9815c9a8",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0410 Knaus Markus (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "f86d514c-dfcb-301c-be5a-5e887df1da9e",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0411 Gächter Katharina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "345694e5-1951-3175-b77b-c1e9e05ba871",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0412 Eugster Samuel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "5",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "5 - Dummy list"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung2"
+          } ],
+          "children" : [ {
+            "alias" : "42b0e5ce-1a25-3086-ac9b-3d6257d384ce",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0501 Trappitsch Daniel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "1,2"
+            } ]
+          }, {
+            "alias" : "ccbcd6b8-bc05-3d57-8449-9f66fae542f0",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0502 Varga Irene (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "3,4"
+            } ]
+          }, {
+            "alias" : "4a5fbb3a-1731-3b56-8609-1bff952e633c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0503 Rohrer Erich (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "5,6"
+            } ]
+          }, {
+            "alias" : "6b0e9643-baec-33b7-8db1-c2b67aa176d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0504 Osterwalder Godenne Luzia (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "7,8"
+            } ]
+          }, {
+            "alias" : "d4af673a-2e62-3428-930d-622f9f84ac71",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0505 Weibel Christiane (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "9,10"
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "lists",
+          "max" : "1",
+          "min" : "0",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Vid"
+        }, {
+          "alias" : "candidates",
+          "max" : "12",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "2",
+          "blankText" : "Nagin num selecziunà"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_staenderat_sg",
+      "locale" : "rm-CH",
+      "texts" : {
+        "title" : "Ständeratswahl Kanton St. Gallen 2015 (1. Wahlgang)",
+        "description" : "Ständeratswahl Kanton St. Gallen 2015 (1. Wahlgang)",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Liste description",
+            "key" : "attribute1"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate text",
+            "key" : "attribute2"
+          }, {
+            "name" : "Incumbent",
+            "key" : "attribute3"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "list_for_CAND-7101",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Keller-Sutter Karin"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7101",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Keller-Sutter Karin"
+            }, {
+              "text" : "Wil (FDP) (bisher)"
+            }, {
+              "text" : "uscant"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7102",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Rechsteiner Paul"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7102",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Rechsteiner Paul"
+            }, {
+              "text" : "St. Gallen (SP) (bisher)"
+            }, {
+              "text" : "uscant"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7103",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Richard"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7103",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Richard"
+            }, {
+              "text" : "Abtwil (BDP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7104",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7104",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Thomas"
+            }, {
+              "text" : "Rüthi (CVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7105",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Gilli Yvonne"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7105",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Gilli Yvonne"
+            }, {
+              "text" : "Wil (GRÜNE)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7106",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Graf Andreas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7106",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Graf Andreas"
+            }, {
+              "text" : "Steinach (Parteifrei)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7107",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Kessler Margrit"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7107",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Kessler Margrit"
+            }, {
+              "text" : "Altstätten (glp)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7108",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Müller Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7108",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Müller Thomas"
+            }, {
+              "text" : "Rorschach (SVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7109",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Oppliger Hans"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7109",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Oppliger Hans"
+            }, {
+              "text" : "Frümsen (EVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "candidates",
+          "max" : "2",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Nagin num selecziunà"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_nr_st_gallen",
+      "locale" : "it-CH",
+      "texts" : {
+        "title" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "description" : "Nationalratswahl 2015 Kanton St. Gallen",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Party Name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Apparentamento di liste",
+            "key" : "apparentment"
+          }, {
+            "name" : "Sottocongiunzione di liste",
+            "key" : "sousApparentment"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate text",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate Text on Position",
+            "key" : "attribute2"
+          }, {
+            "name" : "Candidate Incumbent Text",
+            "key" : "attribute3"
+          }, {
+            "name" : "Cumulo iniziale",
+            "key" : "initialAccumulation"
+          }, {
+            "name" : "Position on List IT",
+            "key" : "positionOnList"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "1",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "1 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "84568c21-b442-3347-9025-208078724419",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0101 Burkhard Andreas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "f80d1a9e-a2ec-329c-a2dd-929f3f0100d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0102 Strasser Andrina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "5c53ad03-3fb4-3260-bbbf-530f616b707c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0103 Steinmann Cristina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "29767ae7-4520-31fd-af2f-894b36f63a01",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0104 Hutter Fabian (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "d79c5504-1aa0-3bf3-91f8-61b8b427c8a6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0105 Meier Florian (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "218c99d1-28a0-3970-b88c-8dbcc86db4ac",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0106 Frei Luca (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "9cbc8f35-a34d-39fa-9d84-a1a777d6b54c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0107 Berisha Prend (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "479ac7fe-e977-323f-8eb9-bb2d4cb0b800",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0108 Mösch Raphael (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "94e19ca9-5774-39da-a1a9-401843307181",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0109 Koch Sandro (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "6d9f9371-57ab-39b7-96ff-c85f24940f04",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0110 Morelli Sandro (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "6c4fd420-2b2e-3366-a9b8-f8991e2fcfe6",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0111 Hofstetter Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "013ee9d4-928a-3590-bf76-2b1aa723946d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0112 Rasaj Veton (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "2",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "2 - Dummy list"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung2"
+          } ],
+          "children" : [ {
+            "alias" : "24566884-f235-3d1a-9986-b185b952550f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0201 Lamprecht Odilo (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "bb5e1c43-2aec-3153-97df-058a03698e99",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0202 Stäheli Pascal (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "e636ae60-871d-3c47-8e0d-c40db0adb10c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0203 Bünzli Fabienne (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "ac51183e-6ced-39ee-adef-2022b8bc045f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0204 Flückiger Marc (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "93ec8746-628f-35d8-a08e-087d93675583",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0205 Zhuta Egzon (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "6d0766bf-a6b1-3d9b-aa79-4b981a7de92b",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0206 Maron Lucio (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "91bfc29e-d3cc-30cb-83c6-674115cb2bb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0207 Senn Pascal (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "a18ca64b-d4a0-3827-b217-ee84e75f5f5c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0208 Fritschi Stefan (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "98035898-1b6d-3fb6-8a8c-eb736bb67446",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0209 Blank Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "0dc0791b-d302-3e33-861e-0e89311324e1",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0210 Schweizer Jannik (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "b71584cc-3fe9-34c0-b264-8ecbac9a67d3",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0211 Wehrle Louis (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "304cb4d7-bb93-3975-9098-806b6b944655",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0212 Barman Yusuf (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "3",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "3 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "22f5d3f6-36fd-3105-b66a-9efa28ca0cc2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0301 Büchler Jakob (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "05d80bb6-0a08-38c6-82c9-e589e461ab61",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0302 Ritter Markus (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "c60776d1-6f6f-3a4e-88ce-bf446675a93d",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0303 Dürr Barbara (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "04c1c26b-d4db-33ae-a45f-74418b445311",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0304 Storchenegger Martha (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "6d0cd17d-b032-38fc-a281-608465eeb3fb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0305 Suter Yvonne (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "b260335d-0afa-37f1-a604-5dc58aee6268",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0306 Ammann Thomas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "f24e6e12-aff3-3b19-9d25-7f47973b9fb7",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0307 Bischofberger Felix (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "7a5a67c4-29a3-3eae-ba45-d18ddd7caa92",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0308 Damann Bruno (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "5bef91f9-1890-3d9b-80f1-d1bcb33fc4d5",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0309 Fust Lukas (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "7aea83c8-d288-3916-b6b0-3548739c5967",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0310 Imper-Filli David (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "a0bfeb14-cfcd-37ea-8665-6f4980af9a77",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0311 Paganini Nicolo (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "857a5289-f305-3a52-acba-35a97df960eb",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0312 Sartory Beda (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "4",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "4 - Dummy list"
+          }, {
+            "text" : "Listenunterverbindung2"
+          }, {
+            "text" : ""
+          } ],
+          "children" : [ {
+            "alias" : "85d3218d-cf93-3412-aba0-cde8be35c4e9",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0401 Oppliger Hans (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "1"
+            } ]
+          }, {
+            "alias" : "0e969e14-f212-3e48-8964-6b55aefe652f",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0402 Müller Jascha (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "2"
+            } ]
+          }, {
+            "alias" : "ed6dc050-6008-3e3b-bbce-de22209bf70a",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0403 Schweizer Ursi (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "3"
+            } ]
+          }, {
+            "alias" : "02fdf42d-cb84-32bd-b4b1-aa350b286fb4",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0404 Rutz Roman (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "4"
+            } ]
+          }, {
+            "alias" : "3cad482d-f29b-35f4-a8d4-f98c71e504ca",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0405 Bertoldo Daniel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "5"
+            } ]
+          }, {
+            "alias" : "a8c46881-17da-33ae-a0fa-3159aaa3784c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0406 Gubelmann Irene (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "6"
+            } ]
+          }, {
+            "alias" : "25a5f140-c6d8-3fcd-9f47-1fa79eeef930",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0407 Stübi Samuel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "7"
+            } ]
+          }, {
+            "alias" : "9ef4e397-6e5a-3cd1-a396-61896f978468",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0408 Bärlocher Wieland (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "8"
+            } ]
+          }, {
+            "alias" : "3e89d424-0ffa-3793-80d8-e84dd992f878",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0409 Sutter Franz (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "9"
+            } ]
+          }, {
+            "alias" : "678af565-b5ca-35bc-a15e-562b9815c9a8",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0410 Knaus Markus (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "10"
+            } ]
+          }, {
+            "alias" : "f86d514c-dfcb-301c-be5a-5e887df1da9e",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0411 Gächter Katharina (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "11"
+            } ]
+          }, {
+            "alias" : "345694e5-1951-3175-b77b-c1e9e05ba871",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0412 Eugster Samuel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "1"
+            }, {
+              "text" : "12"
+            } ]
+          } ]
+        }, {
+          "alias" : "5",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "5 - Dummy list"
+          }, {
+            "text" : ""
+          }, {
+            "text" : "Listenunterverbindung2"
+          } ],
+          "children" : [ {
+            "alias" : "42b0e5ce-1a25-3086-ac9b-3d6257d384ce",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0501 Trappitsch Daniel (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "1,2"
+            } ]
+          }, {
+            "alias" : "ccbcd6b8-bc05-3d57-8449-9f66fae542f0",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0502 Varga Irene (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "3,4"
+            } ]
+          }, {
+            "alias" : "4a5fbb3a-1731-3b56-8609-1bff952e633c",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0503 Rohrer Erich (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "5,6"
+            } ]
+          }, {
+            "alias" : "6b0e9643-baec-33b7-8db1-c2b67aa176d2",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0504 Osterwalder Godenne Luzia (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "7,8"
+            } ]
+          }, {
+            "alias" : "d4af673a-2e62-3428-930d-622f9f84ac71",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "0505 Weibel Christiane (Dummy list)"
+            }, {
+              "text" : "dummy cd"
+            }, {
+              "text" : ""
+            }, {
+              "text" : "2"
+            }, {
+              "text" : "9,10"
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "lists",
+          "max" : "1",
+          "min" : "0",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Bianco"
+        }, {
+          "alias" : "candidates",
+          "max" : "12",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "2",
+          "blankText" : "Nessun nominativo selezionato"
+        } ]
+      }
+    }, {
+      "entityId" : "contest_staenderat_sg",
+      "locale" : "it-CH",
+      "texts" : {
+        "title" : "Election du Conseil des Etats Canton St. Gallen 2015 (1. Wahlgang)",
+        "description" : "Election du Conseil des Etats Canton St. Gallen 2015 (1. Wahlgang)",
+        "explanationText" : "",
+        "extraDataTypes" : {
+          "listType" : [ {
+            "name" : "Descrizione di Lista",
+            "key" : "attribute1"
+          } ],
+          "candidateType" : [ {
+            "name" : "Candidate name",
+            "key" : "attribute1"
+          }, {
+            "name" : "Candidate text",
+            "key" : "attribute2"
+          }, {
+            "name" : "Incumbent",
+            "key" : "attribute3"
+          } ]
+        },
+        "attributes" : [ {
+          "alias" : "list_for_CAND-7101",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Keller-Sutter Karin"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7101",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Keller-Sutter Karin"
+            }, {
+              "text" : "Wil (FDP) (bisher)"
+            }, {
+              "text" : "uscente"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7102",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Rechsteiner Paul"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7102",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Rechsteiner Paul"
+            }, {
+              "text" : "St. Gallen (SP) (bisher)"
+            }, {
+              "text" : "uscente"
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7103",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Richard"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7103",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Richard"
+            }, {
+              "text" : "Abtwil (BDP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7104",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Ammann Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7104",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Ammann Thomas"
+            }, {
+              "text" : "Rüthi (CVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7105",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Gilli Yvonne"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7105",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Gilli Yvonne"
+            }, {
+              "text" : "Wil (GRÜNE)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7106",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Graf Andreas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7106",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Graf Andreas"
+            }, {
+              "text" : "Steinach (Parteifrei)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7107",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Kessler Margrit"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7107",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Kessler Margrit"
+            }, {
+              "text" : "Altstätten (glp)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7108",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Müller Thomas"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7108",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Müller Thomas"
+            }, {
+              "text" : "Rorschach (SVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        }, {
+          "alias" : "list_for_CAND-7109",
+          "extraDataType" : "listType",
+          "extraDataValues" : [ {
+            "text" : "Oppliger Hans"
+          } ],
+          "children" : [ {
+            "alias" : "CAND-7109",
+            "extraDataType" : "candidateType",
+            "extraDataValues" : [ {
+              "text" : "Oppliger Hans"
+            }, {
+              "text" : "Frümsen (EVP)"
+            }, {
+              "text" : ""
+            } ]
+          } ]
+        } ],
+        "questions" : [ {
+          "alias" : "candidates",
+          "max" : "2",
+          "min" : "1",
+          "writeIn" : "false",
+          "choices" : [ ],
+          "fusions" : [ ],
+          "accumulation" : "1",
+          "blankText" : "Nessun nominativo selezionato"
+        } ]
+      }
+    } ]
+  } ]
+}
