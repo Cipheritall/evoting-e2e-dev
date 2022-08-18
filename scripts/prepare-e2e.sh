@@ -75,19 +75,19 @@ prepare_multiple_sdm() {
   printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nchoiceCodeGenerationChunkSize=10" >>$SDM_LOCAL_PATH/../application.properties
 
-  echo "Creating configuration, decryption, and synchronisation secure-data-manager. Please wait..."
-  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/configuration
-  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/decryption
-  mv ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/synchronisation
+  echo "Creating config, online and tally secure-data-manager. Please wait..."
+  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/ConfigSDM
+  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/TallySDM
+  mv ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/OnlineSDM
 
   echo "Configuring specific secure-data-manager instances properties. Please wait..."
-  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/configuration/win64/application.properties
-  sed -i 's/role.isTally=false/role.isTally=true/g' ./secure-data-manager-$evoting_version/decryption/win64/application.properties
+  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/ConfigSDM/win64/application.properties
+  sed -i 's/role.isTally=false/role.isTally=true/g' ./secure-data-manager-$evoting_version/TallySDM/win64/application.properties
 
-  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/configuration/win64/application.properties
-  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/decryption/win64/application.properties
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/ConfigSDM/win64/application.properties
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/TallySDM/win64/application.properties
 
-  echo "Setup completed! You can now run the synchronisation 'SecureDataManager.exe' application!"
+  echo "Setup completed! You can now run the OnlineSDM 'SecureDataManager.exe' application!"
 
   cd evoting-e2e-dev
 }
@@ -104,7 +104,7 @@ echo "Starting all services"
 docker-compose ${composeFileOptions} stop
 docker-compose ${composeFileOptions} up -d --force-recreate
 
-echo "Extracting and configuring the three secure-data-manager instances (synchronisation, configuration, decryption)."
+echo "Extracting and configuring the three secure-data-manager instances (OnlineSDM, ConfigSDM, TallySDM)."
 prepare_multiple_sdm
 
 echo "Starting to listen on docker container logs..."
