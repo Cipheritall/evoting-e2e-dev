@@ -54,7 +54,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
     networks:
       - area-voter-portal
@@ -100,7 +99,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: authentication
       DATABASE_PASSWORD: authentication
     networks:
@@ -147,7 +145,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: certificate_registry
       DATABASE_PASSWORD: certificate_registry
     networks:
@@ -192,7 +189,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: extended_authentication
       DATABASE_PASSWORD: extended_authentication
     networks:
@@ -237,7 +233,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: election_information
       DATABASE_PASSWORD: election_information
     networks:
@@ -284,7 +279,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: voter_material
       DATABASE_PASSWORD: voter_material
     networks:
@@ -331,7 +325,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
       DATABASE_USER: vote_verification
       DATABASE_PASSWORD: vote_verification
@@ -382,7 +375,6 @@ services:
       VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
       VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
       VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
       DATABASE_USER: voting_workflow
       DATABASE_PASSWORD: voting_workflow
     networks:
@@ -433,63 +425,6 @@ services:
       - "8016:8016"
     oom_kill_disable: true
 
-  orchestrator:
-    depends_on:
-      database:
-        condition: service_healthy
-      message-broker-3:
-        condition: service_healthy
-    build:
-      context: ${EVOTING_HOME}/voting-server/orchestrator/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/orchestrator:${EVOTING_VERSION}
-    container_name: orchestrator
-    hostname: orchestrator
-    security_opt:
-      - no-new-privileges
-    environment:
-      CATALINA_OPTS: >-
-        -Dtc.http.port=8010 -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -XX:+UseParallelGC -Dch.post.it.environment=dev
-        -Dch.post.it.container=tomcat -Dch.post.it.config.dir=/data/appl/tomee/etc -Dch.post.it.logging.dir=/data/appl/tomee/logs
-        -Dch.post.it.logging.defaultSeverity=WARN -XX:+HeapDumpOnOutOfMemoryError
-        -Dtenantpasswordsdirectory=/data/appl/tomee/conf/password/tenant
-        -Donetimefiledirectory=/data/appl/tomee/conf/password -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:6010
-        -javaagent:/data/appl/libs/opentelemetry-javaagent.jar -Dotel.resource.attributes=service.name=orchestrator -Dotel.traces.exporter=jaeger
-        -Dotel.exporter.jaeger.endpoint=http://jaegertracing:14250
-      TZ: Europe/Zurich
-      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
-      CC_MB_HOSTNAME: message-broker
-      CC_MB_PORT: 5671
-      CC_MB_VHOST: control-components
-      CC_MB_USER: orchestrator
-      CC_MB_PASSWORD: orchestrator
-      CC_QUEUE_NAMES: '{"g1":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.1","res":"configuration.return-codes.GenEncLongCodeSharesResponse.1"}},"g2":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.2","res":"configuration.return-codes.GenEncLongCodeSharesResponse.2"}},"g3":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.3","res":"configuration.return-codes.GenEncLongCodeSharesResponse.3"}},"g4":{"cg-comp":{"req":"configuration.return-codes.GenEncLongCodeSharesRequest.4","res":"configuration.return-codes.GenEncLongCodeSharesResponse.4"}}}'
-      CC_TOPIC_NAMES: '{"or-ha": "orchestrator-ha" }'
-      AUTHENTICATION_CONTEXT_URL: http://authentication:8000/au-ws-rest
-      CERTIFICATES_CONTEXT_URL: http://certificate-registry:8008/cr-ws-rest
-      ELECTION_INFORMATION_CONTEXT_URL: http://election-information:8001/ei-ws-rest
-      EXTENDED_AUTHENTICATION_CONTEXT_URL: http://extended-authentication:8009/ea-ws-rest
-      VERIFICATION_CONTEXT_URL: http://vote-verification:8003/vv-ws-rest
-      VERIFICATION_CODE_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest/votes
-      VOTER_MATERIAL_CONTEXT_URL: http://voter-material:8002/vm-ws-rest
-      VOTING_WORKFLOW_CONTEXT_URL: http://voting-workflow:8004/vw-ws-rest
-      ORCHESTRATOR_CONTEXT_URL: http://orchestrator:8010/or-ws-rest
-      DATABASE_USER: orchestrator
-      DATABASE_PASSWORD: orchestrator
-    networks:
-      - area-voter-portal
-      - area-database
-      - area-message-broker
-    ports:
-      - "6010:6010"
-      - "8010:8010"
-    volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-      - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/tenant/
-      - ./testdata/orchestrator/keystore:/data/appl/tomee/conf/password/keys_tmp/
-    oom_kill_disable: true
-
   voter-portal:
     build:
       context: ${EVOTING_HOME}/voter-portal/
@@ -497,7 +432,7 @@ services:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         APACHE_HTTP_PORT: 7000
         APACHE_HTTPS_PORT: 7001
-        SECOND_FACTOR: yob
+        SECOND_FACTOR: dob
     image: ev/voter-portal:${EVOTING_VERSION}
     container_name: voter-portal
     hostname: voter-portal

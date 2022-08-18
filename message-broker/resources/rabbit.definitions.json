@@ -1003,16 +1003,16 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.1",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.1",
@@ -1067,16 +1067,16 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.2",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.2",
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.2",
@@ -1131,16 +1131,16 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.3",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.3",
@@ -1195,16 +1195,16 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.4",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesRequest.4",
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
+      "source": "evoting-exchange",
+      "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesResponse.4",
       "destination_type": "queue",
       "routing_key": "configuration.return-codes.GenEncLongCodeSharesResponse.4",

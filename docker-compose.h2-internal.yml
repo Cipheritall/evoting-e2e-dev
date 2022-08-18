@@ -70,11 +70,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=MESSAGE_BROKER_ORCHESTRATOR
       SPRING_DATASOURCE_DRIVER_CLASS: org.h2.Driver
 
-  orchestrator:
-    environment:
-      DATABASE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=ORCHESTRATOR
-      DATABASE_DRIVER: org.h2.Driver
-
   control-component-1:
     environment:
       SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:9093/~/h2db1;MODE=Oracle;DATABASE_TO_UPPER=true;SCHEMA=CONTROL_COMPONENT_1
