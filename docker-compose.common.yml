@@ -432,7 +432,7 @@ services:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         APACHE_HTTP_PORT: 7000
         APACHE_HTTPS_PORT: 7001
-        SECOND_FACTOR: yob
+        SECOND_FACTOR: dob
     image: ev/voter-portal:${EVOTING_VERSION}
     container_name: voter-portal
     hostname: voter-portal
