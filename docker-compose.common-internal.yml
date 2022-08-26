@@ -548,6 +548,7 @@ services:
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION_CONFIG: /home/evote/keystore/config/signing_pw_sdm_config.txt
       DIRECT_TRUST_KEYSTORE_LOCATION_TALLY: /home/evote/keystore/tally/signing_keystore_sdm_tally.jks
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION_TALLY: /home/evote/keystore/tally/signing_pw_sdm_tally.txt
+      ENCRYPTION_PARAMETERS_PAYLOAD_LOCATION: /home/evote/sdm/config/encryption-parameters
       ROLE_ISTALLY: "true"
       ROLE_ISCONFIG: "true"
       IMPORT_EXPORT_ZIP_PASSWORD: sdmpassword
@@ -569,6 +570,7 @@ services:
       - ./testdata/tools/DIS/Post_E2E_DEV/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV/input
       - ./testdata/tools/DIS/Post_E2E_DEV_1000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/input
       - ./testdata/tools/DIS/Post_E2E_DEV_10000/output/batch:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_10000/input
+      - ./testdata/tools/encryption-parameters:/home/evote/sdm/config/encryption-parameters
       - ./testdata/sdm/systemKeys:/home/evote/sdm/systemKeys
       - ./testdata/sdm/direct-trust/:/home/evote/keystore/
       # Writing storage
