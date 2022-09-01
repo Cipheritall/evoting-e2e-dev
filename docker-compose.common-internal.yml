@@ -8,7 +8,7 @@ version: "2.4"
 services:
 
   jaeger:
-    image: jaegertracing/all-in-one
+    image: ${DOCKER_REGISTRY}/jaegertracing/all-in-one:latest
     hostname: jaegertracing
     ports:
       - "5775:5775"
@@ -22,6 +22,24 @@ services:
       - area-voter-portal
       - area-control-components
       - area-sdm
+
+  gatling:
+    build:
+      context: ${EVOTING_HOME}/end-to-end/
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
+    image: ev/gatling:${EVOTING_VERSION}
+    container_name: gatling
+    hostname: gatling
+    security_opt:
+      - no-new-privileges
+    networks:
+      - area-voter-portal
+      - area-admin-portal
+      - area-sdm
+    volumes:
+      - ./testdata/sdm/config:/home/evote/testdata/configuration/sdm/config
+      - ./testdata/smart-cards:/home/evote/testdata/configuration/smart-cards
 
   admin-portal:
     depends_on:
@@ -539,7 +557,7 @@ services:
         '-Dmemory.chunk.size=1024000'
         '-Dstorage.diskCache.bufferSize=7800'
       TZ: Europe/Zurich
-      SMARTCARDS_PROFILE: e2e
+      SMARTCARDS_PROFILE: e2e-automatic
       keystore_location: /home/evote/sdm/config/keystore
       database.password.location: /home/evote/sdm/config/database_password.properties
       ADMIN_PORTAL_HOST: http://admin-portal:8005
@@ -563,6 +581,7 @@ services:
     volumes:
       - ./testdata/sdm/config:/home/evote/sdm/config
       - ./testdata/sdm/application-level-security/signed-http-headers/keystore:/home/evote/sdm/config/keystore
+      - ./testdata/sdm/application-level-security/signed-http-headers/keystore/keystore.properties:/home/evote/sdm/sdmConfig/keystore.properties
       - ./testdata/sdm/electionEvents:/home/evote/sdm/integration/electionEvents
       - ./testdata/tools/file-converter/Post_E2E_DEV/output:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV/output
       - ./testdata/tools/file-converter/Post_E2E_DEV_1000/output:/home/evote/sdm/integration/electionEvents/Post_E2E_DEV_1000/output
@@ -657,7 +676,7 @@ services:
     oom_kill_disable: true
 
   haproxy:
-    image: haproxy:1.7
+    image: ${DOCKER_REGISTRY}/haproxy:1.7
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     container_name: haproxy
