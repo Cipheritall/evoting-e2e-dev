@@ -69,7 +69,7 @@ prepare_multiple_sdm() {
 
   echo "Configuring global secure-data-manager instances properties. Please wait..."
   printf "\nadmin.portal.enabled=false" >>$SDM_LOCAL_PATH/../application.properties
-  printf "\nsmartcards.profile=e2e" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nsmartcards.profile=e2e-manual" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nrole.isConfig=false" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nrole.isTally=false" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
