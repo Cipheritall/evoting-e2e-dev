@@ -328,7 +328,7 @@ services:
       MESSAGE_BROKER_ORCHESTRATOR_CONTEXT_URL: http://message-broker-orchestrator:8016/mo-ws-rest
       DATABASE_USER: vote_verification
       DATABASE_PASSWORD: vote_verification
-      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_voting_server.jks
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_voting_server.p12
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_voting_server.txt
     networks:
       - area-voter-portal
@@ -574,7 +574,7 @@ services:
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
       NODEID: 1
-      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_1.jks
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_1.p12
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_1.txt
     networks:
       - area-control-components
@@ -616,7 +616,7 @@ services:
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
       NODEID: 2
-      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_2.jks
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_2.p12
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_2.txt
     networks:
       - area-control-components
@@ -657,7 +657,7 @@ services:
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
       NODEID: 3
-      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_3.jks
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_3.p12
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_3.txt
     networks:
       - area-control-components
@@ -698,7 +698,7 @@ services:
       SPRING_RABBITMQ_VIRTUAL_HOST: control-components
       SPRING_RABBITMQ_PORT: 5671
       NODEID: 4
-      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_4.jks
+      DIRECT_TRUST_KEYSTORE_LOCATION: /home/evote/keystore/signing_keystore_control_component_4.p12
       DIRECT_TRUST_KEYSTORE_PASSWORD_LOCATION: /home/evote/keystore/signing_pw_control_component_4.txt
     networks:
       - area-control-components
