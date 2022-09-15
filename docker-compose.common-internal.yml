@@ -539,7 +539,7 @@ services:
       config-tools:
         condition: service_healthy
     build:
-      context: ${EVOTING_HOME}/secure-data-manager/backend/
+      context: ${EVOTING_HOME}/secure-data-manager/
       args:
         DOCKER_REGISTRY: ${DOCKER_REGISTRY}
         VERSION: ${EVOTING_VERSION}
