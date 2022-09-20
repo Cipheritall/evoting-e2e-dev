@@ -140,26 +140,6 @@
       "arguments": {}
     },
     {
-      "name": "configuration.mixing.SetupTallyCCMRequest.1",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "configuration.mixing.SetupTallyCCMResponse.1",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
       "name": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
       "vhost": "control-components",
       "durable": true,
@@ -231,26 +211,6 @@
     },
     {
       "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "configuration.mixing.SetupTallyCCMRequest.2",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "configuration.mixing.SetupTallyCCMResponse.2",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -340,26 +300,6 @@
       }
     },
     {
-      "name": "configuration.mixing.SetupTallyCCMRequest.3",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "configuration.mixing.SetupTallyCCMResponse.3",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
       "name": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
       "vhost": "control-components",
       "durable": true,
@@ -430,26 +370,6 @@
     },
     {
       "name": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "configuration.mixing.SetupTallyCCMRequest.4",
-      "vhost": "control-components",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-        "x-dead-letter-exchange": "dead-letter-exchange",
-        "x-dead-letter-routing-key": "dead-letter"
-      }
-    },
-    {
-      "name": "configuration.mixing.SetupTallyCCMResponse.4",
       "vhost": "control-components",
       "durable": true,
       "auto_delete": false,
@@ -987,22 +907,6 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMRequest.1",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMRequest.1",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMResponse.1",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMResponse.1",
-      "arguments": {}
-    },
-    {
       "source": "evoting-exchange",
       "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.1",
@@ -1048,22 +952,6 @@
       "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
       "destination_type": "queue",
       "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.1",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMRequest.2",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMRequest.2",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMResponse.2",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMResponse.2",
       "arguments": {}
     },
     {
@@ -1115,22 +1003,6 @@
       "arguments": {}
     },
     {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMRequest.3",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMRequest.3",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMResponse.3",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMResponse.3",
-      "arguments": {}
-    },
-    {
       "source": "evoting-exchange",
       "vhost": "control-components",
       "destination": "configuration.return-codes.GenEncLongCodeSharesRequest.3",
@@ -1176,22 +1048,6 @@
       "destination": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
       "destination_type": "queue",
       "routing_key": "configuration.setup-voting.longVoteCastReturnCodesAllowListResponse.3",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMRequest.4",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMRequest.4",
-      "arguments": {}
-    },
-    {
-      "source": "control-components",
-      "vhost": "/",
-      "destination": "configuration.mixing.SetupTallyCCMResponse.4",
-      "destination_type": "queue",
-      "routing_key": "configuration.mixing.SetupTallyCCMResponse.4",
       "arguments": {}
     },
     {
