@@ -1,1 +1,0 @@
-Output of the DIS was truncated to only the files that are needed for testing. If other files are needed they can be regenerated using the input files. 
