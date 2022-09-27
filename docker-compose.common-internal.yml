@@ -515,29 +515,7 @@ services:
       - ./testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
     oom_kill_disable: true
 
-  config-tools:
-    build:
-      context: ${EVOTING_HOME}/tools/
-      args:
-        DOCKER_REGISTRY: ${DOCKER_REGISTRY}
-    image: ev/config-tools:${EVOTING_VERSION}
-    container_name: config-tools
-    hostname: config-tools
-    security_opt:
-      - no-new-privileges
-    environment:
-      keystore_location: ${KEYSTORE_MOUNT_LOCATION}
-    stdin_open: true
-    networks:
-      - area-frontend
-    volumes:
-      - ./testdata/config-platform-root/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-    oom_kill_disable: true
-
   sdm-backend:
-    depends_on:
-      config-tools:
-        condition: service_healthy
     build:
       context: ${EVOTING_HOME}/secure-data-manager/
       args:
