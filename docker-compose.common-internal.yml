@@ -511,7 +511,7 @@ services:
     ports:
       - "7000:7000"
     volumes:
-      - ./testdata/voter-portal/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
+      - ./testdata/voter-portal/portalConfig.json:/data/appl/midw/httpd/work/htdocs/vote/assets/configuration/portalConfig.json
       - ./testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
     oom_kill_disable: true
 
