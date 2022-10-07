@@ -83,4 +83,4 @@ docker ps
 
 ## Run an Election Event
 
-In order to carry out an election event, please follow the [Run Election Event-Guide.](Run_Election_Event.md)
+In order to carry out an election event, please follow the [Run Election Event-Guide.](docker-compose/Run_Election_Event.md)
