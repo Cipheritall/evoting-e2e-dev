@@ -9,7 +9,7 @@
 
 set -o errexit
 
-source $EVOTING_DOCKER_HOME/copy-evoting-version-in-env-file.sh
+source $EVOTING_DOCKER_HOME/scripts/copy-evoting-version-in-env-file.sh
 
 reset_testdata() {
   rm -rf testdata
