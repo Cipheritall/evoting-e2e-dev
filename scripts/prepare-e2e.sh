@@ -75,7 +75,7 @@ prepare_multiple_sdm() {
   printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nchoiceCodeGenerationChunkSize=10" >>$SDM_LOCAL_PATH/../application.properties
 
-  echo "Creating config, online and tally secure-data-manager. Please wait..."
+  echo "Creating setup, online and tally secure-data-manager. Please wait..."
   cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/SetupSDM
   cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/TallySDM
   mv ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/OnlineSDM
