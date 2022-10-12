@@ -7,7 +7,7 @@
 
 **Placeholders:**
 
-- INSTANCE: ConfigSDM | OnlineSDM | TallySDM
+- INSTANCE: SetupSDM | OnlineSDM | TallySDM
 - N: Number 1..2
 
 ## Instances of the SDM
@@ -15,7 +15,7 @@
 Running an Election Event requires three separate instances of the Secure Data Manager (SDM), normally deployed on different machines.\
 To facilitate testing, this guide describes how to run a test when all three instances of the SDM are deployed on a single machine:
 
-- ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/SecureDataManager.exe```
+- ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/SecureDataManager.exe```
 - ```C:/tmp/secure-data-manager-<version>/OnlineSDM/win64//SecureDataManager.exe```
 - ```C:/tmp/secure-data-manager-<version>/TallySDM/win64//SecureDataManager.exe```
 
@@ -27,9 +27,9 @@ To facilitate testing, this guide describes how to run a test when all three ins
 
 ### Two instances of the SDM are deployed on airgapped machines:
 
-- **Config SDM**: Instance of the SDM which generates the Election Event configuration
+- **Setup SDM**: Instance of the SDM which generates the Election Event configuration
 
-![Config SDM](../.gitlab/media/config-sdm.png)
+![Setup SDM](../.gitlab/media/setup-sdm.png)
 
 - **Tally SDM**: Instance of the SDM which performs the offline mixing and decryption after an Election Event
 
@@ -46,7 +46,7 @@ To facilitate testing, this guide describes how to run a test when all three ins
 **Workflow:**
 1. Launch the Online SDM in ```C:/tmp/secure-data-manager-<version>/OnlineSDM/win64/SecureDataManager.exe```
 2. Click **IMPORT**
-3. Navigate and select the Testdata previously downloaded at: [TESTDATA](../testdata/testdata-external/sdm/import-me.sdm)
+3. Navigate and select the SDM archive previously downloaded at: [IMPORT-ME](../testdata/testdata-external/sdm/import-me.sdm)
 4. Click **Open**
 
 ---
@@ -78,19 +78,19 @@ These keys are crucial for verifiability and privacy protection in the cryptogra
 
 ---
 
-### Config SDM - Import Election Event
+### Setup SDM - Import Election Event
 
-![Config SDM](../.gitlab/media/config-sdm.png)
+![Setup SDM](../.gitlab/media/setup-sdm.png)
 
 **Workflow:**
-1. Launch the Config SDM in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/SecureDataManager.exe```
+1. Launch the Setup SDM in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/SecureDataManager.exe```
 2. Click **IMPORT**
 3. Select the Election Event previously exported to ```C:/tmp/1-export-Post_E2E_DEV```
 4. Click **Open**
 
 ---
 
-### Config SDM - Constitute the Admin Board
+### Setup SDM - Constitute the Admin Board
 
 In order to make testing accessible, this guide describes a special configuration for automated E2E Tests where the Smart Cards are simulated and no physical hardware is required.\
 This configuration is activated by the property ```smartcards.profile=e2e``` in ```C:/tmp/secure-data-manager-<version>/win64/sdm/sdmConfig/sdm.properties```\
@@ -105,19 +105,19 @@ In order to simplify testing a single member of the Administration Board can act
 5. Select the [tenant key file](../testdata/testdata-external/sdm/tenant/tenant_100.sks)
 6. Enter the password of the tenant key (see [tenant_PW.txt](../testdata/testdata-external/sdm/tenant/tenant_PW.txt))
 7. Click **Open**
-8. Navigate to ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/smart-cards```
+8. Navigate to ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/smart-cards```
 9. For each member of the Administration Board (e.g. 2 members):
    + Create an empty text file *smart-card.b64*
    + Enter a PIN (*e.g. "222222" - When simulating Smart Cards the PIN has no effect*)
    + Click **OK**
    + Rename the file ```smart-card.b64``` to ```smart-card.b64.ab<N>``` (*e.g. smart-card.b64.ab1, smart-card.b64..ab2*)
-10. The directory ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/smart-cards``` shall contain:
+10. The directory ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/smart-cards``` shall contain:
 -  *smart-card.b64.ab1*
 -  *smart-card.b64.ab2*
 
 ---
 
-### Config SDM - Secure the Election Event
+### Setup SDM - Secure the Election Event
 
 **Workflow:**
 1. Click **Election Events**
@@ -127,12 +127,12 @@ In order to simplify testing a single member of the Administration Board can act
 
 ---
 
-### Config SDM - Activate the Administration Board
+### Setup SDM - Activate the Administration Board
 
 **Workflow:**
 1. Click ```Post_E2E_DEV```
 2. Click **Activate Administration Board**
-3. Navigate to ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/SecureDataManager.exe```
+3. Navigate to ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/SecureDataManager.exe```
 4. For each member of the Administration Board:
    + Rename the corresponding ```AB<N>.b64``` file to ```smart-card.b64```
    + Enter the PIN (*e.g. "222222"*)
@@ -143,7 +143,7 @@ In order to simplify testing a single member of the Administration Board can act
 
 ---
 
-### Config SDM - Prepare Ballot and Voting Card Sets
+### Setup SDM - Prepare Ballot and Voting Card Sets
 
 **Workflow:**
 1. Click **Ballots**
@@ -156,7 +156,7 @@ In order to simplify testing a single member of the Administration Board can act
 
 ---
 
-### Config SDM - Export Election Event
+### Setup SDM - Export Election Event
 
 For real Election Events the export and transfer would be performed with USB Sticks.
 
@@ -169,7 +169,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 6. Click **EXPORT**
 7. Select an arbitrary location for the Election Event, e.g. ```C:/tmp/2-export-Post_E2E_DEV```
 8. Wait until all data has successfully been exported
-9. Close the Config SDM
+9. Close the Setup SDM
 
 ---
 
@@ -217,19 +217,19 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
-### Config SDM - Import Election Event
+### Setup SDM - Import Election Event
 
-![Config SDM](../.gitlab/media/config-sdm.png)
+![Setup SDM](../.gitlab/media/setup-sdm.png)
 
 **Workflow:**
-1. Launch the Config SDM in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/SecureDataManager.exe```
+1. Launch the Setup SDM in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/SecureDataManager.exe```
 2. Click **IMPORT**
 3. Select the Election Event previously exported to ```C:/tmp/3-export-Post_E2E_DEV```
 4. Click **Open**
 
 ---
 
-### Config SDM - Download and generate Voting Card Sets
+### Setup SDM - Download and generate Voting Card Sets
 
 **Workflow:**
 1. Click **Election Events**
@@ -243,11 +243,11 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
-### Config SDM - Sign Voting Card Sets
+### Setup SDM - Sign Voting Card Sets
 
 **Workflow:**
 1. Click **Activate Administration Board**
-2. Navigate to ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/smart-cards```
+2. Navigate to ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/smart-cards```
 3. For each member of the Administration Board:
    + Rename the corresponding ```smart-card.b64.ab<N>``` file to ```smart-card.b64```
    + Enter the PIN (*e.g. "222222"*)
@@ -262,7 +262,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
-### Config SDM - Generate print file
+### Setup SDM - Generate print file
 
 **Workflow:**
 1.  Click **SIGNED**
@@ -273,7 +273,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ## Day 2 - Release of the election event
 
-### Config SDM - Constitute Electoral Authorities
+### Setup SDM - Constitute Electoral Authorities
 
 **Workflow:**
 1. Click **Election Events**
@@ -289,7 +289,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
-### Config SDM - Sign Electoral Authorities
+### Setup SDM - Sign Electoral Authorities
 
 **Workflow:**
 1. Click **Electoral Authorities**
@@ -300,7 +300,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 ---
 
 
-### Config SDM - Sign Test Ballot Boxes
+### Setup SDM - Sign Test Ballot Boxes
 
 **Workflow:**
 1. Click **Election Events**
@@ -314,7 +314,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
-### Config SDM - Export Election Event and Transfer to the Online SDM
+### Setup SDM - Export Election Event and Transfer to the Online SDM
 
 **Workflow:**
 1. Click **Election Events**
@@ -325,7 +325,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 6. Click **EXPORT**
 7. Select an arbitrary location for the Election Event, e.g. ```C:/tmp/4-export-Post_E2E_DEV```
 8. Wait until all data has successfully been exported
-9. Close the Config SDM
+9. Close the Setup SDM
 
 ---
 
@@ -373,7 +373,7 @@ Note: If all status are not "synchronized", please click again on **SYNC**, this
 ### Voter-portal - Submit Votes
 
 The Election Event ID EEID is a hex number, e.g. ```dfffc06a3ee249fa9b72584507a55fd3```
-The current EEID corresponds to the folder name in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/config```
+The current EEID corresponds to the folder name in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/config```
 
 The voter needs 4 values:
 1. Start Voting Key: Initializing (e.g. ihhrubtmb3rpchyu6kvg)
@@ -381,10 +381,10 @@ The voter needs 4 values:
 3. Vote Cast Code: Finalisation
 4. Date of birth: 2nd factor (e.g. 01011970)
 
-The first 3 values can be found in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/config/<EEID>/ONLINE/printing/evoting-print_Post_E2E_DEV.xml:```\
+The first 3 values can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/config/<EEID>/ONLINE/printing/evoting-print_Post_E2E_DEV.xml:```\
 ![img.png](../.gitlab/media/evoting-print_Post_E2E_DEV.png)
 
-The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/config/<EEID>/ONLINE/printing/<votingCardSetID>/aliases.csv:```\
+The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/config/<EEID>/ONLINE/printing/<votingCardSetID>/aliases.csv:```\
 ![img.png](../.gitlab/media/aliases.png)
 
 ---
@@ -474,7 +474,7 @@ The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/
 
 **Workflow:**
 1. Copy the simulated smart cards of the Administration Board and Electoral Authority from
-   + C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/smart-cards to
+   + C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/smart-cards to
    + C:/tmp/secure-data-manager-<version>/TallySDM/win64/sdm/smart-cards
 2. Click **Election Events**
 3. Select **Post_E2E_DEV**
@@ -534,7 +534,7 @@ The list of prime numbers corresponding to the chosen voting options can be foun
 In order to re-run the Election Event a cleanup of the previous Election Event is needed.
 
 **Workflow:**
-For each SDM instance <INSTANCE> (ConfigSDM, OnlineSDM, TallySDM) delete following files and directories:
+For each SDM instance <INSTANCE> (SetupSDM, OnlineSDM, TallySDM) delete following files and directories:
 - ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/config/*.*```
 - ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/logs```
 - ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/sdmConfig/elections_config.json```
