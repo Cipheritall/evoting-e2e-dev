@@ -62,7 +62,7 @@ services:
       - "6006:6006"
       - "8011:8011"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
     oom_kill_disable: true
 
   authentication:
@@ -108,9 +108,9 @@ services:
       - "6000:6000"
       - "8000:8000"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-      - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/tenant/
-      - ./testdata/authentication/keystore:/data/appl/tomee/conf/password/keys_tmp/
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/authentication/keystore:/data/appl/tomee/conf/password/tenant/
+      - ../testdata/testdata/authentication/keystore:/data/appl/tomee/conf/password/keys_tmp/
     oom_kill_disable: true
 
   certificate-registry:
@@ -154,7 +154,7 @@ services:
       - "6008:6008"
       - "8008:8008"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
     oom_kill_disable: true
 
   extended-authentication:
@@ -198,7 +198,7 @@ services:
       - "6009:6009"
       - "8009:8009"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
     oom_kill_disable: true
 
   election-information:
@@ -242,9 +242,9 @@ services:
       - "6001:6001"
       - "8001:8001"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
-      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
+      - ../testdata/testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
     oom_kill_disable: true
 
   voter-material:
@@ -288,7 +288,7 @@ services:
       - "6002:6002"
       - "8002:8002"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
     oom_kill_disable: true
 
   vote-verification:
@@ -337,10 +337,10 @@ services:
       - "6003:6003"
       - "8003:8003"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
-      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
-      - ./testdata/vote-verification/direct-trust/:/home/evote/keystore/
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
+      - ../testdata/testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
+      - ../testdata/testdata/vote-verification/direct-trust/:/home/evote/keystore/
     oom_kill_disable: true
 
   voting-workflow:
@@ -384,7 +384,7 @@ services:
       - "6004:6004"
       - "8014:8004"
     volumes:
-      - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
+      - ../testdata/testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
     oom_kill_disable: true
 
   message-broker-orchestrator:
@@ -446,8 +446,8 @@ services:
     ports:
       - "7000:7000"
     volumes:
-      - ./testdata/voter-portal/platformRootCA.js:/data/appl/midw/httpd/work/htdocs/vote/platformRootCA.js
-      - ./testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
+      - ../testdata/testdata/voter-portal/portalConfig.json:/data/appl/midw/httpd/work/htdocs/vote/assets/configuration/portalConfig.json
+      - ../testdata/testdata/voter-portal/httpd.conf:/etc/httpd/conf/httpd.conf
     oom_kill_disable: true
 
   message-broker-1:
@@ -531,7 +531,7 @@ services:
   haproxy:
     image: haproxy:1.7
     volumes:
-      - ./testdata/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - ../testdata/testdata/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     container_name: haproxy
     hostname: message-broker
     depends_on:
@@ -582,7 +582,7 @@ services:
     ports:
       - "6025:6025"
     volumes:
-      - ./testdata/control-components/direct-trust/control_component_1/:/home/evote/keystore/
+      - ../testdata/testdata/control-components/direct-trust/control_component_1/:/home/evote/keystore/
     mem_limit: 1024m
     memswap_limit: 2048m
     oom_kill_disable: true
@@ -624,7 +624,7 @@ services:
     ports:
       - "6026:6025"
     volumes:
-      - ./testdata/control-components/direct-trust/control_component_2/:/home/evote/keystore/
+      - ../testdata/testdata/control-components/direct-trust/control_component_2/:/home/evote/keystore/
     mem_limit: 1024m
     memswap_limit: 2048m
     oom_kill_disable: true
@@ -665,7 +665,7 @@ services:
     ports:
       - "6027:6025"
     volumes:
-      - ./testdata/control-components/direct-trust/control_component_3/:/home/evote/keystore/
+      - ../testdata/testdata/control-components/direct-trust/control_component_3/:/home/evote/keystore/
     mem_limit: 1024m
     memswap_limit: 2048m
     oom_kill_disable: true
@@ -706,7 +706,7 @@ services:
     ports:
       - "6028:6025"
     volumes:
-      - ./testdata/control-components/direct-trust/control_component_4/:/home/evote/keystore/
+      - ../testdata/testdata/control-components/direct-trust/control_component_4/:/home/evote/keystore/
     mem_limit: 1024m
     memswap_limit: 2048m
     oom_kill_disable: true

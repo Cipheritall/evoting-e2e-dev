@@ -262,6 +262,15 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 ---
 
+### Config SDM - Generate print file
+
+**Workflow:**
+1.  Click **SIGNED**
+2. **Select all Voting Card Sets**
+3. Click **GENERATE PRINT FILE**
+
+---
+
 ## Day 2 - Release of the election event
 
 ### Config SDM - Constitute Electoral Authorities
@@ -372,8 +381,8 @@ The voter needs 4 values:
 3. Vote Cast Code: Finalisation
 4. Date of birth: 2nd factor (e.g. 01011970)
 
-The first 3 values can be found in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/config/<EEID>/ONLINE/printing/<votingCardSetID>/printingData.csv:```\
-![img.png](../.gitlab/media/printData.png)
+The first 3 values can be found in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/config/<EEID>/ONLINE/printing/evoting-print_Post_E2E_DEV.xml:```\
+![img.png](../.gitlab/media/evoting-print_Post_E2E_DEV.png)
 
 The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/ConfigSDM/win64/sdm/config/<EEID>/ONLINE/printing/<votingCardSetID>/aliases.csv:```\
 ![img.png](../.gitlab/media/aliases.png)
@@ -510,6 +519,15 @@ The list of prime numbers corresponding to the chosen voting options can be foun
 
 ---
 
+### Tally SDM - Generate tally files
+
+**Workflow:**
+1. Verify that all Ballot Boxes appear
+2. **Select all Voting Card Sets**
+3. Click **GENERATE TALLY FILES**
+
+---
+
 ## Day 4 - Data deletion
 
 ### Cleanup
@@ -517,11 +535,7 @@ In order to re-run the Election Event a cleanup of the previous Election Event i
 
 **Workflow:**
 For each SDM instance <INSTANCE> (ConfigSDM, OnlineSDM, TallySDM) delete following files and directories:
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/config/*.*```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/db_dump.json```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/db_dump.json.p7```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/integration/electionEvents```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/logs```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdmConfig/elections_config.json```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdmConfig/elections_config.json.p7```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/smdDB```
+- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/config/*.*```
+- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/logs```
+- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/sdmConfig/elections_config.json```
+- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/win64/sdm/smdDB```
