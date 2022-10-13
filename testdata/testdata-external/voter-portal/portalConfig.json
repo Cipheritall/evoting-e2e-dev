@@ -1,0 +1,54 @@
+{
+  "platformRootCA": "-----BEGIN CERTIFICATE-----MIIEVTCCAr2gAwIBAgIUcZjF75yIpnleQEmOFIuezh26mcswDQYJKoZIhvcNAQELBQAwUjELMAkGA1UEBhMCQ0gxFTATBgNVBAoMDE9yZ2FuaXphdGlvbjEWMBQGA1UECwwNT25saW5lIFZvdGluZzEUMBIGA1UEAwwLZGV2IFJvb3QgQ0EwHhcNMjExMTE5MjMwMDAwWhcNMjQxMTE5MjMwMDAwWjBSMQswCQYDVQQGEwJDSDEVMBMGA1UECgwMT3JnYW5pemF0aW9uMRYwFAYDVQQLDA1PbmxpbmUgVm90aW5nMRQwEgYDVQQDDAtkZXYgUm9vdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAKMyMvm5OrNbLY/bLp51oGAE/MrjC2DNmFiFYM5c/cNYb7bmSpzXEGITHp8oNjS1hadPpeq/nWVAK7CczM+3x5sW079wVbHkXWgyx6xtgpD/F3GFH3cK68t2/afvWNfPDSZ5i8zQljdaAEYrN1mIidOSOPCYH89h1FjFFc8ea49fT+Wweikc98Me2RU/zpU+Kprktzy5y9nt82Ty6j7M3BJ/JHQr8jxzHnLezG1SX45ml2akmvG1M00c6tsZ1VKthXetS9pEUEMQjU9T1oH5Rx27qTMxffAJU2hO/rwtzB3YADcxjX1X8RqeUPyVn6E+s/BcksXHJqejyGzO2g+HPLTabyWpwUH7aUODulG/G2fjOrGd7B5aiOWWZWqW4gAVoOGQ68g1cL91EEy1Usl6xioH6paFRwe4Vi0T+atQTaENlESdUCQ2fG1+JGlxc5QEdRXksvn8vkamH+5ENEdNREcJ0qMJ8c9hyo300bZLV7uHfSfdx2KTYT6x7dfF86q9VQIDAQABoyMwITAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjANBgkqhkiG9w0BAQsFAAOCAYEAck6SVvFCno8QE+PVUQZHanaBOnj5K2l4PQYnuq4ftGyGvpbCBApaz89lcftHXUvbPT97dMnH1kqxycujY0J4XAU+fUuxNxWl7bpIqkHPGlWT9t4A5rMipwNAf2ZvDXZw+DUz1xCSD1pSTtfFOo3Jvl8jx5ytwYstnIJIKNwcKfKqd0bWRKQRFPgNGKp7CX4dmVSW1jNtnL9+egDPRxV7I2nvDLoOp3oDzS95L5U1rwfZf7XTB6fJ7a6mN9cWLrSKbr0yIt8gknOY+kSJMKfl9iBk/7gIF6looQGjUGz3C9btmo3eoJzICQME2g66OH+1cxxf4vP5E/lBMw0IcJdqA1SIuoc6wfm/tZkaA0CEm80cNiijpYQ05TBNFm7BI1uZZMScOL1h5UytmkvcWyoS18ijhM7iGN2V77xOo9mNPpP8drGgwSBSaUkv8+LIw2eG1UVylerxJXdj2b8DnXuGdle50GhLL2Zy04rau5uFMuku296HKcBphMChEHb8H9Fv-----END CERTIFICATE-----",
+  "contestsCapabilities": {
+    "writeIns": true
+  },
+  "identification": "dob",
+  "translatePlaceholders": {
+    "en": {
+      "voting_card_1": "card 1",
+      "voting_card_2": "card 2",
+      "voting_card_3": "card 3",
+      "voting_card_4": "card 4",
+      "voting_card_5": "card 5",
+      "voting_card_6": "card 6",
+      "support": "en@support.ch"
+    },
+    "de": {
+      "voting_card_1": "Stimmrechtsausweis",
+      "voting_card_2": "dem Stimmrechtsausweis",
+      "voting_card_3": "Dieser Stimmrechtsausweis",
+      "voting_card_4": "der Stimmrechtsausweis",
+      "voting_card_5": "Ihr Stimmrechtsausweis",
+      "voting_card_6": "Karte 6",
+      "support": "das Supportteam (evoting@post.ch)"
+    },
+    "fr": {
+      "voting_card_1": "carte de vote",
+      "voting_card_2": "la carte de vote",
+      "voting_card_3": "Cette carte de vote",
+      "voting_card_4": "la carte de vote",
+      "voting_card_5": "Votre carte de vote",
+      "voting_card_6": "la",
+      "support": "l’équipe d’assistance (evoting@post.ch)"
+    },
+    "it": {
+      "voting_card_1": "carta 1",
+      "voting_card_2": "carta 2",
+      "voting_card_3": "carta 3",
+      "voting_card_4": "carta 4",
+      "voting_card_5": "carta 5",
+      "voting_card_6": "carta 6",
+      "support": "l’assistenza (evoting@post.ch)"
+    },
+    "rm": {
+      "voting_card_1": "**Karte 1",
+      "voting_card_2": "**Karte 2",
+      "voting_card_3": "**Karte 3",
+      "voting_card_4": "**Karte 4",
+      "voting_card_5": "**Karte 5",
+      "voting_card_6": "**Karte 6",
+      "support": "il team da support (evoting@post.ch)"
+    }
+  }
+}

@@ -9,11 +9,11 @@
 
 set -o errexit
 
-source $EVOTING_DOCKER_HOME/copy-evoting-version-in-env-file.sh
+source $EVOTING_DOCKER_HOME/scripts/copy-evoting-version-in-env-file.sh
 
 reset_testdata() {
-  rm -rf testdata
-  cp -r testdata-external testdata
+  rm -rf $EVOTING_DOCKER_HOME/docker-compose/testdata
+  cp -r $EVOTING_DOCKER_HOME/testdata/testdata-external $EVOTING_DOCKER_HOME/docker-compose/testdata
 }
 
 # Arg 1: prompt
@@ -39,7 +39,7 @@ rebuild_service_images() {
 }
 
 define_compose_file_options() {
-  composeFileOptions="-f docker-compose.common.yml -f docker-compose.h2.yml"
+  composeFileOptions="-f ${EVOTING_DOCKER_HOME}/docker-compose/docker-compose.common.yml -f ${EVOTING_DOCKER_HOME}/docker-compose/docker-compose.h2.yml"
 }
 
 prepare_multiple_sdm() {
@@ -58,33 +58,33 @@ prepare_multiple_sdm() {
   mkdir -p secure-data-manager-$evoting_version
   mkdir -p $SDM_LOCAL_PATH/sdmConfig
 
-  cp -R evoting-e2e-dev/testdata/sdm/config/. $SDM_LOCAL_PATH/config
-  cp -R evoting-e2e-dev/testdata/sdm/application-level-security/signed-http-headers/keystore/. $SDM_LOCAL_PATH/config/keystore
-  cp -R evoting-e2e-dev/testdata/sdm/systemKeys/. $SDM_LOCAL_PATH/systemKeys
-  cp -R evoting-e2e-dev/testdata/sdm/direct-trust/. $SDM_LOCAL_PATH/direct-trust
-  cp evoting-e2e-dev/testdata/sdm/config/database_password.properties $SDM_LOCAL_PATH/sdmConfig/database_password.properties
-  cp -R evoting-e2e-dev/testdata/sdm/tenant/. $SDM_LOCAL_PATH/tenant
+  cp -R evoting-e2e-dev/docker-compose/testdata/sdm/config/. $SDM_LOCAL_PATH/config
+  cp -R evoting-e2e-dev/docker-compose/testdata/sdm/application-level-security/signed-http-headers/keystore/. $SDM_LOCAL_PATH/config/keystore
+  cp -R evoting-e2e-dev/docker-compose/testdata/sdm/systemKeys/. $SDM_LOCAL_PATH/systemKeys
+  cp -R evoting-e2e-dev/docker-compose/testdata/sdm/direct-trust/. $SDM_LOCAL_PATH/direct-trust
+  cp evoting-e2e-dev/docker-compose/testdata/sdm/config/database_password.properties $SDM_LOCAL_PATH/sdmConfig/database_password.properties
+  cp -R evoting-e2e-dev/docker-compose/testdata/sdm/tenant/. $SDM_LOCAL_PATH/tenant
 
   mkdir -p $SDM_LOCAL_PATH/smart-cards
 
   echo "Configuring global secure-data-manager instances properties. Please wait..."
   printf "\nadmin.portal.enabled=false" >>$SDM_LOCAL_PATH/../application.properties
-  printf "\nsmartcards.profile=e2e" >>$SDM_LOCAL_PATH/../application.properties
+  printf "\nsmartcards.profile=e2e-manual" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nrole.isConfig=false" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nrole.isTally=false" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nimport.export.zip.password=sdmpassword" >>$SDM_LOCAL_PATH/../application.properties
   printf "\nchoiceCodeGenerationChunkSize=10" >>$SDM_LOCAL_PATH/../application.properties
 
-  echo "Creating config, online and tally secure-data-manager. Please wait..."
-  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/ConfigSDM
+  echo "Creating setup, online and tally secure-data-manager. Please wait..."
+  cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/SetupSDM
   cp -R ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/TallySDM
   mv ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/OnlineSDM
 
   echo "Configuring specific secure-data-manager instances properties. Please wait..."
-  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/ConfigSDM/win64/application.properties
+  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/SetupSDM/win64/application.properties
   sed -i 's/role.isTally=false/role.isTally=true/g' ./secure-data-manager-$evoting_version/TallySDM/win64/application.properties
 
-  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/ConfigSDM/win64/application.properties
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/SetupSDM/win64/application.properties
   printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/TallySDM/win64/application.properties
 
   echo "Setup completed! You can now run the OnlineSDM 'SecureDataManager.exe' application!"
@@ -104,7 +104,7 @@ echo "Starting all services"
 docker-compose ${composeFileOptions} stop
 docker-compose ${composeFileOptions} up -d --force-recreate
 
-echo "Extracting and configuring the three secure-data-manager instances (OnlineSDM, ConfigSDM, TallySDM)."
+echo "Extracting and configuring the three secure-data-manager instances (OnlineSDM, SetupSDM, TallySDM)."
 prepare_multiple_sdm
 
 echo "Starting to listen on docker container logs..."
