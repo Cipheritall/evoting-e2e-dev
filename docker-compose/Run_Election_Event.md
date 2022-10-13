@@ -369,7 +369,23 @@ Note: If all status are not "synchronized", please click again on **SYNC**, this
 8. Wait until all data has successfully been exported
 9. Close the Online SDM
 
-### Voter-portal - Submit Votes
+## Voter-portal
+
+Voting is done from a WEB browser.
+
+### Voter-portal - Submit Votes from the browser
+
+**Workflow:**
+1. Open the following URL in your browser: http://localhost:7000/vote/#/legal-terms/**EEID**
+2. Acknowledge the **Legal Terms**
+3. In order the authenticate yourself as a voter enter:
+   + the **Start Voting Key**
+   + the **date of birth**
+4. Make your selection
+5. Validated your choice
+6. Confirm your choice with your **Vote Cast Code**
+
+**The information in points 1 to 6 in bold are described below:**
 
 The Election Event ID EEID is a hex number, e.g. ```dfffc06a3ee249fa9b72584507a55fd3```
 The current EEID corresponds to the folder name in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/config```
@@ -385,20 +401,6 @@ The first 3 values can be found in ```C:/tmp/secure-data-manager-<version>/Setup
 
 The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/win64/sdm/config/<EEID>/ONLINE/printing/<votingCardSetID>/aliases.csv:```\
 ![img.png](../.gitlab/media/aliases.png)
-
----
-
-### Web Browser - Submit Votes
-
-**Workflow:**
-1. Open the following URL in your browser: http://localhost:7000/vote/#/legal-terms/EEID
-2. Acknowledge the **Legal Terms**
-3. In order the authenticate yourself as a voter enter:
-   + the **Start Voting Key**
-   + the **date of birth**
-4. Make your selection
-5. Validated your choice
-6. Confirm your choice with your **Vote Cast Code**
 
 ---
 
@@ -425,8 +427,8 @@ The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/w
 6. Click **MIX**
 7. **Enter the shown Verification Code**
 8. Click **CONFIRM** (*This process can take some time*)
-9. **Select all Ballot Boxes** (*Regular and Test Ballot Boxes*)
-10. Click **MIXING**
+9. Click **MIXING**
+10. **Select all Ballot Boxes** (*Regular and Test Ballot Boxes*)
 11. Click **UPDATE MIXING STATUS** repeatedly until all Ballot Boxes appear under **MIXED**
 
 ---
