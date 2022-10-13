@@ -586,7 +586,6 @@ services:
     mem_limit: 1024m
     memswap_limit: 2048m
     oom_kill_disable: true
-    cpus: 0.5
 
   control-component-2:
     depends_on:
