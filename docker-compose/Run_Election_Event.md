@@ -266,8 +266,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 
 **Workflow:**
 1.  Click **SIGNED**
-2. **Select all Voting Card Sets**
-3. Click **GENERATE PRINT FILE**
+2. Click **GENERATE PRINT FILE**
 
 ---
 
@@ -523,8 +522,7 @@ The list of prime numbers corresponding to the chosen voting options can be foun
 
 **Workflow:**
 1. Verify that all Ballot Boxes appear
-2. **Select all Voting Card Sets**
-3. Click **GENERATE TALLY FILES**
+2. Click **GENERATE TALLY FILES**
 
 ---
 
