@@ -243,8 +243,6 @@ services:
       - "8001:8001"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/tenant/
-      - ./testdata/election-information/keystore:/data/appl/tomee/conf/password/keys_tmp/
     oom_kill_disable: true
 
   voter-material:
@@ -338,8 +336,6 @@ services:
       - "8003:8003"
     volumes:
       - ./testdata/shared/application-level-security/signed-http-headers/keystore:${KEYSTORE_MOUNT_LOCATION}
-      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/tenant/
-      - ./testdata/vote-verification/keystore:/data/appl/tomee/conf/password/keys_tmp/
       - ./testdata/vote-verification/direct-trust/:/home/evote/keystore/
     oom_kill_disable: true
 
