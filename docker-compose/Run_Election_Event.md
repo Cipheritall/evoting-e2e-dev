@@ -538,4 +538,4 @@ For each SDM instance <INSTANCE> (SetupSDM, OnlineSDM, TallySDM) delete followin
 - ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdm/config/*.*```
 - ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdm/logs```
 - ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdm/sdmConfig/elections_config.json```
-- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdm/smdDB```
+- ```C:/tmp/secure-data-manager-<version>/<INSTANCE>/sdm/sdmDB```
