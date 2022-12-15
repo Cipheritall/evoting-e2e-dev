@@ -50,7 +50,7 @@ prepare_multiple_sdm() {
   rm -rf secure-data-manager*
 
   evoting_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout -f e-voting/pom.xml)
-  SDM_LOCAL_PATH=./secure-data-manager-package-$evoting_version/win64/sdm
+  SDM_LOCAL_PATH=./secure-data-manager-package-$evoting_version/sdm
 
   unzip "e-voting/secure-data-manager/packaging/target/secure-data-manager-package-$evoting_version.zip" -d ./secure-data-manager-package-$evoting_version
 
@@ -81,11 +81,11 @@ prepare_multiple_sdm() {
   mv ./secure-data-manager-package-$evoting_version ./secure-data-manager-$evoting_version/OnlineSDM
 
   echo "Configuring specific secure-data-manager instances properties. Please wait..."
-  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/SetupSDM/win64/application.properties
-  sed -i 's/role.isTally=false/role.isTally=true/g' ./secure-data-manager-$evoting_version/TallySDM/win64/application.properties
+  sed -i 's/role.isConfig=false/role.isConfig=true/g' ./secure-data-manager-$evoting_version/SetupSDM/application.properties
+  sed -i 's/role.isTally=false/role.isTally=true/g' ./secure-data-manager-$evoting_version/TallySDM/application.properties
 
-  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/SetupSDM/win64/application.properties
-  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/TallySDM/win64/application.properties
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/SetupSDM/application.properties
+  printf "\nvoting.portal.enabled=false" >>./secure-data-manager-$evoting_version/TallySDM/application.properties
 
   echo "Setup completed! You can now run the OnlineSDM 'SecureDataManager.exe' application!"
 
