@@ -93,7 +93,7 @@ These keys are crucial for verifiability and privacy protection in the cryptogra
 ### Setup SDM - Constitute the Admin Board
 
 In order to make testing accessible, this guide describes a special configuration for automated E2E Tests where the Smart Cards are simulated and no physical hardware is required.\
-This configuration is activated by the property ```smartcards.profile=e2e``` in ```C:/tmp/secure-data-manager-<version>/sdm/sdmConfig/sdm.properties```\
+This configuration is activated by the property ```smartcards.profile=e2e``` in ```C:/tmp/secure-data-manager-<version>/SetupSDM/application.properties```\
 The threshold of the number of Administration Board members required to activate the Administration Board is configurable.\
 In order to simplify testing a single member of the Administration Board can activate the Administration Board in the current configuration.
 
@@ -198,7 +198,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 8. Click **COMPUTED**
 9. **Select all Voting Card Sets**
 10. Click **DOWNLOAD**
-11. All Voting Card Sets has been moved to **DOWNLOADED**
+11. All Voting Card Sets have been moved to **DOWNLOADED**
 
 ---
 
@@ -238,7 +238,7 @@ For real Election Events the export and transfer would be performed with USB Sti
 4. Click **DOWNLOADED**
 5. **Select all Voting Card Sets**
 6. Click **GENERATE**
-7. All Voting Card Sets has been moved to **GENERATING**
+7. All Voting Card Sets have been moved to **GENERATING**
 8. Click **UPDATE GENERATING STATUS** repeatedly until all Voting Card Sets appear under **GENERATED**
 
 ---
@@ -378,7 +378,7 @@ Voting is done from a WEB browser.
 **Workflow:**
 1. Open the following URL in your browser: http://localhost:7000/vote/#/legal-terms/**EEID**
 2. Acknowledge the **Legal Terms**
-3. In order the authenticate yourself as a voter enter:
+3. In order to authenticate yourself as a voter, enter:
    + the **Start Voting Key**
    + the **date of birth**
 4. Make your selection
@@ -394,13 +394,10 @@ The voter needs 4 values:
 1. Start Voting Key: Initializing (e.g. ihhrubtmb3rpchyu6kvg)
 2. Ballot Casting Key: Confirmation
 3. Vote Cast Code: Finalisation
-4. Date of birth: 2nd factor (e.g. 01011970)
+4. Date of birth: 2nd factor (01.01.1970 for all voters as a test value)
 
 The first 3 values can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/sdm/config/<EEID>/ONLINE/printing/evoting-print_Post_E2E_DEV.xml:```\
 ![img.png](../.gitlab/media/evoting-print_Post_E2E_DEV.png)
-
-The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/sdm/config/<EEID>/ONLINE/printing/<votingCardSetID>/aliases.csv:```\
-![img.png](../.gitlab/media/aliases.png)
 
 ---
 
@@ -425,7 +422,7 @@ The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/s
 4. Click **SIGNED**
 5. Select all Ballot Boxes (*Regular and Test Ballot Boxes*)
 6. Click **MIX**
-7. **Enter the shown Verification Code**
+7. **Enter the shown Confirmation Code**
 8. Click **CONFIRM** (*This process can take some time*)
 9. Click **MIXING**
 10. **Select all Ballot Boxes** (*Regular and Test Ballot Boxes*)
@@ -480,13 +477,15 @@ The 4th value can be found in ```C:/tmp/secure-data-manager-<version>/SetupSDM/s
 2. Click **Election Events**
 3. Select **Post_E2E_DEV**
 4. Click **Activate Administration Board**
-5. Navigate to ```C:/tmp/secure-data-manager-verison/TallySDM/sdm/smart-cards```
-6. For each member of the Administration Board:
+5. Navigate to ```C:/tmp/secure-data-manager-<version>/SetupSDM/sdm/smart-cards```
+6. Copy all ```smart-card.b64.ab<N>``` files into ```C:/tmp/secure-data-manager-<version>/TallySDM/sdm/smart-cards```
+7. Navigate to ```C:/tmp/secure-data-manager-<version>/TallySDM/sdm/smart-cards```
+8. For each member of the Administration Board:
    + Rename the corresponding ```smart-card.b64.ab<N>``` file to ```smart-card.b64```
    + Enter the PIN (*e.g. "222222"*)
    + Click **OK**
    + Rename the file ```smart-card.b64``` back to ```smart-card.b64.ab<N>``` (*e.g. smart-card.b64.ab1, smart-card.b64.ab2*)
-7. For each member of the Administration Board:
+9. For each member of the Administration Board:
    + Click **ACTIVATE**
 
 ---
@@ -511,7 +510,7 @@ Note: Steps 5 to 8 can take some time.
 
 ### Tally SDM - Election Results
 
-The list of prime numbers corresponding to the chosen voting options can be found in the file decompressedVotes.csv under
+The list of prime numbers corresponding to the chosen voting options can be found in the file tallyComponentVotesPayload.json under
 ```C:/tmp/secure-data-manager-<version>/TallySDM/wind64/sdm/config/<EEID>/ONLINE/electionInformation/ballots/<ballotID>/ballotBoxes/<ballotBoxID>```
 
 **Workflow:**
@@ -525,6 +524,8 @@ The list of prime numbers corresponding to the chosen voting options can be foun
 **Workflow:**
 1. Verify that all Ballot Boxes appear
 2. Click **GENERATE TALLY FILES**
+3. The results of the Election Event can be found under ```C:/tmp/secure-data-manager-<version>/TallySDM/sdm/config/<EEID>/CUSTOMER/output``` as XML
+   files.
 
 ---
 
